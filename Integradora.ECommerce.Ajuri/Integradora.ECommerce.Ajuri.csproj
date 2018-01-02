@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82CF5F52-F262-4FB0-AF3F-CF29B5677F7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.ECommerce.Ajuri</RootNamespace>
+    <AssemblyName>Integradora.ECommerce.Ajuri</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comum\Almoxarifado.cs" />
+    <Compile Include="Comum\Atuacao.cs" />
+    <Compile Include="Comum\Cancelamentos.cs" />
+    <Compile Include="Comum\Conferencia.cs" />
+    <Compile Include="Comum\Configuracoes.cs" />
+    <Compile Include="Comum\Documentos.cs" />
+    <Compile Include="Comum\Atuacoes.cs" />
+    <Compile Include="Comum\Correcoes.cs" />
+    <Compile Include="Comum\Conferencias.cs" />
+    <Compile Include="Comum\Itens.cs" />
+    <Compile Include="Comum\Produtos.cs" />
+    <Compile Include="Comum\Entidades.cs" />
+    <Compile Include="Comum\IBaseAjuri.cs" />
+    <Compile Include="Comum\Cabecalho.cs" />
+    <Compile Include="Comum\CabecalhoChave.cs" />
+    <Compile Include="Comum\Cancelamento.cs" />
+    <Compile Include="Comum\Cfop.cs" />
+    <Compile Include="Comum\Cliente.cs" />
+    <Compile Include="Comum\Configuracao.cs" />
+    <Compile Include="Comum\Correcao.cs" />
+    <Compile Include="Comum\Destino.cs" />
+    <Compile Include="Comum\Documento.cs" />
+    <Compile Include="Comum\Embalagem.cs" />
+    <Compile Include="Comum\Endereco.cs" />
+    <Compile Include="Comum\Entidade.cs" />
+    <Compile Include="Comum\Filial.cs" />
+    <Compile Include="Comum\Fornecedor.cs" />
+    <Compile Include="Comum\Gerador.cs" />
+    <Compile Include="Comum\Grupo.cs" />
+    <Compile Include="Comum\Item.cs" />
+    <Compile Include="Comum\Livre.cs" />
+    <Compile Include="Comum\Livres.cs" />
+    <Compile Include="Comum\Motivo.cs" />
+    <Compile Include="Comum\Origem.cs" />
+    <Compile Include="Comum\Posicao.cs" />
+    <Compile Include="Comum\Predio.cs" />
+    <Compile Include="Comum\Produto.cs" />
+    <Compile Include="Comum\Target.cs" />
+    <Compile Include="Comum\Ticket.cs" />
+    <Compile Include="Comum\Tipo.cs" />
+    <Compile Include="Metodos\AlimentaEntidadeMestra.cs" />
+    <Compile Include="Metodos\RetornaInventario.cs" />
+    <Compile Include="Metodos\RetornaIO.cs" />
+    <Compile Include="Metodos\CancelarIO.cs" />
+    <Compile Include="Metodos\CorrigeEstoque.cs" />
+    <Compile Include="Retornos\ResponsePosicaoEstoquePorMotivo.cs" />
+    <Compile Include="Retornos\RetornaCorrigeEstoque.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Retornos\ResponseOf.cs" />
+    <Compile Include="Metodos\AlimentaIO.cs" />
+    <Compile Include="Metodos\AlimentaProduto.cs" />
+    <Compile Include="Metodos\Inventario.cs" />
+    <Compile Include="Metodos\AlimentaAtuarEstoque.cs" />
+    <Compile Include="Retornos\ResponseStatusDocumento.cs" />
+    <Compile Include="Integracao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Retornos\RetornaAtuarEstoque.cs" />
+    <Compile Include="Web References\AjuriEntradas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AjuriSaidas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AjuriTransferencias\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce\Integradora.ECommerce.csproj">
+      <Project>{128091e7-33fd-47af-b892-98b499c0e87b}</Project>
+      <Name>Integradora.ECommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP.Winthor\Integradora.ERP.Winthor.csproj">
+      <Project>{01442edb-670d-4cc0-877d-00967fa880b1}</Project>
+      <Name>Integradora.ERP.Winthor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AjuriEntradas\item.wsdl" />
+    <None Include="Web References\AjuriEntradas\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AjuriSaidas\item.wsdl" />
+    <None Include="Web References\AjuriSaidas\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AjuriTransferencias\item.wsdl" />
+    <None Include="Web References\AjuriTransferencias\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documentação\index.html" />
+    <Content Include="Documentação\wms\index.html" />
+    <Content Include="Documentação\wms\intro.html" />
+    <Content Include="Documentação\wms\modelos\abertura-inventario.xml" />
+    <Content Include="Documentação\wms\modelos\acerto-estoque-response.xml" />
+    <Content Include="Documentação\wms\modelos\acerto-estoque.xml" />
+    <Content Include="Documentação\wms\modelos\atualizar-entrada.xml" />
+    <Content Include="Documentação\wms\modelos\atualizar-saida.xml" />
+    <Content Include="Documentação\wms\modelos\bloqueio-response.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Documentação\wms\modelos\bloqueio.xml" />
+    <Content Include="Documentação\wms\modelos\cancelamento-entrada-response.xml" />
+    <Content Include="Documentação\wms\modelos\cancelamento-entrada.xml" />
+    <Content Include="Documentação\wms\modelos\cancelamento-saida-response.xml" />
+    <Content Include="Documentação\wms\modelos\cancelamento-saida.xml" />
+    <Content Include="Documentação\wms\modelos\desbloqueio-response.xml" />
+    <Content Include="Documentação\wms\modelos\desbloqueio.xml" />
+    <Content Include="Documentação\wms\modelos\documento-entrada.xml" />
+    <Content Include="Documentação\wms\modelos\documento-saida-bloqueado.xml" />
+    <Content Include="Documentação\wms\modelos\documento-saida.xml" />
+    <Content Include="Documentação\wms\modelos\fabricante.xml" />
+    <Content Include="Documentação\wms\modelos\fechamento-inventario.xml" />
+    <Content Include="Documentação\wms\modelos\fornecedor.xml" />
+    <Content Include="Documentação\wms\modelos\lotes-inventario.xml" />
+    <Content Include="Documentação\wms\modelos\produto.xml" />
+    <Content Include="Documentação\wms\modelos\troca-programa-response.xml" />
+    <Content Include="Documentação\wms\modelos\troca-programa.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ajuri.homologacao.am.gov.br/index.php/ws_entradas/%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AjuriEntradas\</RelPath>
+      <UpdateFromURL>http://ajuri.homologacao.am.gov.br/index.php/ws_entradas/%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_Ajuri_AjuriEntradas_WsEntradas</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ajuri.homologacao.am.gov.br/index.php/ws_pedidos/%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AjuriSaidas\</RelPath>
+      <UpdateFromURL>http://ajuri.homologacao.am.gov.br/index.php/ws_pedidos/%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_Ajuri_AjuriSaidas_WsPedidos</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ajuri.homologacao.am.gov.br/index.php/ws_transferencias/%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AjuriTransferencias\</RelPath>
+      <UpdateFromURL>http://ajuri.homologacao.am.gov.br/index.php/ws_transferencias/%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_Ajuri_AjuriTransferencias_WsTransferencias</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

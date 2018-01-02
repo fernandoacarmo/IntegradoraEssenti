@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Integradora.WebServiceOMBoat/ServiceTrafego.svc?xsd=xsd1" namespace="vx" />
+  <xs:import schemaLocation="http://localhost/Integradora.WebServiceOMBoat/ServiceTrafego.svc?xsd=xsd2" namespace="SOAP-ENV" />
+  <xs:import schemaLocation="http://localhost/Integradora.WebServiceOMBoat/ServiceTrafego.svc?xsd=xsd3" namespace="http://cema.nucci.com.br/custom/wms/integracao/ws/cema/webservice_Returns" />
+  <xs:element name="integrarEntidadeMestra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xml" type="AlimentaEntidadeMestraXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AlimentaEntidadeMestraXML">
+    <xs:sequence>
+      <xs:element xmlns:q1="vx" minOccurs="0" maxOccurs="1" ref="q1:AlimentaEntidadeMestra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="integrarEntidadeMestraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="SOAP-ENV" minOccurs="0" maxOccurs="1" name="integrarEntidadeMestraResult" type="q2:ResponseOf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="integrarProduto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xml" type="AlimentaProdutoXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AlimentaProdutoXML">
+    <xs:sequence>
+      <xs:element xmlns:q3="vx" minOccurs="0" maxOccurs="1" ref="q3:AlimentaProduto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="integrarProdutoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="SOAP-ENV" minOccurs="0" maxOccurs="1" name="integrarProdutoResult" type="q4:ResponseOf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="integrarDocumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xml" type="AlimentaIOXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AlimentaIOXML">
+    <xs:sequence>
+      <xs:element xmlns:q5="vx" minOccurs="0" maxOccurs="1" ref="q5:AlimentaIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="integrarDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="SOAP-ENV" minOccurs="0" maxOccurs="1" name="integrarDocumentoResult" type="q6:ResponseOf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cancelaDocumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xml" type="CancelarIOXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CancelarIOXML">
+    <xs:sequence>
+      <xs:element xmlns:q7="vx" minOccurs="0" maxOccurs="1" ref="q7:CancelarIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cancelaDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="SOAP-ENV" minOccurs="0" maxOccurs="1" name="cancelaDocumentoResult" type="q8:ResponseOf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="integrarAtuacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xml" type="RetornaAtuarEstoqueXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RetornaAtuarEstoqueXML">
+    <xs:sequence>
+      <xs:element xmlns:q9="vx" minOccurs="0" maxOccurs="1" ref="q9:RetornaAtuarEstoque" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="integrarAtuacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="SOAP-ENV" minOccurs="0" maxOccurs="1" name="integrarAtuacaoResult" type="q10:ResponseOf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="integrarCorrecao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xml" type="CorrigeEstoqueXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CorrigeEstoqueXML">
+    <xs:sequence>
+      <xs:element xmlns:q11="vx" minOccurs="0" maxOccurs="1" ref="q11:CorrigeEstoque" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="integrarCorrecaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://cema.nucci.com.br/custom/wms/integracao/ws/cema/webservice_Returns" minOccurs="0" maxOccurs="1" name="integrarCorrecaoResult" type="q12:RetornaCorrigeEstoque" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="integrarInventario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xml" type="InventarioXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="InventarioXML">
+    <xs:sequence>
+      <xs:element xmlns:q13="vx" minOccurs="0" maxOccurs="1" ref="q13:Inventario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="integrarInventarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="SOAP-ENV" minOccurs="0" maxOccurs="1" name="integrarInventarioResult" type="q14:ResponseOf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="integrarInventarioConferido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xml" type="InventarioXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="integrarInventarioConferidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="SOAP-ENV" minOccurs="0" maxOccurs="1" name="integrarInventarioConferidoResult" type="q15:ResponseOf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ObterCep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterCepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterCepResult" type="tns:CepVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CepVO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Cep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Logradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObterCepSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterCep" />
+  </wsdl:message>
+  <wsdl:message name="ObterCepSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterCepResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicoSoap">
+    <wsdl:operation name="ObterCep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtem os dados referente ao CEP pesquisado.</wsdl:documentation>
+      <wsdl:input message="tns:ObterCepSoapIn" />
+      <wsdl:output message="tns:ObterCepSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicoSoap" type="tns:ServicoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObterCep">
+      <soap:operation soapAction="http://tempuri.org/ObterCep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicoSoap12" type="tns:ServicoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObterCep">
+      <soap12:operation soapAction="http://tempuri.org/ObterCep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servico">
+    <wsdl:port name="ServicoSoap" binding="tns:ServicoSoap">
+      <soap:address location="http://webcep.toolsweb.com.br/ToolsWeb.WebCEP/Servico.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicoSoap12" binding="tns:ServicoSoap12">
+      <soap12:address location="http://webcep.toolsweb.com.br/ToolsWeb.WebCEP/Servico.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

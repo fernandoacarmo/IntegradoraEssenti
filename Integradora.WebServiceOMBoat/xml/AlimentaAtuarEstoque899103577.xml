@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AlimentaAtuarEstoque xmlns="vx">
+    <ticket>
+      <pid>AJURI</pid>
+      <nome>AJURI</nome>
+      <empresa>RV</empresa>
+      <fornecedor>AJURI</fornecedor>
+      <host>192.168.33.1</host>
+      <data-origem>2016-12-06T14:53:20</data-origem>
+      <versao>1.0.0</versao>
+      <observacoes />
+      <id>123</id>
+      <filial>
+        <codigo>vx:codigo</codigo>
+        <documento-federal>05.366.444/0003-20</documento-federal>
+        <razao-social>vx:razao-social</razao-social>
+      </filial>
+    </ticket>
+    <atuacoes>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>14398</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>2022</lote>
+        <serial>108</serial>
+        <modelo>57</modelo>
+        <data-fabricacao>2016-01-31</data-fabricacao>
+        <data-vencimento>2018-01-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710277</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>1</quantidade>
+      </atuacao>
+    </atuacoes>
+  </AlimentaAtuarEstoque>
+</xml>

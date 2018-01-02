@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemsResult" type="tns:ArrayOfIntegracaoUsuarioInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIntegracaoUsuarioInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IntegracaoUsuarioInfo" nillable="true" type="tns:IntegracaoUsuarioInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IntegracaoUsuarioInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EcommerceId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoPessoaId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrigemContatoId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnderecoResidencialId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnderecoEntregaId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoSexoId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FormaPagamentoId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoPreferenciaUsuarioId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgaoEmissor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeMae" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelefoneResidencial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelefoneCelular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelefoneComercial" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataNascimento" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RazaoSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNPJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InscricaoEstadual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Responsavel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCriacao" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataAtualizacao" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Endereco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complemento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CEP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParceiroID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DadosNewsletter" type="tns:IntegracaoNewsletterInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IntegracaoNewsletterInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IntegracaoNewsletterId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCadastro" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoubleOptInValido" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataAceitacaoOptIn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPAceitacaoOptIn" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="usuarioId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectResult" type="tns:IntegracaoUsuarioInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Complete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="usuarioId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItems" />
+  </wsdl:message>
+  <wsdl:message name="GetItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Select" />
+  </wsdl:message>
+  <wsdl:message name="SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Complete" />
+  </wsdl:message>
+  <wsdl:message name="CompleteSoapOut">
+    <wsdl:part name="parameters" element="tns:CompleteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SyncUsuarioSoap">
+    <wsdl:operation name="GetItems">
+      <wsdl:input message="tns:GetItemsSoapIn" />
+      <wsdl:output message="tns:GetItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <wsdl:input message="tns:SelectSoapIn" />
+      <wsdl:output message="tns:SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Complete">
+      <wsdl:input message="tns:CompleteSoapIn" />
+      <wsdl:output message="tns:CompleteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SyncUsuarioSoap" type="tns:SyncUsuarioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetItems">
+      <soap:operation soapAction="http://tempuri.org/GetItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <soap:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Complete">
+      <soap:operation soapAction="http://tempuri.org/Complete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SyncUsuarioSoap12" type="tns:SyncUsuarioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetItems">
+      <soap12:operation soapAction="http://tempuri.org/GetItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <soap12:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Complete">
+      <soap12:operation soapAction="http://tempuri.org/Complete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SyncUsuario">
+    <wsdl:port name="SyncUsuarioSoap" binding="tns:SyncUsuarioSoap">
+      <soap:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncUsuario.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SyncUsuarioSoap12" binding="tns:SyncUsuarioSoap12">
+      <soap12:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncUsuario.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

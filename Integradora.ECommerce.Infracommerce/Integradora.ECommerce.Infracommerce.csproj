@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9BFB344D-7C34-480D-9EF2-C7A1E04EB7AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.ECommerce.Infracommerce</RootNamespace>
+    <AssemblyName>Integradora.ECommerce.Infracommerce</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Integracao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\WebServiceClientes\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebServiceEstoque\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebServiceLimiteCredito\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebServicePagamentos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebServicePedidos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebServicePosicaoPedido\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce\Integradora.ECommerce.csproj">
+      <Project>{128091e7-33fd-47af-b892-98b499c0e87b}</Project>
+      <Name>Integradora.ECommerce</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="F:\Estudos\Infrashop-Middleware-Unilever\ErpServices\OrderIntegration.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebServicePedidos\</RelPath>
+      <UpdateFromURL>F:\Estudos\Infrashop-Middleware-Unilever\ErpServices\OrderIntegration.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_Infracommerce_WebServicePedidos_BOOrderIntegration</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="F:\Estudos\Infrashop-Middleware-Unilever\ErpServices\PaymentServices.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebServicePagamentos\</RelPath>
+      <UpdateFromURL>F:\Estudos\Infrashop-Middleware-Unilever\ErpServices\PaymentServices.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_Infracommerce_WebServicePagamentos_PaymentServicesMediator_ep</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="F:\Estudos\Unilever\AcecServices\CustomerServices.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebServiceClientes\</RelPath>
+      <UpdateFromURL>F:\Estudos\Unilever\AcecServices\CustomerServices.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_Infracommerce_WebServiceClientes_CustomerServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="F:\Estudos\Unilever\AcecServices\StockServices.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebServiceEstoque\</RelPath>
+      <UpdateFromURL>F:\Estudos\Unilever\AcecServices\StockServices.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_Infracommerce_WebServiceEstoque_StockServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="F:\Estudos\Unilever\AcecServices\TrackingServices.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebServicePosicaoPedido\</RelPath>
+      <UpdateFromURL>F:\Estudos\Unilever\AcecServices\TrackingServices.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_Infracommerce_WebServicePosicaoPedido_TrackingServicesMediator_ep</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="F:\Estudos\Unilever\AcecServices\VoucherServices.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebServiceLimiteCredito\</RelPath>
+      <UpdateFromURL>F:\Estudos\Unilever\AcecServices\VoucherServices.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_Infracommerce_WebServiceLimiteCredito_VoucherServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WebServiceClientes\AcecCustomer.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceClientes\CustomerServices.wsdl" />
+    <None Include="Web References\WebServiceClientes\CustomerServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceClientes\notifyCustomerCreationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceClientes\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebServiceClientes\updateCustomerResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceEstoque\AcecStock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceEstoque\ErrorLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceEstoque\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebServiceEstoque\setStockResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceEstoque\StockServices.wsdl" />
+    <None Include="Web References\WebServiceEstoque\StockServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceLimiteCredito\AcecCoupon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceLimiteCredito\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebServiceLimiteCredito\replaceVoucherResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceLimiteCredito\VoucherServices.wsdl" />
+    <None Include="Web References\WebServiceLimiteCredito\VoucherServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServicePagamentos\confirmPaymentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServicePagamentos\ErrorLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServicePagamentos\PaymentServices.wsdl" />
+    <None Include="Web References\WebServicePagamentos\PaymentServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServicePagamentos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebServicePedidos\AcecInvoiceInfo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServicePedidos\AcecOrder.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServicePedidos\BOOrderIntegration.wsdl" />
+    <None Include="Web References\WebServicePedidos\BOOrderIntegration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServicePedidos\integrateOrderResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServicePedidos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebServicePosicaoPedido\AcecInvoiceInfo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServicePosicaoPedido\AcecTracking.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServicePosicaoPedido\captureTrackingResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServicePosicaoPedido\ErrorLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServicePosicaoPedido\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebServicePosicaoPedido\TrackingServices.wsdl" />
+    <None Include="Web References\WebServicePosicaoPedido\TrackingServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

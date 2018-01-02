@@ -1,0 +1,27 @@
+﻿CREATE OR REPLACE TRIGGER esg_ecommerce_notfiscal
+ AFTER INSERT
+    ON PCNFSAID
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+BEGIN
+  --Apenas cupom fiscal
+  IF (:NEW.SERIE IN ('CF','CP')) and
+     (NVL(:NEW.CODFILIALNF, :NEW.CODFILIAL) = '2') AND
+     (:NEW.CODCLI NOT IN (1,2))
+  THEN
+    BEGIN
+      INSERT INTO ESTREPLICACAO_ECOMMERCE ( TABELA
+                                          , ACAO
+                                          , ID
+                                          , DTINCLUSAO)
+         VALUES ( 'VWCUPOMFISCAL' --Tabela que sera processada
+                , 0          --Acao a ser realizada
+                , :NEW.ROWID --Registro a ser importado
+                , SYSDATE    --Data e hora de inclusão do registro
+                );
+    EXCEPTION
+    WHEN DUP_VAL_ON_INDEX THEN
+      NULL;
+    END;
+  END IF;
+END;

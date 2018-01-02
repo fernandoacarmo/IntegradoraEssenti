@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost/Integradora.WebServiceOMBoat/ServiceTrafego.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost/Integradora.WebServiceOMBoat/ServiceTrafego.svc?xsd=xsd1" namespace="vx" />
+      <xsd:import schemaLocation="http://localhost/Integradora.WebServiceOMBoat/ServiceTrafego.svc?xsd=xsd2" namespace="SOAP-ENV" />
+      <xsd:import schemaLocation="http://localhost/Integradora.WebServiceOMBoat/ServiceTrafego.svc?xsd=xsd3" namespace="http://cema.nucci.com.br/custom/wms/integracao/ws/cema/webservice_Returns" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceTrafego_integrarEntidadeMestra_InputMessage">
+    <wsdl:part name="parameters" element="integrarEntidadeMestra" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarEntidadeMestra_OutputMessage">
+    <wsdl:part name="parameters" element="integrarEntidadeMestraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarProduto_InputMessage">
+    <wsdl:part name="parameters" element="integrarProduto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarProduto_OutputMessage">
+    <wsdl:part name="parameters" element="integrarProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarDocumento_InputMessage">
+    <wsdl:part name="parameters" element="integrarDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="integrarDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_cancelaDocumento_InputMessage">
+    <wsdl:part name="parameters" element="cancelaDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_cancelaDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="cancelaDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarAtuacao_InputMessage">
+    <wsdl:part name="parameters" element="integrarAtuacao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarAtuacao_OutputMessage">
+    <wsdl:part name="parameters" element="integrarAtuacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarCorrecao_InputMessage">
+    <wsdl:part name="parameters" element="integrarCorrecao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarCorrecao_OutputMessage">
+    <wsdl:part name="parameters" element="integrarCorrecaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarInventario_InputMessage">
+    <wsdl:part name="parameters" element="integrarInventario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarInventario_OutputMessage">
+    <wsdl:part name="parameters" element="integrarInventarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarInventarioConferido_InputMessage">
+    <wsdl:part name="parameters" element="integrarInventarioConferido" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_integrarInventarioConferido_OutputMessage">
+    <wsdl:part name="parameters" element="integrarInventarioConferidoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceTrafego">
+    <wsdl:operation name="integrarEntidadeMestra">
+      <wsdl:input wsaw:Action="urn:IServiceTrafego/integrarEntidadeMestra" message="IServiceTrafego_integrarEntidadeMestra_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IServiceTrafego/integrarEntidadeMestraResponse" message="IServiceTrafego_integrarEntidadeMestra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="integrarProduto">
+      <wsdl:input wsaw:Action="urn:IServiceTrafego/integrarProduto" message="IServiceTrafego_integrarProduto_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IServiceTrafego/integrarProdutoResponse" message="IServiceTrafego_integrarProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="integrarDocumento">
+      <wsdl:input wsaw:Action="urn:IServiceTrafego/integrarDocumento" message="IServiceTrafego_integrarDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IServiceTrafego/integrarDocumentoResponse" message="IServiceTrafego_integrarDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelaDocumento">
+      <wsdl:input wsaw:Action="urn:IServiceTrafego/cancelaDocumento" message="IServiceTrafego_cancelaDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IServiceTrafego/cancelaDocumentoResponse" message="IServiceTrafego_cancelaDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="integrarAtuacao">
+      <wsdl:input wsaw:Action="urn:IServiceTrafego/integrarAtuacao" message="IServiceTrafego_integrarAtuacao_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IServiceTrafego/integrarAtuacaoResponse" message="IServiceTrafego_integrarAtuacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="integrarCorrecao">
+      <wsdl:input wsaw:Action="urn:IServiceTrafego/integrarCorrecao" message="IServiceTrafego_integrarCorrecao_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IServiceTrafego/integrarCorrecaoResponse" message="IServiceTrafego_integrarCorrecao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="integrarInventario">
+      <wsdl:input wsaw:Action="urn:IServiceTrafego/integrarInventario" message="IServiceTrafego_integrarInventario_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IServiceTrafego/integrarInventarioResponse" message="IServiceTrafego_integrarInventario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="integrarInventarioConferido">
+      <wsdl:input wsaw:Action="urn:IServiceTrafego/integrarInventarioConferido" message="IServiceTrafego_integrarInventarioConferido_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IServiceTrafego/integrarInventarioConferidoResponse" message="IServiceTrafego_integrarInventarioConferido_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

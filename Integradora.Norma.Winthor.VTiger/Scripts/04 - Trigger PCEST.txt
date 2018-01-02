@@ -1,0 +1,56 @@
+﻿CREATE OR REPLACE TRIGGER esg_vtiger_estoque
+ AFTER
+   INSERT OR DELETE OR UPDATE OF qtestger, qtreserv, qtpendente, qtbloqueada
+ ON friopeca.pcest
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+    vnacao   vtiger.estreplicacao_vtiger.acao%TYPE;
+    vsid     vtiger.estreplicacao_vtiger.id%TYPE;
+BEGIN
+    vnacao := 0;                                                   --Inserindo
+
+    --Se for prenchimento destes campos nao faz nada
+    IF    (:new.qtestger IS NULL)
+       OR (:new.qtreserv IS NULL)
+       OR (:new.qtbloqueada IS NULL)
+       OR (:new.codfilial <> '5')
+    THEN
+        vnacao := -1;
+    END IF;
+
+    IF vnacao > -1
+    THEN
+        BEGIN
+            vsid := :new.ROWID;
+
+            IF UPDATING
+            THEN
+                vnacao := 1;                                      -- Alterando
+            END IF;
+
+            INSERT INTO vtiger.estreplicacao_vtiger (tabela, acao, id)
+                SELECT   'VWVTEXPRODUTOS', vnacao, pcprodut.ROWID
+                  FROM   friopeca.pcprodut
+                 WHERE       pcprodut.codprod = :new.codprod
+                         AND pcprodut.nomeecommerce IS NOT NULL
+                         AND pcprodut.codlinhaprod IS NOT NULL
+                         AND NOT EXISTS
+                                (SELECT   1
+                                   FROM   vtiger.estreplicacao_vtiger
+                                  WHERE   vtiger.estreplicacao_vtiger.tabela =
+                                              'VWVTEXPRODUTOS'
+                                          AND vtiger.estreplicacao_vtiger.id =
+                                                 pcprodut.ROWID);
+
+        EXCEPTION
+            WHEN DUP_VAL_ON_INDEX
+            THEN
+                NULL;
+        END;
+    END IF;
+END;
+/
+
+
+-- End of DDL Script for Trigger VTEX.ESG_ECOMMERCE_ESTOQUE

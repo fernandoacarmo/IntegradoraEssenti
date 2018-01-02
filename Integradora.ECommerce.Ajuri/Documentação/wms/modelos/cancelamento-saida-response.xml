@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><ResponseOf status="SUCCESS" xmlns="http://cema.nucci.com.br/custom/wms/integracao/ws/cema/webservice_Returns">
+<request-ticket>172374</request-ticket>
+<request-date>2016-05-16T14:54:02-04:00</request-date>
+<response-ticket>br.com.nucci2016-05-16T14:54:02-04:00:2016-05-16T14:54:02-04:00</response-ticket>
+<pid>nucciCema</pid>
+<message>Documento cancelado com sucesso.</message>
+<detail>1 documento(s) cancelados</detail>
+</ResponseOf>

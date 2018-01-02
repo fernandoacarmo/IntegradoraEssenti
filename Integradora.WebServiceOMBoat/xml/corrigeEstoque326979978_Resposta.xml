@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RetornaCorrigeEstoque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" status="ERROR">
+  <ticket version="v1">
+    <pid>IntegracaoOMBoat</pid>
+    <nome>IntegracaoOMBoat</nome>
+    <empresa>OMBoat</empresa>
+    <fornecedor>OMBoat</fornecedor>
+    <host>fe80::c006:3416:c57:635e%11</host>
+    <data-origem>2016-12-14T12:39:29</data-origem>
+    <versao>v1build1591</versao>
+    <id>IntegracaoOMBoat2016-12-14T12:39:29</id>
+    <filial>
+      <codigo>OMBoat</codigo>
+      <documento-federal>17.026.052/0001-30</documento-federal>
+      <razao-social>OM BOAT LOCACAO DE EMBARCACOES LTDA.</razao-social>
+    </filial>
+  </ticket>
+  <target>
+    <pid>AjuriWS</pid>
+    <nome>Ajuri</nome>
+    <empresa>CEMA</empresa>
+    <fornecedor>Prodam</fornecedor>
+    <host>unknow</host>
+    <data-origem>2016-12-14T12:39:29</data-origem>
+    <observacoes>Erro ao cadastrar transferência/acerto de estoque: System.FormatException: Cadeia de caracteres não foi reconhecida como DateTime válido.
+   em System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   em System.Convert.ToDateTime(String value)
+   em Integradora.WebServiceOMBoat.Cadastrar.ImportarEstoqueTransferenciaAcerto(Correcao DadosAjuri) na f:\Desenvolvimento3\Projetos\CSharp\Integradora\Integradora.WebServiceOMBoat\Cadastrar.cs:linha 1546</observacoes>
+  </target>
+  <correcoes>
+    <correcao tipo="?">
+      <filial>
+        <codigo>?</codigo>
+        <documento-federal>?</documento-federal>
+        <razao-social>?</razao-social>
+      </filial>
+      <cliente>
+        <documento-federal>?</documento-federal>
+        <razao-social>?</razao-social>
+      </cliente>
+      <origem>
+        <produto>
+          <partnumber>?</partnumber>
+        </produto>
+        <quantidade-unidades>?</quantidade-unidades>
+        <lote>?</lote>
+        <serial>?</serial>
+        <modelo>?</modelo>
+        <fabricacao>?</fabricacao>
+        <vencimento>?</vencimento>
+      </origem>
+      <destino>
+        <produto>
+          <partnumber>?</partnumber>
+        </produto>
+        <quantidade-unidades>?</quantidade-unidades>
+        <lote>?</lote>
+        <serial>?</serial>
+        <modelo>?</modelo>
+        <fabricacao>?</fabricacao>
+        <vencimento>?</vencimento>
+      </destino>
+      <livres>
+        <livre>
+          <indice>?</indice>
+          <nome>?</nome>
+          <valor>?</valor>
+        </livre>
+      </livres>
+    </correcao>
+  </correcoes>
+</RetornaCorrigeEstoque>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52EF630F-3420-471F-AC92-8089474F3EB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.Norma.Winthor.Magento001</RootNamespace>
+    <AssemblyName>Integradora.Norma.Winthor.Magento001</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comum.cs" />
+    <Compile Include="Enviar.cs" />
+    <Compile Include="Processo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receber.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.Magento001\Integradora.ECommerce.Magento001.csproj">
+      <Project>{591ba8b5-73ac-490f-b449-e4cb10a130fc}</Project>
+      <Name>Integradora.ECommerce.Magento001</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce\Integradora.ECommerce.csproj">
+      <Project>{128091e7-33fd-47af-b892-98b499c0e87b}</Project>
+      <Name>Integradora.ECommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP.Winthor\Integradora.ERP.Winthor.csproj">
+      <Project>{01442edb-670d-4cc0-877d-00967fa880b1}</Project>
+      <Name>Integradora.ERP.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Mensageiro\Integradora.Mensageiro.csproj">
+      <Project>{8cdcbc5a-3b1c-433b-8bf0-7dedbd6400be}</Project>
+      <Name>Integradora.Mensageiro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor\Integradora.Norma.Winthor.csproj">
+      <Project>{11e5eaeb-d83b-4d84-bedd-51fd6a7870e3}</Project>
+      <Name>Integradora.Norma.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma\Integradora.Norma.csproj">
+      <Project>{164dd693-513a-42da-9b8b-032e2f502504}</Project>
+      <Name>Integradora.Norma</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Correspondencia.txt" />
+    <Content Include="Scripts\Criar job.txt" />
+    <Content Include="Scripts\Procedure esp_enviar_produto_ecommece.txt" />
+    <Content Include="Scripts\Tabela ESTPCPPARAMETROS.txt" />
+    <Content Include="Scripts\Tabela ESTPEDIDOFINANCEIRO.txt" />
+    <Content Include="Scripts\Trigger PCPRODUT.txt" />
+    <Content Include="Scripts\Trigger PCTABPR.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

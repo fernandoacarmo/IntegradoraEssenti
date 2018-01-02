@@ -1,0 +1,691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{502F87C6-78F7-40D4-BD10-58F7ABFBA459}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.ECommerce.Magento002</RootNamespace>
+    <AssemblyName>Integradora.ECommerce.Magento002</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Integracao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\MagentoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.CEP\Integradora.CEP.csproj">
+      <Project>{c8172da1-02d4-4367-9597-de577f3ba583}</Project>
+      <Name>Integradora.CEP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Database.Oracle\Integradora.Database.Oracle.csproj">
+      <Project>{5bfaa3c1-e7fc-4f38-ac3b-3ca6ef9e5134}</Project>
+      <Name>Integradora.Database.Oracle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Database\Integradora.Database.csproj">
+      <Project>{04e32b6d-2847-4beb-aab4-0561433bf63d}</Project>
+      <Name>Integradora.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce\Integradora.ECommerce.csproj">
+      <Project>{128091e7-33fd-47af-b892-98b499c0e87b}</Project>
+      <Name>Integradora.ECommerce</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.apiEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.associativeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.callResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogAssignedProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogAttributeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogAttributeOptionEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryAssignedProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryAssignProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryAttributeCurrentStoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryAttributeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryAttributeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryCurrentStoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryEntityNoChildren.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryLevelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryMoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryRemoveProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryTree.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryTreeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryUpdateProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogCategoryUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogInventoryStockItemEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogInventoryStockItemListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogInventoryStockItemMultiUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogInventoryStockItemUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeAddOptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeCurrentStoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeMediaCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeMediaCurrentStoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeMediaInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeMediaListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeMediaRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeMediaTypeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeMediaTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeMediaUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeSetAttributeAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeSetAttributeRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeSetCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeSetEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeSetGroupAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeSetGroupRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeSetGroupRenameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeSetListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeSetRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeTierPriceInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeTierPriceUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductAttributeUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCurrentStoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionInfoEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionListEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionTypesEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionValueAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionValueInfoEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionValueInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionValueListEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionValueListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionValueRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductCustomOptionValueUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductDownloadableLinkAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductDownloadableLinkListEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductDownloadableLinkListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductDownloadableLinkRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductGetSpecialPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductImageEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductLinkAssignResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductLinkAttributeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductLinkAttributesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductLinkEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductLinkListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductLinkRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductLinkTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductLinkUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductMultiUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductReturnEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductSetSpecialPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductSpecialPriceReturnEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTagAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTagInfoEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTagInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTagListEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTagListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTagRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTagUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTierPriceEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTypeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductTypeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.catalogProductUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerAddressCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerAddressDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerAddressEntityItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerAddressInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerAddressListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerAddressUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerCustomerCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerCustomerDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerCustomerEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerCustomerInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerCustomerListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerCustomerUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerGroupEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.customerGroupListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.directoryCountryEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.directoryCountryListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.directoryRegionEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.directoryRegionListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.endSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.existsFaltureEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.giftMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.giftMessageSetForQuoteItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.giftMessageSetForQuoteProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.giftMessageSetForQuoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.globalFaultsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.loginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.magentoInfoEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.magentoInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.multiCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.resourceFaultsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.resourcesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderAddCommentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderCancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderCreditmemoAddCommentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderCreditmemoCancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderCreditmemoCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderCreditmemoEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderCreditmemoInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderCreditmemoListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderHoldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderInvoiceAddCommentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderInvoiceCancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderInvoiceCaptureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderInvoiceCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderInvoiceEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderInvoiceInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderInvoiceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderInvoiceVoidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderListEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderShipmentAddCommentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderShipmentAddTrackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderShipmentCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderShipmentEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderShipmentGetCarriersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderShipmentInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderShipmentListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderShipmentRemoveTrackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderShipmentSendInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.salesOrderUnholdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartCouponAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartCouponRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartCustomerAddressesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartCustomerSetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartInfoEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartLicenseEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartLicenseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartPaymentListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartPaymentMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartPaymentMethodResponseEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartProductAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartProductListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartProductMoveToCustomerQuoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartProductRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartProductUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartShippingListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartShippingMethodEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartShippingMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartTotalsEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.shoppingCartTotalsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.startSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.storeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.storeInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Integradora.ECommerce.Magento002.MagentoService.storeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MagentoService\Magento.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MagentoService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MagentoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MagentoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MagentoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

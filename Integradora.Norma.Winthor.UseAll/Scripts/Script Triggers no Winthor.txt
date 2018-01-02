@@ -1,0 +1,35 @@
+﻿CREATE OR REPLACE TRIGGER CERGRAND.ESG_PCPREST_WINTHOR_USEALL
+BEFORE UPDATE
+OF DTBAIXA
+  ,DTESTORNO
+  ,DTPAG
+  ,VPAGO
+ON CERGRAND.PCPREST 
+REFERENCING NEW AS NEW OLD AS OLD
+FOR EACH ROW
+DECLARE vnACAO ESTREPLICACAO_ECOMMERCE.ACAO%TYPE;
+BEGIN
+  vnACAO := -1;
+
+  IF :NEW.CODCOB <> 'DESD' THEN --Desdobramento não envia
+    IF (:NEW.DTESTORNO IS NOT NULL) THEN
+       vnACAO := 2; --Enviar título para estorno
+    ELSIF (:NEW.DTPAG IS NOT NULL) THEN
+       vnACAO := 1; --Enviar titulo para quitação
+    END IF;
+  END IF;
+    
+  IF (vnACAO <> -1) THEN--ESTAVA IGUAL A = -1
+    --Gerando a fila de replicação
+    BEGIN
+      INSERT INTO ESTREPLICACAO_ECOMMERCE ( TABELA, ID, ACAO )
+                                   VALUES ( 'PCPREST'
+                                          , :NEW.ROWID
+                                          , vnACAO
+                                          );
+    EXCEPTION
+     WHEN DUP_VAL_ON_INDEX  THEN
+        NULL;
+    END;     
+  END IF;
+END;

@@ -1,0 +1,57 @@
+﻿-- Start of DDL Script for Trigger LOCAL.ESG_ECOMMERCE_PRECO
+-- Generated 24-mar-2017 11:35:09 from LOCAL@LOCAL
+
+CREATE OR REPLACE TRIGGER ESG_ECOMMERCE_PRECO
+ BEFORE
+   INSERT OR DELETE OR UPDATE OF NUMREGIAO, CODPROD, PVENDA1
+ ON PCTABPR
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_ECOMMERCE.acao%type;
+      vsID   ESTREPLICACAO_ECOMMERCE.id%type;
+   BEGIN
+     vnACAO := 0;
+     
+     IF (:NEW.NUMREGIAO <> PARAMFILIAL.obtercomonumber('FIL_NUMREGIAOPADRAO','2')) THEN
+        vnACAO := -1;
+     ELSE
+       BEGIN --Testando se o departamento e usando no e-Commerce
+         SELECT 1
+              , PCPRODUT.ROWID
+           INTO vnACAO
+              , vsID
+           FROM PCPRODUT
+          WHERE PCPRODUT.NOMEECOMMERCE IS NOT NULL
+            AND PCPRODUT.ENVIAECOMMERCE = 'S'
+            AND PCPRODUT.CODPROD = :NEW.CODPROD;
+       EXCEPTION
+         WHEN NO_DATA_FOUND THEN
+           vnACAO := -1;
+       END;
+     END IF; 
+
+     IF vnACAO > -1 THEN
+       IF DELETING THEN
+          vnACAO := 2; --Excluindo
+       ELSE
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       BEGIN
+         INSERT INTO ESTREPLICACAO_ECOMMERCE (TABELA, ACAO, ID)
+              VALUES ('PCPRODUT'
+                     , vnACAO
+                     , vsID);
+       EXCEPTION
+         WHEN DUP_VAL_ON_INDEX THEN
+           NULL;
+       END;
+     END IF; 
+   END;
+/
+
+
+-- End of DDL Script for Trigger LOCAL.ESG_ECOMMERCE_PRECO

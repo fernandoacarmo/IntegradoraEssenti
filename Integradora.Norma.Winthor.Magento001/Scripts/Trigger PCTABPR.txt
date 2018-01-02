@@ -1,0 +1,43 @@
+﻿CREATE OR REPLACE TRIGGER esg_ecommerce_preco
+ AFTER
+   INSERT OR DELETE OR UPDATE OF numregiao, pvenda1, codprod, pvenda
+ ON pctabpr
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+    vnacao   estreplicacao_ECOMMERCE.acao%TYPE;
+BEGIN
+    vnacao := 0;                                                   --Inserindo
+
+    IF vnacao > -1
+    THEN
+        BEGIN
+            IF DELETING
+            THEN
+                vnacao := 2;                                       --Excluindo
+            ELSE
+                IF UPDATING
+                THEN
+                    vnacao := 1;                                  -- Alterando
+                END IF;
+            END IF;
+
+            INSERT INTO estreplicacao_ECOMMERCE (tabela, acao, id)
+                SELECT   'VWMAGENTOPRODUTOS', vnacao, pcprodut.ROWID
+                  FROM   pcprodut
+                 WHERE       pcprodut.codprod = :new.codprod
+                         AND pcprodut.codepto IS NOT NULL
+                         AND pcprodut.codsec IS NOT NULL
+                         AND pcprodut.codcategoria IS NOT NULL
+
+                         AND pcprodut.nomeecommerce IS NOT NULL
+                         AND pcprodut.codlinhaprod IS NOT NULL;
+
+        EXCEPTION
+            WHEN DUP_VAL_ON_INDEX
+            THEN
+                NULL;
+        END;
+    END IF;
+END;
+/

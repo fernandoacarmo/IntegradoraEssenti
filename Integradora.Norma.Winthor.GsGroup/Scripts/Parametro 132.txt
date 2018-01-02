@@ -1,0 +1,59 @@
+﻿INSERT INTO PCMETAPARAMFILIAL
+            (ID
+           , NOME
+           , TITULO
+           , PORFILIAL
+           , TEXTOAJUDA
+           , TIPODADOS
+           , TAMDADOS
+           , ESCALADADOS
+           , VALORTRUE
+           , VALORFALSE
+           , ASSUNTOS
+           , ORIGEM
+           , EDITAVEL
+           , PESQUISATABELA
+           , PESQUISACAMPOS
+           , PESQUISACAMPOCODIGO
+           , PESQUISACAMPODESCRICAO
+           , PESQUISAPARAMNOWHERE
+           , PESQUISASQLADICIONAL
+           , PESQUISACODROTINACADASTRO
+           , CODROTULO
+           , VALORDEFAULT
+           , IDNAFILIAL
+           , IDPARAMPAI
+           , DTALTER)
+     VALUES (1018
+           , 'CODEMPRESA_GSGROUP'
+           , 'Código da empresa no GSGroup'
+           , 'S'
+           , 'Código da empresa no GSGroup'
+           , 'N'
+           , 10
+           , 6
+           , 'S'
+           , 'N'
+           , 'VENDAS'
+           , ''
+           , 'S'
+           , NULL
+           , NULL
+           , NULL
+           , NULL
+           , NULL
+           , NULL
+           , NULL
+           , NULL
+           , NULL
+           , NULL
+           , NULL
+           , NULL);
+                      
+INSERT INTO PCPARAMFILIAL (NOME,CODFILIAL,VALOR) 
+     SELECT 'CODEMPRESA_GSGROUP',PCFILIAL.CODIGO,PCFILIAL.CODIGO
+       FROM PCFILIAL
+      WHERE PCFILIAL.CODIGO <> '99'
+        AND PCFILIAL.DTEXCLUSAO IS NULL; 
+
+		SELECT * FROM PCPARAMFILIAL WHERE NOME = 'CODEMPRESA_GSGROUP';

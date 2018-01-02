@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///F:/Estudos/Infrashop-Middleware-Unilever/DataModel/AcecInvoiceInfo.xsd" filename="AcecInvoiceInfo.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///F:/Estudos/Infrashop-Middleware-Unilever/ErpServices/schemas/BOOrderIntegration.xsd" filename="BOOrderIntegration.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///F:/Estudos/Infrashop-Middleware-Unilever/DataModel/AcecOrder.xsd" filename="AcecOrder.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///F:/Estudos/Infrashop-Middleware-Unilever/ErpServices/OrderIntegration.wsdl" filename="BOOrderIntegration.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,45 @@
+﻿CREATE OR REPLACE TRIGGER ESG_ECOMMERCE_SECAOWEB
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODSECAO,
+        DESCRICAO,
+        CODDEPTO
+ ON PCSECAOWEB
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_ECOMMERCE.acao%type;
+      vsID   ESTREPLICACAO_ECOMMERCE.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODSECAO IS NULL) OR
+        (:NEW.DESCRICAO IS NULL) OR
+        (:NEW.CODDEPTO IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_ECOMMERCE (TABELA, ACAO, ID)
+           VALUES ('PCSECAOWEB'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+

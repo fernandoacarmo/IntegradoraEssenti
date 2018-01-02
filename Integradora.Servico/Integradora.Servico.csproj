@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB816A59-1FA6-4A04-900D-2B2AA35D2B30}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.Servico</RootNamespace>
+    <AssemblyName>Integradora.Servico</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>F:\Desenvolvimento1\Executaveis\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.codigocompleto.com.br/integradora/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>36105B20433910F1BD61255E72A0BB8168BEABC1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Integradora.Servico_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1363312110_37048.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Executor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Executor.Designer.cs">
+      <DependentUpon>Executor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Database.Oracle\Integradora.Database.Oracle.csproj">
+      <Project>{5bfaa3c1-e7fc-4f38-ac3b-3ca6ef9e5134}</Project>
+      <Name>Integradora.Database.Oracle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP.Corpem\Integradora.ERP.Corpem.csproj">
+      <Project>{fa91bc9b-df63-4a74-b3e6-6d4222c8d3c3}</Project>
+      <Name>Integradora.ERP.Corpem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP.Winthor\Integradora.ERP.Winthor.csproj">
+      <Project>{01442edb-670d-4cc0-877d-00967fa880b1}</Project>
+      <Name>Integradora.ERP.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP\Integradora.ERP.csproj">
+      <Project>{c2e10202-5c91-4b33-8f2f-a6e92982b5d6}</Project>
+      <Name>Integradora.ERP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Licenca\Integradora.Licenca.csproj">
+      <Project>{2be7c640-6fd1-4754-8031-76ea5d10f760}</Project>
+      <Name>Integradora.Licenca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Adena\Integradora.Norma.Winthor.Adena.csproj">
+      <Project>{d85478f2-f263-4d87-b12e-6bba67bab048}</Project>
+      <Name>Integradora.Norma.Winthor.Adena</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Ajuri\Integradora.Norma.Winthor.Ajuri.csproj">
+      <Project>{4875db08-a412-40e2-a10c-64c6c68c515e}</Project>
+      <Name>Integradora.Norma.Winthor.Ajuri</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Corpem\Integradora.Norma.Winthor.Corpem.csproj">
+      <Project>{255584eb-f13c-4a9a-abaf-b2612db8962a}</Project>
+      <Name>Integradora.Norma.Winthor.Corpem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.DataHub\Integradora.Norma.Winthor.DataHub.csproj">
+      <Project>{e43513d7-1acd-4019-bdcb-33a03673e9cb}</Project>
+      <Name>Integradora.Norma.Winthor.DataHub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.FBits\Integradora.Norma.Winthor.FBits.csproj">
+      <Project>{38d42932-db31-4cd0-a1b2-de2b2f303414}</Project>
+      <Name>Integradora.Norma.Winthor.FBits</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.GsGroup\Integradora.Norma.Winthor.GsGroup.csproj">
+      <Project>{e696e699-45c7-40bf-b741-de696fa9f3c8}</Project>
+      <Name>Integradora.Norma.Winthor.GsGroup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.IShopping\Integradora.Norma.Winthor.IShopping.csproj">
+      <Project>{fd42ccff-54a2-495d-8e1b-6dd72a81ac6f}</Project>
+      <Name>Integradora.Norma.Winthor.IShopping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Magento001\Integradora.Norma.Winthor.Magento001.csproj">
+      <Project>{52ef630f-3420-471f-ac92-8089474f3eb9}</Project>
+      <Name>Integradora.Norma.Winthor.Magento001</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Magento002\Integradora.Norma.Winthor.Magento002.csproj">
+      <Project>{89c57cf1-5c28-4618-a7bf-5c543c62aae9}</Project>
+      <Name>Integradora.Norma.Winthor.Magento002</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.OnLine\Integradora.Norma.Winthor.OnLine.csproj">
+      <Project>{33de89fc-13f5-4be0-acda-9eb6bce9eabd}</Project>
+      <Name>Integradora.Norma.Winthor.OnLine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Protheus\Integradora.Norma.Winthor.Protheus.csproj">
+      <Project>{14ae7b33-d1c8-44ed-844e-ec29343c52b7}</Project>
+      <Name>Integradora.Norma.Winthor.Protheus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Shoppub\Integradora.Norma.Winthor.Shoppub.csproj">
+      <Project>{aba156c6-c646-4bc7-a5d8-80b64690fd55}</Project>
+      <Name>Integradora.Norma.Winthor.Shoppub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Tray\Integradora.Norma.Winthor.Tray.csproj">
+      <Project>{c50237ba-5e2d-49a5-b6b4-18bc31e7548d}</Project>
+      <Name>Integradora.Norma.Winthor.Tray</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.UseAll\Integradora.Norma.Winthor.UseAll.csproj">
+      <Project>{0eb488d0-22da-46bd-94ea-382e0acc008d}</Project>
+      <Name>Integradora.Norma.Winthor.UseAll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Virtuemart\Integradora.Norma.Winthor.Virtuemart.csproj">
+      <Project>{054344b2-ba7e-4b07-afdd-187c2d3b1347}</Project>
+      <Name>Integradora.Norma.Winthor.Virtuemart</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.VTex\Integradora.Norma.Winthor.VTex.csproj">
+      <Project>{225084bf-8e51-4894-8efe-01d6b645223c}</Project>
+      <Name>Integradora.Norma.Winthor.VTex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.VTiger\Integradora.Norma.Winthor.VTiger.csproj">
+      <Project>{0dfdd57e-b096-455a-9636-41e5292de419}</Project>
+      <Name>Integradora.Norma.Winthor.VTiger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor\Integradora.Norma.Winthor.csproj">
+      <Project>{11e5eaeb-d83b-4d84-bedd-51fd6a7870e3}</Project>
+      <Name>Integradora.Norma.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma\Integradora.Norma.csproj">
+      <Project>{164dd693-513a-42da-9b8b-032e2f502504}</Project>
+      <Name>Integradora.Norma</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1363312110_37048.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

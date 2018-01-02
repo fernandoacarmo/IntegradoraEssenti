@@ -1,0 +1,7 @@
+﻿CREATE TABLE estreplicacao_vtiger
+    (tabela                         VARCHAR2(50) NOT NULL,
+    acao                           NUMBER(2,0) DEFAULT 0 NOT NULL,
+    id                             VARCHAR2(50) NOT NULL,
+    dtinclusao                     DATE DEFAULT SYSDATE NOT NULL,
+	 CONSTRAINT pk_estreplicacao_vtiger PRIMARY KEY (tabela, acao, id, dtinclusao)
+  )

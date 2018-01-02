@@ -1,0 +1,39 @@
+﻿CREATE OR REPLACE VIEW ESVESTADO_PRACA
+AS
+   SELECT A.UF
+        , A.CODPRACA
+        , PCPRACA.NUMREGIAO
+     FROM (SELECT PCESTADO.UF
+                , CASE WHEN PCESTADO.UF = 'AC' THEN 01  --ACRE
+                       WHEN PCESTADO.UF = 'AL' THEN 02  --ALAGOAS
+                       WHEN PCESTADO.UF = 'AM' THEN 03  --AMAZONAS
+                       WHEN PCESTADO.UF = 'AP' THEN 04  --AMAPA
+                       WHEN PCESTADO.UF = 'BA' THEN 05  --BAHIA
+                       WHEN PCESTADO.UF = 'CE' THEN 06  --CEARA
+                       WHEN PCESTADO.UF = 'DF' THEN 07  --DISTRITO FEDERAL
+                       WHEN PCESTADO.UF = 'ES' THEN 08  --ESPIRITO SANTO
+                       WHEN PCESTADO.UF = 'EX' THEN 09  --EXTERIOR
+                       WHEN PCESTADO.UF = 'GO' THEN 10  --GOIAS
+                       WHEN PCESTADO.UF = 'MA' THEN 11  --MARANHAO
+                       WHEN PCESTADO.UF = 'MG' THEN 12  --MINAS GERAIS
+                       WHEN PCESTADO.UF = 'MS' THEN 13  --MATO GROSSO DO SUL
+                       WHEN PCESTADO.UF = 'MT' THEN 14  --MATO GROSSO
+                       WHEN PCESTADO.UF = 'PA' THEN 15  --PARA
+                       WHEN PCESTADO.UF = 'PB' THEN 16  --PARAIBA
+                       WHEN PCESTADO.UF = 'PE' THEN 17  --PERNAMBUCO
+                       WHEN PCESTADO.UF = 'PI' THEN 18  --PIAUI
+                       WHEN PCESTADO.UF = 'PR' THEN 19  --PARANA
+                       WHEN PCESTADO.UF = 'RJ' THEN 20  --RIO DE JANEIRO
+                       WHEN PCESTADO.UF = 'RN' THEN 21  --RIO GRANDE DO NORTE
+                       WHEN PCESTADO.UF = 'RO' THEN 22  --RONDONIA
+                       WHEN PCESTADO.UF = 'RR' THEN 23  --RORAIMA
+                       WHEN PCESTADO.UF = 'RS' THEN 24  --RIO GRANDE DO SUL
+                       WHEN PCESTADO.UF = 'SC' THEN 25  --SANTA CATARINA
+                       WHEN PCESTADO.UF = 'SE' THEN 26  --SERGIPE
+                       WHEN PCESTADO.UF = 'SP' THEN 27  --SAO PAULO
+                       WHEN PCESTADO.UF = 'TO' THEN 28  --TOCANTINS
+                       ELSE 9999
+                  END CODPRACA
+             FROM PCESTADO) A
+        , PCPRACA
+    WHERE A.CODPRACA = PCPRACA.CODPRACA

@@ -1,0 +1,16 @@
+﻿CREATE TABLE estreplicacao_ecommerce
+    (tabela                         VARCHAR2(50) NOT NULL,
+    acao                           NUMBER(2,0) DEFAULT 0 NOT NULL,
+    id                             VARCHAR2(50) NOT NULL,
+    dtinclusao                     DATE DEFAULT SYSDATE NOT NULL,
+    dtreplicacao                   DATE,
+	dtreplicacaowms                   DATE);
+
+
+
+
+-- Constraints for ESTREPLICACAO_ECOMMERCE
+
+ALTER TABLE estreplicacao_ecommerce
+ADD CONSTRAINT pk_estreplicacao_ecommerce PRIMARY KEY (tabela, acao, id, 
+  dtinclusao);

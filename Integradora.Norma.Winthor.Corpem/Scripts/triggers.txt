@@ -1,0 +1,704 @@
+﻿CREATE OR REPLACE TRIGGER ESG_WMS_SUPERVISOR
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODSUPERVISOR,
+        NOME,
+        CODGERENTE
+ ON PCSUPERV
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+
+     IF (:NEW.CODSUPERVISOR IS NULL) OR
+        (:NEW.NOME IS NULL) OR
+        (:NEW.CODGERENTE IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCSUPERV'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_SECAO
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODSEC,
+        DESCRICAO,
+        CODEPTO,
+        DTEXCLUSAO
+ ON PCSECAO
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODSEC IS NULL) OR
+        (:NEW.DESCRICAO IS NULL) OR
+        (:NEW.CODEPTO IS NULL) OR
+        (:NEW.DTEXCLUSAO IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING OR (:NEW.DTEXCLUSAO IS NOT NULL) THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCSECAO'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_RCA
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODUSUR,
+        NOME,
+        CODSUPERVISOR,
+        DTEXCLUSAO
+ ON PCUSUARI
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODUSUR IS NULL) OR
+        (:NEW.NOME IS NULL) OR
+        (:NEW.CODSUPERVISOR IS NULL) OR
+        (:NEW.DTEXCLUSAO IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING OR (:NEW.DTEXCLUSAO IS NOT NULL) THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCUSUARI'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_RAMOATIVIDADE
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODATIV,
+        RAMO
+ ON PCATIVI
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODATIV IS NULL) OR
+        (:NEW.RAMO IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCATIVI'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_PRODUTO
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODPROD,
+        DESCRICAO,
+        EMBALAGEM,
+        UNIDADE,
+        CODNCMEX,
+        CODAUXILIAR,
+        CODSEC,
+        CODMARCA,
+        QTUNIT,
+        QTUNITCX,
+        PESOLIQ,
+        PESOBRUTO,
+        VOLUME,
+        COMPRIMENTOM3,
+        LARGURAM3,
+        ALTURAM3,
+        DTEXCLUSAO
+ ON PCPRODUT
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODPROD IS NULL) OR
+        (:NEW.DESCRICAO IS NULL) OR
+        (:NEW.EMBALAGEM IS NULL) OR
+        (:NEW.UNIDADE IS NULL) OR
+        (:NEW.CODNCMEX IS NULL) OR
+        (:NEW.CODAUXILIAR IS NULL) OR
+        (:NEW.CODSEC IS NULL) OR
+        (:NEW.CODMARCA IS NULL) OR
+        (:NEW.QTUNIT IS NULL) OR
+        (:NEW.QTUNITCX IS NULL) OR
+        (:NEW.PESOLIQ IS NULL) OR
+        (:NEW.PESOBRUTO IS NULL) OR
+        (:NEW.VOLUME IS NULL) OR
+        (:NEW.COMPRIMENTOM3 IS NULL) OR
+        (:NEW.LARGURAM3 IS NULL) OR
+        (:NEW.ALTURAM3 IS NULL) OR
+        (:NEW.DTEXCLUSAO IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING OR (:NEW.DTEXCLUSAO IS NOT NULL) THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCPRODUT'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_NCM
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODNCM,
+        DESCRICAO,
+        CAPITULO,
+        DTEXCLUSAO
+ ON PCNCM
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODNCM IS NULL) OR
+        (:NEW.DESCRICAO IS NULL) OR
+        (:NEW.CAPITULO IS NULL) OR
+        (:NEW.DTEXCLUSAO IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING OR (:NEW.DTEXCLUSAO IS NOT NULL) THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCNCM'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_MARCA
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODMARCA,
+        MARCA,
+        ATIVO
+ ON PCMARCA
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODMARCA IS NULL) OR
+        (:NEW.MARCA IS NULL) OR
+        (:NEW.ATIVO IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCMARCA'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_GERENTE
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODGERENTE,
+        NOMEGERENTE
+ ON PCGERENTE
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODGERENTE IS NULL) OR
+        (:NEW.NOMEGERENTE IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCGERENTE'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_FORNECEDOR
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODFORNEC,
+        FORNECEDOR,
+        TIPOPESSOA,
+        CGC,
+        IE,
+        ENDER,
+        CIDADE,
+        ESTADO,
+        BAIRRO,
+        NUMEROEND,
+        CEP,
+        TELEFONECOM,
+        FAXREP,
+        EMAIL
+ ON PCFORNEC
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+
+     IF
+       (:NEW.CODFORNEC IS NULL) OR
+       (:NEW.FORNECEDOR IS NULL) OR
+       (:NEW.TIPOPESSOA IS NULL) OR
+       (:NEW.CGC IS NULL) OR
+       (:NEW.IE IS NULL) OR
+       (:NEW.ENDER IS NULL) OR
+       (:NEW.CIDADE IS NULL) OR
+       (:NEW.ESTADO IS NULL) OR
+       (:NEW.BAIRRO IS NULL) OR
+       (:NEW.NUMEROEND IS NULL) OR
+       (:NEW.CEP IS NULL) OR
+       (:NEW.TELEFONECOM IS NULL) OR
+       (:NEW.FAXREP IS NULL) OR
+       (:NEW.EMAIL IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING OR (:NEW.DTEXCLUSAO IS NOT NULL) THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCFORNEC'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_FILIAL
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODIGO,
+        RAZAOSOCIAL,
+        CGC,
+        IE,
+        ENDERECO,
+        BAIRRO,
+        UF,
+        NUMERO,
+        CEP,
+        TELEFONE,
+        FAX,
+        EMAIL,
+        DTEXCLUSAO
+ ON PCFILIAL
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODIGO IS NULL) OR
+        (:NEW.RAZAOSOCIAL IS NULL) OR
+        (:NEW.CGC IS NULL) OR
+        (:NEW.IE IS NULL) OR
+        (:NEW.ENDERECO IS NULL) OR
+        (:NEW.BAIRRO IS NULL) OR
+        (:NEW.UF IS NULL) OR
+        (:NEW.NUMERO IS NULL) OR
+        (:NEW.CEP IS NULL) OR
+        (:NEW.TELEFONE IS NULL) OR
+        (:NEW.FAX IS NULL) OR
+        (:NEW.EMAIL IS NULL) OR
+        (:NEW.DTEXCLUSAO IS NULL) 
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING  OR (:NEW.DTEXCLUSAO IS NOT NULL)  THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCFILIAL'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_EMBALAGEM
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODAUXILIAR,
+        CODFILIAL,
+        CODPROD,
+        EMBALAGEM,
+        UNIDADE,
+        QTUNIT,
+        PESOBRUTO,
+        PESOLIQ
+ ON PCEMBALAGEM
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+     IF (:NEW.CODAUXILIAR IS NULL) OR
+       (:NEW.CODFILIAL IS NULL) OR
+       (:NEW.CODPROD IS NULL) OR
+       (:NEW.EMBALAGEM IS NULL) OR
+       (:NEW.UNIDADE IS NULL) OR
+       (:NEW.QTUNIT IS NULL) OR
+       (:NEW.PESOBRUTO IS NULL) OR
+       (:NEW.PESOLIQ IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCEMBALAGEM'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_DEPTO
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODEPTO,
+        DESCRICAO,
+        DTEXCLUSAO
+ ON PCDEPTO
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+
+     IF (:NEW.CODEPTO IS NULL) OR
+        (:NEW.DESCRICAO IS NULL) OR
+        (:NEW.DTEXCLUSAO IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING OR (:NEW.DTEXCLUSAO IS NOT NULL) THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCDEPTO'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;
+
+
+CREATE OR REPLACE TRIGGER ESG_WMS_CLIENTE
+ BEFORE
+  INSERT OR DELETE OR UPDATE
+     OF CODCLI,
+        CLIENTE,
+        TIPOFJ,
+        CGCENT,
+        IEENT,
+        ENDERENT,
+        MUNICENT,
+        ESTENT,
+        BAIRROENT,
+        NUMEROENT,
+        CEPENT,
+        TELENT,
+        TELCELENT,
+        FAXCLI,
+        EMAIL,
+        CODATV1
+ ON PCCLIENT
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_CORPEM.acao%type;
+      vsID   ESTREPLICACAO_CORPEM.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo
+
+     IF (:NEW.CODCLI IS NULL) OR
+       (:NEW.CLIENTE IS NULL) OR
+       (:NEW.TIPOFJ IS NULL) OR
+       (:NEW.CGCENT IS NULL) OR
+       (:NEW.IEENT IS NULL) OR
+       (:NEW.ENDERENT IS NULL) OR
+       (:NEW.MUNICENT IS NULL) OR
+       (:NEW.ESTENT IS NULL) OR
+       (:NEW.BAIRROENT IS NULL) OR
+       (:NEW.NUMEROENT IS NULL) OR
+       (:NEW.CEPENT IS NULL) OR
+       (:NEW.TELENT IS NULL) OR
+       (:NEW.TELCELENT IS NULL) OR
+       (:NEW.FAXCLI IS NULL) OR
+       (:NEW.EMAIL IS NULL) OR
+       (:NEW.CODATV1 IS NULL)
+        THEN
+        vnACAO := -1;
+     END IF;
+
+     IF vnACAO > -1 THEN
+     BEGIN
+       vsID := :NEW.ROWID;
+       IF DELETING OR (:NEW.DTEXCLUSAO IS NOT NULL) THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+          vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+       END IF;
+       INSERT INTO ESTREPLICACAO_CORPEM (TABELA, ACAO, ID)
+           VALUES ('PCCLIENT'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;

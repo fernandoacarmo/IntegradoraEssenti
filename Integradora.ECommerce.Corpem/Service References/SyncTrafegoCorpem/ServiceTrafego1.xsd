@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1824/ServiceTrafego.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" />
+  <xs:complexType name="ESTPedidosaida">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q1:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_Cpf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_filial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_filialemissor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_transportadora" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codcliente" type="xs:int" />
+          <xs:element minOccurs="0" name="Codendereco" type="xs:int" />
+          <xs:element minOccurs="0" name="Codfilial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codgerente" type="xs:int" />
+          <xs:element minOccurs="0" name="Codibge" type="xs:long" />
+          <xs:element minOccurs="0" name="Codprofissional" type="xs:int" />
+          <xs:element minOccurs="0" name="Codrastreamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codrca" type="xs:int" />
+          <xs:element minOccurs="0" name="Codsupervisor" type="xs:int" />
+          <xs:element minOccurs="0" name="Codtransportadora" type="xs:int" />
+          <xs:element minOccurs="0" name="Complemento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Dtlibera" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Dtprevisaoentrega" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numnota" type="xs:long" />
+          <xs:element minOccurs="0" name="Numpedido" type="xs:long" />
+          <xs:element minOccurs="0" name="Numpedrca" type="xs:long" />
+          <xs:element minOccurs="0" name="Obsentrega" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Observacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pontoreferencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Qtitens" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtvolumes" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Razaosocial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tipofrete" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URLrastreamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vltotal" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTPedidosaida" nillable="true" type="tns:ESTPedidosaida" />
+  <xs:complexType name="ESTPrePedidosaidaitens">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q2:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codproduto" type="xs:int" />
+          <xs:element minOccurs="0" name="Numpedido" type="xs:long" />
+          <xs:element minOccurs="0" name="Numseq" type="xs:int" />
+          <xs:element minOccurs="0" name="Qtatendido" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtcorte" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Quantidade" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Vltotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Vlunitario" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTPrePedidosaidaitens" nillable="true" type="tns:ESTPrePedidosaidaitens" />
+  <xs:complexType name="ESTPrePedidosaida">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q3:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_Cpf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_filial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_filialemissor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_transportadora" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codcliente" type="xs:int" />
+          <xs:element minOccurs="0" name="Codendereco" type="xs:int" />
+          <xs:element minOccurs="0" name="Codfilial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codgerente" type="xs:int" />
+          <xs:element minOccurs="0" name="Codibge" type="xs:long" />
+          <xs:element minOccurs="0" name="Codprofissional" type="xs:int" />
+          <xs:element minOccurs="0" name="Codrastreamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codrca" type="xs:int" />
+          <xs:element minOccurs="0" name="Codsupervisor" type="xs:int" />
+          <xs:element minOccurs="0" name="Codtransportadora" type="xs:int" />
+          <xs:element minOccurs="0" name="Complemento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Dtlibera" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Dtprevisaoentrega" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numnota" type="xs:long" />
+          <xs:element minOccurs="0" name="Numpedido" type="xs:long" />
+          <xs:element minOccurs="0" name="Numpedrca" type="xs:long" />
+          <xs:element minOccurs="0" name="Obsentrega" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Observacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pontoreferencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Qtitens" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtvolumes" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Razaosocial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tipofrete" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URLrastreamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vltotal" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTPrePedidosaida" nillable="true" type="tns:ESTPrePedidosaida" />
+  <xs:complexType name="ESTPedidosaidaitens">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q4:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codproduto" type="xs:int" />
+          <xs:element minOccurs="0" name="Numpedido" type="xs:long" />
+          <xs:element minOccurs="0" name="Numseq" type="xs:int" />
+          <xs:element minOccurs="0" name="Qtatendido" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtcorte" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Quantidade" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Vltotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Vlunitario" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTPedidosaidaitens" nillable="true" type="tns:ESTPedidosaidaitens" />
+  <xs:complexType name="ESTEmbalagem">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q5:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Altura" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Codbarra" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Codfilial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codproduto" type="xs:int" />
+          <xs:element minOccurs="0" name="Comprimento" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Embalagem" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Largura" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Pesobruto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Pesoliquido" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtunitaria" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Unidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Volume" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTEmbalagem" nillable="true" type="tns:ESTEmbalagem" />
+  <xs:complexType name="ESTEndereco">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q6:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codcliente" type="xs:int" />
+          <xs:element minOccurs="0" name="Codibge" type="xs:long" />
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTEndereco" nillable="true" type="tns:ESTEndereco" />
+  <xs:complexType name="ESTGerente">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q7:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTGerente" nillable="true" type="tns:ESTGerente" />
+  <xs:complexType name="ESTMarca">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q8:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTMarca" nillable="true" type="tns:ESTMarca" />
+  <xs:complexType name="ESTNcm">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q9:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Capitulo" type="xs:short" />
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ncm" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTNcm" nillable="true" type="tns:ESTNcm" />
+  <xs:complexType name="ESTRamoatividade">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q10:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTRamoatividade" nillable="true" type="tns:ESTRamoatividade" />
+  <xs:complexType name="ESTRca">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q11:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Codsupervisor" type="xs:int" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTRca" nillable="true" type="tns:ESTRca" />
+  <xs:complexType name="ESTSupervisor">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q12:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codgerente" type="xs:int" />
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTSupervisor" nillable="true" type="tns:ESTSupervisor" />
+  <xs:complexType name="ESTInventario">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q13:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codfilial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codigo" type="xs:long" />
+          <xs:element minOccurs="0" name="Codproduto" type="xs:int" />
+          <xs:element minOccurs="0" name="Quantidade" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTInventario" nillable="true" type="tns:ESTInventario" />
+  <xs:complexType name="ArrayOfESTCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTCliente" nillable="true" type="tns:ESTCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTCliente" nillable="true" type="tns:ArrayOfESTCliente" />
+  <xs:complexType name="ESTCliente">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q14:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_Cpf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codibge" type="xs:long" />
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Codramoatividade" type="xs:int" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tipopessoa" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTCliente" nillable="true" type="tns:ESTCliente" />
+  <xs:complexType name="ArrayOfESTEmbalagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTEmbalagem" nillable="true" type="tns:ESTEmbalagem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTEmbalagem" nillable="true" type="tns:ArrayOfESTEmbalagem" />
+  <xs:complexType name="ArrayOfESTEndereco">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTEndereco" nillable="true" type="tns:ESTEndereco" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTEndereco" nillable="true" type="tns:ArrayOfESTEndereco" />
+  <xs:complexType name="ArrayOfESTGerente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTGerente" nillable="true" type="tns:ESTGerente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTGerente" nillable="true" type="tns:ArrayOfESTGerente" />
+  <xs:complexType name="ArrayOfESTMarca">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTMarca" nillable="true" type="tns:ESTMarca" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTMarca" nillable="true" type="tns:ArrayOfESTMarca" />
+  <xs:complexType name="ArrayOfESTNcm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTNcm" nillable="true" type="tns:ESTNcm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTNcm" nillable="true" type="tns:ArrayOfESTNcm" />
+  <xs:complexType name="ArrayOfESTRamoatividade">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTRamoatividade" nillable="true" type="tns:ESTRamoatividade" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTRamoatividade" nillable="true" type="tns:ArrayOfESTRamoatividade" />
+  <xs:complexType name="ArrayOfESTRca">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTRca" nillable="true" type="tns:ESTRca" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTRca" nillable="true" type="tns:ArrayOfESTRca" />
+  <xs:complexType name="ArrayOfESTSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTSupervisor" nillable="true" type="tns:ESTSupervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTSupervisor" nillable="true" type="tns:ArrayOfESTSupervisor" />
+  <xs:complexType name="ArrayOfESTDepartamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTDepartamento" nillable="true" type="tns:ESTDepartamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTDepartamento" nillable="true" type="tns:ArrayOfESTDepartamento" />
+  <xs:complexType name="ESTDepartamento">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q15:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTDepartamento" nillable="true" type="tns:ESTDepartamento" />
+  <xs:complexType name="ArrayOfESTSecao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTSecao" nillable="true" type="tns:ESTSecao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTSecao" nillable="true" type="tns:ArrayOfESTSecao" />
+  <xs:complexType name="ESTSecao">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q16:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Coddepartamento" type="xs:int" />
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTSecao" nillable="true" type="tns:ESTSecao" />
+  <xs:complexType name="ArrayOfESTFilial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTFilial" nillable="true" type="tns:ESTFilial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTFilial" nillable="true" type="tns:ArrayOfESTFilial" />
+  <xs:complexType name="ESTFilial">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q17:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_Cpf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codibge" type="xs:long" />
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tipopessoa" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTFilial" nillable="true" type="tns:ESTFilial" />
+  <xs:complexType name="ArrayOfESTFornecedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTFornecedor" nillable="true" type="tns:ESTFornecedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTFornecedor" nillable="true" type="tns:ArrayOfESTFornecedor" />
+  <xs:complexType name="ESTFornecedor">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q18:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_Cpf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codibge" type="xs:long" />
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tipofornecedor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tipopessoa" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTFornecedor" nillable="true" type="tns:ESTFornecedor" />
+  <xs:complexType name="ArrayOfESTProduto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTProduto" nillable="true" type="tns:ESTProduto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTProduto" nillable="true" type="tns:ArrayOfESTProduto" />
+  <xs:complexType name="ESTProduto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q19:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Altura" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Codbarra" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CodbarraDUN" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Codfabrica" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Codmarca" type="xs:int" />
+          <xs:element minOccurs="0" name="Codncm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codsecao" type="xs:int" />
+          <xs:element minOccurs="0" name="Comprimento" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Embalagem" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Largura" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Ncm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pesobruto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Pesoliquido" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtembalagem" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtunitaria" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Unidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Volume" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTProduto" nillable="true" type="tns:ESTProduto" />
+  <xs:complexType name="ArrayOfESTKit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTKit" nillable="true" type="tns:ESTKit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTKit" nillable="true" type="tns:ArrayOfESTKit" />
+  <xs:complexType name="ESTKit">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q20:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+          <xs:element minOccurs="0" name="Codinsumo" type="xs:int" />
+          <xs:element minOccurs="0" name="Qtde" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTKit" nillable="true" type="tns:ESTKit" />
+  <xs:complexType name="ArrayOfESTNotaentrada">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTNotaentrada" nillable="true" type="tns:ESTNotaentrada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTNotaentrada" nillable="true" type="tns:ArrayOfESTNotaentrada" />
+  <xs:complexType name="ESTNotaentrada">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q21:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Chavenfe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_Cpf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_emitente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_filial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_filialemissor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_transportadora" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codfilial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codfornecedor" type="xs:int" />
+          <xs:element minOccurs="0" name="Codibge" type="xs:long" />
+          <xs:element minOccurs="0" name="Codrastreamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codtransportadora" type="xs:int" />
+          <xs:element minOccurs="0" name="Complemento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dtemissao" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Dtfaturamento" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numconferencia" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numnota" type="xs:long" />
+          <xs:element minOccurs="0" name="Numpedido" type="xs:long" />
+          <xs:element minOccurs="0" name="Numtransacao" type="xs:long" />
+          <xs:element minOccurs="0" name="Obsentrega" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Observacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pontoreferencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Qtitens" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtvolumes" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Razaosocial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Serie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tipofrete" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tiponota" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URLrastreamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vltotal" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTNotaentrada" nillable="true" type="tns:ESTNotaentrada" />
+  <xs:complexType name="ArrayOfESTNotaentradaitens">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTNotaentradaitens" nillable="true" type="tns:ESTNotaentradaitens" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTNotaentradaitens" nillable="true" type="tns:ArrayOfESTNotaentradaitens" />
+  <xs:complexType name="ESTNotaentradaitens">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q22:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codproduto" type="xs:int" />
+          <xs:element minOccurs="0" name="Numseq" type="xs:int" />
+          <xs:element minOccurs="0" name="Numtransacao" type="xs:long" />
+          <xs:element minOccurs="0" name="Qtarmazenada" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtavaria" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Quantidade" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Vltotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Vlunitario" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTNotaentradaitens" nillable="true" type="tns:ESTNotaentradaitens" />
+  <xs:complexType name="ArrayOfESTNotasaida">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTNotasaida" nillable="true" type="tns:ESTNotasaida" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTNotasaida" nillable="true" type="tns:ArrayOfESTNotasaida" />
+  <xs:complexType name="ESTNotasaida">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q23:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Chavenfe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_Cpf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_filial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_filialemissor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cnpj_transportadora" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codcliente" type="xs:int" />
+          <xs:element minOccurs="0" name="Codfilial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codibge" type="xs:long" />
+          <xs:element minOccurs="0" name="Codrastreamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codtransportadora" type="xs:int" />
+          <xs:element minOccurs="0" name="Complemento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dtemissao" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Dtfaturamento" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numnota" type="xs:long" />
+          <xs:element minOccurs="0" name="Numpedido" type="xs:long" />
+          <xs:element minOccurs="0" name="Numtransacao" type="xs:long" />
+          <xs:element minOccurs="0" name="Obsentrega" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Observacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pontoreferencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Qtitens" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtvolumes" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Razaosocial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Serie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tipofrete" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tiponota" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URLrastreamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vltotal" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTNotasaida" nillable="true" type="tns:ESTNotasaida" />
+  <xs:complexType name="ArrayOfESTNotasaidaitens">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTNotasaidaitens" nillable="true" type="tns:ESTNotasaidaitens" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTNotasaidaitens" nillable="true" type="tns:ArrayOfESTNotasaidaitens" />
+  <xs:complexType name="ESTNotasaidaitens">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" base="q24:OracleTable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codproduto" type="xs:int" />
+          <xs:element minOccurs="0" name="Numseq" type="xs:int" />
+          <xs:element minOccurs="0" name="Numtransacao" type="xs:long" />
+          <xs:element minOccurs="0" name="Qtatendido" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Qtcorte" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Quantidade" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Vltotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Vlunitario" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ESTNotasaidaitens" nillable="true" type="tns:ESTNotasaidaitens" />
+  <xs:complexType name="ArrayOfESTPedidosaida">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTPedidosaida" nillable="true" type="tns:ESTPedidosaida" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTPedidosaida" nillable="true" type="tns:ArrayOfESTPedidosaida" />
+  <xs:complexType name="ArrayOfESTPedidosaidaitens">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTPedidosaidaitens" nillable="true" type="tns:ESTPedidosaidaitens" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTPedidosaidaitens" nillable="true" type="tns:ArrayOfESTPedidosaidaitens" />
+  <xs:complexType name="ArrayOfESTPrePedidosaida">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTPrePedidosaida" nillable="true" type="tns:ESTPrePedidosaida" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTPrePedidosaida" nillable="true" type="tns:ArrayOfESTPrePedidosaida" />
+  <xs:complexType name="ArrayOfESTPrePedidosaidaitens">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTPrePedidosaidaitens" nillable="true" type="tns:ESTPrePedidosaidaitens" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTPrePedidosaidaitens" nillable="true" type="tns:ArrayOfESTPrePedidosaidaitens" />
+  <xs:complexType name="ArrayOfESTInventario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESTInventario" nillable="true" type="tns:ESTInventario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESTInventario" nillable="true" type="tns:ArrayOfESTInventario" />
+</xs:schema>

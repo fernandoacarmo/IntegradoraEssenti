@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pData" type="tns:IntegracaoProdutoVarianteInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IntegracaoProdutoVarianteInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoProdutoVinculoRedirect" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdPai" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdVinculo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrecoCusto" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrecoDe" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrecoPor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrazoEntrega" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FreteGratis" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrocaGratis" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstoqueFisico" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Peso" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Altura" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Comprimento" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Largura" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataCriacao" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataAtualizacao" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Garantia" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FabricanteNome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Autor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Editora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Colecao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isTelevendas" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaAtributos" type="tns:ArrayOfIntegracaoAtributoInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaInformacoes" type="tns:ArrayOfIntegracaoInformacaoInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIntegracaoAtributoInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IntegracaoAtributoInfo" nillable="true" type="tns:IntegracaoAtributoInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IntegracaoAtributoInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="tns:AtributoTipo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExibirAtributo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="VariacaoPreco" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="AtributoTipo">
+        <s:restriction base="s:string">
+          <s:enumeration value="Selecao" />
+          <s:enumeration value="Filtro" />
+          <s:enumeration value="Comparacao" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfIntegracaoInformacaoInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IntegracaoInformacaoInfo" nillable="true" type="tns:IntegracaoInformacaoInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IntegracaoInformacaoInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TipoInformacaoProdId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Texto" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProdutoIdBySKU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sku" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProdutoIdBySKUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProdutoIdBySKUResult" type="tns:ArrayOfIntegracaoProdutoSkuInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIntegracaoProdutoSkuInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IntegracaoProdutoSkuInfo" nillable="true" type="tns:IntegracaoProdutoSkuInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IntegracaoProdutoSkuInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProdutoId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProdutoVarianteId" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListaProdutoIdBySKU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sku" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListaProdutoIdBySKUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListaProdutoIdBySKUResult" type="tns:ArrayOfIntegracaoProdutoSkuInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProdutoIdBySKUSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProdutoIdBySKU" />
+  </wsdl:message>
+  <wsdl:message name="GetProdutoIdBySKUSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProdutoIdBySKUResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListaProdutoIdBySKUSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListaProdutoIdBySKU" />
+  </wsdl:message>
+  <wsdl:message name="GetListaProdutoIdBySKUSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListaProdutoIdBySKUResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SyncProdutoSoap">
+    <wsdl:operation name="Insert">
+      <wsdl:input message="tns:InsertSoapIn" />
+      <wsdl:output message="tns:InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProdutoIdBySKU">
+      <wsdl:input message="tns:GetProdutoIdBySKUSoapIn" />
+      <wsdl:output message="tns:GetProdutoIdBySKUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaProdutoIdBySKU">
+      <wsdl:input message="tns:GetListaProdutoIdBySKUSoapIn" />
+      <wsdl:output message="tns:GetListaProdutoIdBySKUSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SyncProdutoSoap" type="tns:SyncProdutoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProdutoIdBySKU">
+      <soap:operation soapAction="http://tempuri.org/GetProdutoIdBySKU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaProdutoIdBySKU">
+      <soap:operation soapAction="http://tempuri.org/GetListaProdutoIdBySKU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SyncProdutoSoap12" type="tns:SyncProdutoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap12:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProdutoIdBySKU">
+      <soap12:operation soapAction="http://tempuri.org/GetProdutoIdBySKU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaProdutoIdBySKU">
+      <soap12:operation soapAction="http://tempuri.org/GetListaProdutoIdBySKU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SyncProduto">
+    <wsdl:port name="SyncProdutoSoap" binding="tns:SyncProdutoSoap">
+      <soap:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncProduto.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SyncProdutoSoap12" binding="tns:SyncProdutoSoap12">
+      <soap12:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncProduto.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

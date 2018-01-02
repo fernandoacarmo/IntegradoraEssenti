@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A52BA573-DEBB-44B8-8432-9345912BEAEE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.Servico.Testes</RootNamespace>
+    <AssemblyName>Integradora.Servico.Testes</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>True</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Canducci.Zip">
+      <HintPath>..\packages\CanducciCep.1.0.4.2\lib\net45\Canducci.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Service References\TesteWebServiceOMBoat\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TesteWebServiceVTiger\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TesteAjuri.cs" />
+    <Compile Include="TesteIntegracao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TesteVTex.cs" />
+    <Compile Include="TesteDiversos.cs" />
+    <Compile Include="TesteOnLine.cs" />
+    <Compile Include="TesteVTiger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.CEP\Integradora.CEP.csproj">
+      <Project>{c8172da1-02d4-4367-9597-de577f3ba583}</Project>
+      <Name>Integradora.CEP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.Corpem\Integradora.ECommerce.Corpem.csproj">
+      <Project>{1568353a-d3fc-4b05-8643-641298aa0dfe}</Project>
+      <Name>Integradora.ECommerce.Corpem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.DataHub\Integradora.ECommerce.DataHub.csproj">
+      <Project>{9fc9c419-dcb4-4ad8-9e9d-18e10e083eed}</Project>
+      <Name>Integradora.ECommerce.DataHub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.Magento001\Integradora.ECommerce.Magento001.csproj">
+      <Project>{591ba8b5-73ac-490f-b449-e4cb10a130fc}</Project>
+      <Name>Integradora.ECommerce.Magento001</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.Magento002\Integradora.ECommerce.Magento002.csproj">
+      <Project>{502f87c6-78f7-40d4-bd10-58f7abfba459}</Project>
+      <Name>Integradora.ECommerce.Magento002</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.OnLine\Integradora.ECommerce.OnLine.csproj">
+      <Project>{ad4220d1-5c9f-4abb-b1b2-76902e7c0948}</Project>
+      <Name>Integradora.ECommerce.OnLine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.Shoppub\Integradora.ECommerce.Shoppub.csproj">
+      <Project>{83aa20b8-fe20-4ab0-9bbd-4c291f8e6d07}</Project>
+      <Name>Integradora.ECommerce.Shoppub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.VTex\Integradora.ECommerce.VTex.csproj">
+      <Project>{2ed4172e-a8dd-4cc8-8e10-f6e02e6a4e9e}</Project>
+      <Name>Integradora.ECommerce.VTex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.VTiger\Integradora.ECommerce.VTiger.csproj">
+      <Project>{de06354e-31a0-4d23-aa95-699b4ddb9508}</Project>
+      <Name>Integradora.ECommerce.VTiger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce\Integradora.ECommerce.csproj">
+      <Project>{128091e7-33fd-47af-b892-98b499c0e87b}</Project>
+      <Name>Integradora.ECommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP.Corpem\Integradora.ERP.Corpem.csproj">
+      <Project>{fa91bc9b-df63-4a74-b3e6-6d4222c8d3c3}</Project>
+      <Name>Integradora.ERP.Corpem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP.Winthor\Integradora.ERP.Winthor.csproj">
+      <Project>{01442edb-670d-4cc0-877d-00967fa880b1}</Project>
+      <Name>Integradora.ERP.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP\Integradora.ERP.csproj">
+      <Project>{c2e10202-5c91-4b33-8f2f-a6e92982b5d6}</Project>
+      <Name>Integradora.ERP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Licenca\Integradora.Licenca.csproj">
+      <Project>{2be7c640-6fd1-4754-8031-76ea5d10f760}</Project>
+      <Name>Integradora.Licenca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Mensageiro\Integradora.Mensageiro.csproj">
+      <Project>{8cdcbc5a-3b1c-433b-8bf0-7dedbd6400be}</Project>
+      <Name>Integradora.Mensageiro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Ajuri\Integradora.Norma.Winthor.Ajuri.csproj">
+      <Project>{4875db08-a412-40e2-a10c-64c6c68c515e}</Project>
+      <Name>Integradora.Norma.Winthor.Ajuri</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Corpem\Integradora.Norma.Winthor.Corpem.csproj">
+      <Project>{255584eb-f13c-4a9a-abaf-b2612db8962a}</Project>
+      <Name>Integradora.Norma.Winthor.Corpem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.DataHub\Integradora.Norma.Winthor.DataHub.csproj">
+      <Project>{e43513d7-1acd-4019-bdcb-33a03673e9cb}</Project>
+      <Name>Integradora.Norma.Winthor.DataHub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Magento001\Integradora.Norma.Winthor.Magento001.csproj">
+      <Project>{52ef630f-3420-471f-ac92-8089474f3eb9}</Project>
+      <Name>Integradora.Norma.Winthor.Magento001</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.Magento002\Integradora.Norma.Winthor.Magento002.csproj">
+      <Project>{89c57cf1-5c28-4618-a7bf-5c543c62aae9}</Project>
+      <Name>Integradora.Norma.Winthor.Magento002</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor.VTex\Integradora.Norma.Winthor.VTex.csproj">
+      <Project>{225084bf-8e51-4894-8efe-01d6b645223c}</Project>
+      <Name>Integradora.Norma.Winthor.VTex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor\Integradora.Norma.Winthor.csproj">
+      <Project>{11e5eaeb-d83b-4d84-bedd-51fd6a7870e3}</Project>
+      <Name>Integradora.Norma.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma\Integradora.Norma.csproj">
+      <Project>{164dd693-513a-42da-9b8b-032e2f502504}</Project>
+      <Name>Integradora.Norma</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Servico\Integradora.Servico.csproj">
+      <Project>{db816a59-1fa6-4a04-900d-2b2aa35d2b30}</Project>
+      <Name>Integradora.Servico</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.WebserviceCorpem\Integradora.WebserviceCorpem.csproj">
+      <Project>{2365e34c-1481-4cd5-b0a2-d6ca298defd4}</Project>
+      <Name>Integradora.WebserviceCorpem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Service References\TesteWebServiceOMBoat\Integradora.Servico.Testes.TesteWebServiceOMBoat.ResponseOf.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TesteWebServiceOMBoat\Integradora.Servico.Testes.TesteWebServiceOMBoat.RetornaCorrigeEstoque.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TesteWebServiceOMBoat\ServiceTrafego.wsdl" />
+    <None Include="Service References\TesteWebServiceOMBoat\ServiceTrafego.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TesteWebServiceOMBoat\ServiceTrafego1.wsdl" />
+    <None Include="Service References\TesteWebServiceOMBoat\ServiceTrafego1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TesteWebServiceOMBoat\ServiceTrafego2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TesteWebServiceOMBoat\ServiceTrafego3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TesteWebServiceVTiger\Integradora.Servico.Testes.TesteWebServiceVTiger.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TesteWebServiceVTiger\ServiceTrafego.wsdl" />
+    <None Include="Service References\TesteWebServiceVTiger\WebServiceVTiger.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TesteWebServiceVTiger\WebServiceVTiger1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TesteWebServiceVTiger\WebServiceVTiger2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TesteWebServiceVTiger\WebServiceVTiger3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TesteWebServiceOMBoat\" />
+    <WCFMetadataStorage Include="Service References\TesteWebServiceVTiger\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TesteWebServiceVTiger\WebServiceVTiger.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TesteWebServiceVTiger\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TesteWebServiceVTiger\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TesteWebServiceVTiger\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TesteWebServiceOMBoat\ServiceTrafego.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TesteWebServiceOMBoat\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TesteWebServiceOMBoat\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TesteWebServiceOMBoat\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

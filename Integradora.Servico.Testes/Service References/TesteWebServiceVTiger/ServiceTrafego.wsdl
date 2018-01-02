@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceTrafego" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:37842/WebServiceVTiger.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:37842/WebServiceVTiger.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:37842/WebServiceVTiger.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Integradora.WebServiceVTiger" />
+      <xsd:import schemaLocation="http://localhost:37842/WebServiceVTiger.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Integradora.WebServiceVTiger.Entidades" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWebServiceVTiger_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_EnviarPedidoVenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarPedidoVenda" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_EnviarPedidoVenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarPedidoVendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_EnviarPedidoVendaJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarPedidoVendaJson" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_EnviarPedidoVendaJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarPedidoVendaJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_EnviarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_EnviarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_InserirClienteJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirClienteJson" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVTiger_InserirClienteJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirClienteJsonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWebServiceVTiger">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVTiger/GetData" message="tns:IWebServiceVTiger_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVTiger/GetDataResponse" message="tns:IWebServiceVTiger_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVTiger/GetDataUsingDataContract" message="tns:IWebServiceVTiger_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVTiger/GetDataUsingDataContractResponse" message="tns:IWebServiceVTiger_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarPedidoVenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVTiger/EnviarPedidoVenda" message="tns:IWebServiceVTiger_EnviarPedidoVenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVTiger/EnviarPedidoVendaResponse" message="tns:IWebServiceVTiger_EnviarPedidoVenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarPedidoVendaJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVTiger/EnviarPedidoVendaJson" message="tns:IWebServiceVTiger_EnviarPedidoVendaJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVTiger/EnviarPedidoVendaJsonResponse" message="tns:IWebServiceVTiger_EnviarPedidoVendaJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVTiger/EnviarCliente" message="tns:IWebServiceVTiger_EnviarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVTiger/EnviarClienteResponse" message="tns:IWebServiceVTiger_EnviarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirClienteJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVTiger/InserirClienteJson" message="tns:IWebServiceVTiger_InserirClienteJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVTiger/InserirClienteJsonResponse" message="tns:IWebServiceVTiger_InserirClienteJson_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWebServiceVTiger" type="tns:IWebServiceVTiger">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVTiger/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVTiger/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarPedidoVenda">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVTiger/EnviarPedidoVenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarPedidoVendaJson">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVTiger/EnviarPedidoVendaJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCliente">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVTiger/EnviarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirClienteJson">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVTiger/InserirClienteJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceTrafego">
+    <wsdl:port name="BasicHttpBinding_IWebServiceVTiger" binding="tns:BasicHttpBinding_IWebServiceVTiger">
+      <soap:address location="http://localhost:37842/WebServiceVTiger.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

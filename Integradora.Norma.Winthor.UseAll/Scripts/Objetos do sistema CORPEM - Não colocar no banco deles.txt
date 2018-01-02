@@ -1,0 +1,163 @@
+﻿CREATE TABLE FATURA
+(
+  IDCODFATURA        NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  NUMERO_FISCAL      NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  IDUC               NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  ANO_MES            DATE                       NOT NULL,
+  IDCONSUMIDOR       NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  IDCLASSE           NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  IDSUBCLASSE        NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  GRUPO              VARCHAR2(1)               DEFAULT 'B'                   NOT NULL,
+  IDASSOCIADO        NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  IDLOCALENTREGA     NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  IDAGENTE           NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  MOTIVO_BAIXA       NUMBER(2)                  DEFAULT 0                     NOT NULL,
+  VCTO               DATE                       DEFAULT to_date('01011900','ddmmyyyy') NOT NULL,
+  PAGTO              DATE                       DEFAULT to_date('01011900','ddmmyyyy') NOT NULL,
+  VALOR_TOTAL        NUMBER(15,2)               DEFAULT 0                     NOT NULL,
+  COBRAR_MULTA       VARCHAR2(1)               DEFAULT 'N'                   NOT NULL,
+  APRESENTADA        VARCHAR2(1)               DEFAULT 'N'                   NOT NULL,
+  DATA_EMISSAO       DATE                       DEFAULT to_date('01011900','ddmmyyyy') NOT NULL,
+  DATA_APRESENTACAO  DATE                       DEFAULT to_date('01011900','ddmmyyyy') NOT NULL,
+  IDTARIFA           VARCHAR2(3)           NOT NULL,
+  PROCESSADA         VARCHAR2(1)               DEFAULT 'N'                   NOT NULL,
+  IDCALCULO          NUMBER(16)                 DEFAULT 0                     NOT NULL,
+  TIPO_CALCULO       NUMBER(1)                  DEFAULT 1                     NOT NULL,
+  ANO_MES_ORIGINAL   DATE                       DEFAULT to_date('01011900','ddmmyyyy') NOT NULL,
+  REFATURAMENTO      NUMBER(2)                  DEFAULT 0                     NOT NULL,
+  RETIFICADO         VARCHAR2(1)               DEFAULT 'N'                   NOT NULL,
+  IDREMESSA_EFI      NUMBER(9)                  DEFAULT 0                     NOT NULL,
+  IDCFOP             NUMBER(9)                  NOT NULL
+);
+
+
+CREATE TABLE FATURA_ITENS
+(
+  IDCODFATURA      NUMBER(9)                    DEFAULT 0                     NOT NULL,
+  SEQUENCIA        NUMBER(9)                    DEFAULT 0                     NOT NULL,
+  IDITEM           NUMBER(9)                    NOT NULL,
+  CLASSIFICACAO    NUMBER(1)                    NOT NULL,
+  QTDE             NUMBER(9)                    NOT NULL,
+  VALOR            NUMBER(15,2)                 DEFAULT 0                     NOT NULL,
+  REFERENCIA       VARCHAR2(10)            DEFAULT ' '                   NOT NULL,
+  TARIFA_APLICADA  NUMBER(15,5)                 DEFAULT 0                     NOT NULL,
+  BASE_ICMS        VARCHAR2(1)                 DEFAULT 'S'                   NOT NULL,
+  ALIQUOTA_ICMS    NUMBER(5,2)                  DEFAULT 0                     NOT NULL,
+  VALOR_ICMS       NUMBER(15,2)                 DEFAULT 0                     NOT NULL,
+  TIPO_ITEM        NUMBER(2)                    NOT NULL,
+  TARIFA_ICMS      NUMBER                       DEFAULT 0                     NOT NULL,
+  ACAO             VARCHAR2(1)                 NOT NULL,
+  VALOR_PISCOFINS  NUMBER(15,2)                 DEFAULT 0                     NOT NULL,
+  TARIFA_RES       NUMBER(15,5),
+  TIPO_TUSD_TE     NUMBER(2)                    DEFAULT 3                     NOT NULL,
+  QTDE_ABERTURA    NUMBER(9)                    DEFAULT 0                     NOT NULL,
+  TARIFA_TUSD      NUMBER(15,5),
+  TARIFA_TE        NUMBER(15,5),
+  IDOUTRASCOBUC    NUMBER(9),
+  IDOUTRASCOBCONS  NUMBER(9)
+);
+
+CREATE TABLE OUTRASCOB_UC
+(
+  IDOUTRASCOBUC         NUMBER(9)               DEFAULT 0                     NOT NULL,
+  DATA_LANCTO           DATE                    NOT NULL,
+  IDUC                  NUMBER(9)               DEFAULT 0                     NOT NULL,
+  IDITEM                NUMBER(9)               NOT NULL,
+  COMPETENCIA           DATE                    NOT NULL,
+  JAFATURADA            CHAR(1 BYTE)            DEFAULT 'N'                   NOT NULL,
+  MESFATURAMENTO        DATE                    DEFAULT to_date('01011900','ddmmyyyy') NOT NULL,
+  QTDE                  NUMBER(10,2)            NOT NULL,
+  VALOR                 NUMBER(10,2)            NOT NULL,
+  HISTORICO             VARCHAR2(100 BYTE)      NOT NULL,
+  TIPO                  NUMBER(2)               DEFAULT 0                     NOT NULL,
+  IDSEQUENCIAL          NUMBER(9),
+  REFERENCIA            VARCHAR2(5 BYTE)        NOT NULL,
+  DERENEGOCIACAO        CHAR(1 BYTE)            DEFAULT 'N'                   NOT NULL,
+  USUARIO_INSERCAO      VARCHAR2(20 BYTE)       DEFAULT user                  NOT NULL,
+  DATA_INSERCAO         DATE                    DEFAULT sysdate               NOT NULL,
+  CANCELADO             NUMBER(2)               NOT NULL,
+  USUARIO_CANCELAMENTO  VARCHAR2(20 BYTE)       DEFAULT ' '                   NOT NULL,
+  DATA_CANCELAMENTO     DATE                    DEFAULT to_date('01011900','ddmmyyyy') NOT NULL,
+  CONTABILIZAR          CHAR(1 BYTE)            NOT NULL,
+  MOTIVO_CANCELAMENTO   VARCHAR2(256 BYTE)      DEFAULT ' '                   NOT NULL,
+  IDOUTRASCOBMOVTO      NUMBER(9),
+  IDCODFATURA           NUMBER(9),
+  IDREMESSA_EFI         NUMBER(9)               DEFAULT 0                     NOT NULL,
+  STATUS_EFI            CHAR(1 BYTE)            DEFAULT 'N'                   NOT NULL
+);
+
+CREATE TABLE REFATURAMENTO
+(
+  IDCALCULO_REFAT             NUMBER(16)        NOT NULL,
+  IDCALCULO_NOVO              NUMBER(16),
+  IDCALCULO_CANC              NUMBER(16),
+  IDUC                        NUMBER(9)         DEFAULT 0                     NOT NULL,
+  ANO_MES_REFAT               DATE              DEFAULT to_date('01011900','ddmmyyyy') NOT NULL,
+  IDMOTIVORETIF               NUMBER(9)         DEFAULT 0                     NOT NULL,
+  IDCODFATURA                 NUMBER(9)         DEFAULT 0,
+  IDOUTRASCOBUC_REFAT         NUMBER(9),
+  DATA_DEVOLUCAO              DATE              DEFAULT to_date('01011900','ddmmyyyy') NOT NULL,
+  DEFATURA_PAGA               CHAR(1 BYTE)      DEFAULT 'N'                   NOT NULL,
+  REFAT_INDEVIDO              CHAR(1 BYTE)      DEFAULT 'N'                   NOT NULL,
+  COMPLEMENTO                 VARCHAR2(4000 BYTE) DEFAULT ' ' NOT NULL,
+  USUARIO                     VARCHAR2(20 BYTE) DEFAULT user NOT NULL,
+  DATAHORA                    DATE              DEFAULT sysdate               NOT NULL,
+  FATURAS_ZERADAS             CHAR(1 BYTE)      DEFAULT 'N'                   NOT NULL,
+  DEVOLVER_JUROS_RETIF_PAGA   CHAR(1 BYTE)      DEFAULT 'N'                   NOT NULL,
+  DIAS_PRORROGA_APRESENTACAO  NUMBER(9)         DEFAULT 0                     NOT NULL,
+  IDSEQGERDOC                 NUMBER(9)
+)
+
+/* Formatted on 2015/06/04 10:12 (Formatter Plus v4.8.8) */
+CREATE OR REPLACE FORCE VIEW v_faturas_emitidas_itens (idunico,
+                                                       competencia,
+                                                       nr_titulo,
+                                                       cd_cadastro,
+                                                       iduc,
+                                                       id_zona,
+                                                       id_conta,
+                                                       id_item,
+                                                       vl_cobrado
+                                                      )
+AS
+   SELECT fatura_itens.idcodfatura AS idunico, fatura.ano_mes AS competencia,
+          fatura.numero_fiscal AS nr_titulo,
+          fatura.idconsumidor AS cd_cadastro, fatura.iduc AS iduc,
+          TO_NUMBER (SUBSTR (LPAD (fatura.iduc, 9, 0), 1, 2)) AS id_zona,
+          TO_NUMBER (SUBSTR (LPAD (fatura.iduc, 9, 0), 3, 7)) AS id_conta,
+          fatura_itens.iditem AS id_item, fatura_itens.valor AS vl_cobrado
+     FROM fatura JOIN fatura_itens
+          ON (fatura.idcodfatura = fatura_itens.idcodfatura)
+    WHERE ano_mes >= TO_DATE ('01032012', 'ddmmyyyy');
+
+CREATE OR REPLACE FORCE VIEW v_faturas_canceladas (competencia,
+                                                   competencia_original,
+                                                   nr_titulo,
+                                                   cd_cadastro,
+                                                   iduc,
+                                                   id_zona,
+                                                   id_conta,
+                                                   cd_portador,
+                                                   dt_lancamento,
+                                                   dt_vencimento,
+                                                   vl_titulo,
+                                                   data_devolucao
+                                                  )
+AS
+   SELECT fatura.ano_mes AS competencia,
+          fatura.ano_mes_original AS competencia_original,
+          fatura.numero_fiscal AS nr_titulo,
+          fatura.idconsumidor AS cd_cadastro, fatura.iduc AS iduc,
+          TO_NUMBER (SUBSTR (LPAD (fatura.iduc, 9, 0), 1, 2)) AS id_zona,
+          TO_NUMBER (SUBSTR (LPAD (fatura.iduc, 9, 0), 3, 7)) AS id_conta,
+          fatura.idlocalentrega AS cd_portador,
+          fatura.data_emissao AS dt_lancamento, fatura.vcto AS dt_vencimento,
+          ABS (fatura.valor_total) AS vl_titulo,
+          NVL ((SELECT data_devolucao
+                  FROM refaturamento
+                 WHERE refaturamento.idcalculo_canc = fatura.idcalculo),
+               TO_DATE ('01011900', 'ddmmyyyy')
+              ) AS data_devolucao
+     FROM fatura
+    WHERE fatura.ano_mes >= TO_DATE ('01032012', 'ddmmyyyy')
+      AND fatura.retificado = 'X';

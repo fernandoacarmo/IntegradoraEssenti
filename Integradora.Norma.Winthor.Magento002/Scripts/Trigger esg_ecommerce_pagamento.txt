@@ -1,0 +1,29 @@
+﻿CREATE OR REPLACE TRIGGER esg_ecommerce_pagamento
+ AFTER UPDATE OF ESC_AJUSTARFINANCEIRO
+ ON pcpedctemp
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+  vnACAO ESTREPLICACAO_ECOMMERCE.ACAO%TYPE;
+BEGIN
+  --Verifica que o pedido foi pagou ou não
+  IF (:NEW.ESC_AJUSTARFINANCEIRO = 'P') THEN
+    vnACAO := 1; --Pago o título
+  ELSIF (:NEW.ESC_AJUSTARFINANCEIRO = 'R') THEN
+    vnACAO := 0; --Rejeitado o pagamento
+  ELSE
+    vnACAO := -1; --Não teve modificação
+  END IF;
+  
+  IF (vnACAO > -1) THEN
+  BEGIN
+    INSERT INTO ESTREPLICACAO_ECOMMERCE (TABELA, ACAO, ID)
+         VALUES ( 'PCPEDCTEMP', vnACAO, :NEW.ROWID);
+
+    EXCEPTION
+    WHEN DUP_VAL_ON_INDEX THEN
+      NULL;
+    END;
+  END IF;
+END;
+/

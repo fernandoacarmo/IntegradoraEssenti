@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ABA156C6-C646-4BC7-A5D8-80B64690FD55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.Norma.Winthor.Shoppub</RootNamespace>
+    <AssemblyName>Integradora.Norma.Winthor.Shoppub</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enviar.cs" />
+    <Compile Include="Processo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receber.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.Shoppub\Integradora.ECommerce.Shoppub.csproj">
+      <Project>{83aa20b8-fe20-4ab0-9bbd-4c291f8e6d07}</Project>
+      <Name>Integradora.ECommerce.Shoppub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce\Integradora.ECommerce.csproj">
+      <Project>{128091e7-33fd-47af-b892-98b499c0e87b}</Project>
+      <Name>Integradora.ECommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP.Winthor\Integradora.ERP.Winthor.csproj">
+      <Project>{01442edb-670d-4cc0-877d-00967fa880b1}</Project>
+      <Name>Integradora.ERP.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP\Integradora.ERP.csproj">
+      <Project>{c2e10202-5c91-4b33-8f2f-a6e92982b5d6}</Project>
+      <Name>Integradora.ERP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor\Integradora.Norma.Winthor.csproj">
+      <Project>{11e5eaeb-d83b-4d84-bedd-51fd6a7870e3}</Project>
+      <Name>Integradora.Norma.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma\Integradora.Norma.csproj">
+      <Project>{164dd693-513a-42da-9b8b-032e2f502504}</Project>
+      <Name>Integradora.Norma</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Tabela estreplicacao_shoppub.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

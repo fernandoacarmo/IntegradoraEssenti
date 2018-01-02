@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Insere_OutrasCob_UC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="anidzona" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidconta" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="aniditem" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="anmesfatura" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ananofatura" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="addatalancto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anvalor" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="asideverest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insere_OutrasCob_UCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insere_OutrasCob_UCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insere_Consumidor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="anidconsumidor" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidassociado" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnomeempresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="antipoinscricao" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asinscricao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asinscricaoestadual" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ascep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ascomplemento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidregiao" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asfone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asfone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asfone_celular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="addata_cadastro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidlocalentrega" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asci" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asci_orgao_emissor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insere_ConsumidorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insere_ConsumidorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Pagar_Fatura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addata_pagto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidAgente" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="annumero_fiscal" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="aniduc" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="adanomes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anvalor_pagto" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="ascobrar_multa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Pagar_FaturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pagar_FaturaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Estornar_Pagamento_Fatura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addata_pagto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidAgente" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="annumero_fiscal" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="aniduc" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="adanomes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anvalor_pagto" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Estornar_Pagamento_FaturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Estornar_Pagamento_FaturaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insere_OutrasCob_UC_Hist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="anidzona" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidconta" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="aniditem" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="anmesfatura" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ananofatura" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="addatalancto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anvalor" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="asideverest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ashistorico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insere_OutrasCob_UC_HistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insere_OutrasCob_UC_HistResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insere_Consumidor_Novo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="anidconsumidor" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidassociado" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnomeempresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="antipoinscricao" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asinscricao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asinscricaoestadual" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ascep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ascomplemento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidregiao" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asfone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asfone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asfone_celular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="addata_cadastro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidlocalentrega" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asci" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asci_orgao_emissor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asemail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnomepai" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnomemae" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asprofissao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asestadocivil" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnaturalidade" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ancnae" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="andiavcto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insere_Consumidor_NovoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insere_Consumidor_NovoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Atualiza_Consumidor_Novo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="anidconsumidor" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnomeempresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="antipoinscricao" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asinscricao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asinscricaoestadual" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ascep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ascomplemento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidregiao" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asfone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asfone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asfone_celular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="addata_cadastro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="anidlocalentrega" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="asci" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asci_orgao_emissor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asemail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnomepai" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnomemae" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asprofissao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asestadocivil" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asnaturalidade" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ancnae" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="andiavcto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Atualiza_Consumidor_NovoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Atualiza_Consumidor_NovoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Insere_OutrasCob_UCSoapIn">
+    <wsdl:part name="parameters" element="tns:Insere_OutrasCob_UC" />
+  </wsdl:message>
+  <wsdl:message name="Insere_OutrasCob_UCSoapOut">
+    <wsdl:part name="parameters" element="tns:Insere_OutrasCob_UCResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insere_ConsumidorSoapIn">
+    <wsdl:part name="parameters" element="tns:Insere_Consumidor" />
+  </wsdl:message>
+  <wsdl:message name="Insere_ConsumidorSoapOut">
+    <wsdl:part name="parameters" element="tns:Insere_ConsumidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Pagar_FaturaSoapIn">
+    <wsdl:part name="parameters" element="tns:Pagar_Fatura" />
+  </wsdl:message>
+  <wsdl:message name="Pagar_FaturaSoapOut">
+    <wsdl:part name="parameters" element="tns:Pagar_FaturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Estornar_Pagamento_FaturaSoapIn">
+    <wsdl:part name="parameters" element="tns:Estornar_Pagamento_Fatura" />
+  </wsdl:message>
+  <wsdl:message name="Estornar_Pagamento_FaturaSoapOut">
+    <wsdl:part name="parameters" element="tns:Estornar_Pagamento_FaturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insere_OutrasCob_UC_HistSoapIn">
+    <wsdl:part name="parameters" element="tns:Insere_OutrasCob_UC_Hist" />
+  </wsdl:message>
+  <wsdl:message name="Insere_OutrasCob_UC_HistSoapOut">
+    <wsdl:part name="parameters" element="tns:Insere_OutrasCob_UC_HistResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insere_Consumidor_NovoSoapIn">
+    <wsdl:part name="parameters" element="tns:Insere_Consumidor_Novo" />
+  </wsdl:message>
+  <wsdl:message name="Insere_Consumidor_NovoSoapOut">
+    <wsdl:part name="parameters" element="tns:Insere_Consumidor_NovoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Atualiza_Consumidor_NovoSoapIn">
+    <wsdl:part name="parameters" element="tns:Atualiza_Consumidor_Novo" />
+  </wsdl:message>
+  <wsdl:message name="Atualiza_Consumidor_NovoSoapOut">
+    <wsdl:part name="parameters" element="tns:Atualiza_Consumidor_NovoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSSoap">
+    <wsdl:operation name="Insere_OutrasCob_UC">
+      <wsdl:input message="tns:Insere_OutrasCob_UCSoapIn" />
+      <wsdl:output message="tns:Insere_OutrasCob_UCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insere_Consumidor">
+      <wsdl:input message="tns:Insere_ConsumidorSoapIn" />
+      <wsdl:output message="tns:Insere_ConsumidorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pagar_Fatura">
+      <wsdl:input message="tns:Pagar_FaturaSoapIn" />
+      <wsdl:output message="tns:Pagar_FaturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Estornar_Pagamento_Fatura">
+      <wsdl:input message="tns:Estornar_Pagamento_FaturaSoapIn" />
+      <wsdl:output message="tns:Estornar_Pagamento_FaturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insere_OutrasCob_UC_Hist">
+      <wsdl:input message="tns:Insere_OutrasCob_UC_HistSoapIn" />
+      <wsdl:output message="tns:Insere_OutrasCob_UC_HistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insere_Consumidor_Novo">
+      <wsdl:input message="tns:Insere_Consumidor_NovoSoapIn" />
+      <wsdl:output message="tns:Insere_Consumidor_NovoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Atualiza_Consumidor_Novo">
+      <wsdl:input message="tns:Atualiza_Consumidor_NovoSoapIn" />
+      <wsdl:output message="tns:Atualiza_Consumidor_NovoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSSoap" type="tns:WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insere_OutrasCob_UC">
+      <soap:operation soapAction="http://tempuri.org/Insere_OutrasCob_UC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insere_Consumidor">
+      <soap:operation soapAction="http://tempuri.org/Insere_Consumidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pagar_Fatura">
+      <soap:operation soapAction="http://tempuri.org/Pagar_Fatura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estornar_Pagamento_Fatura">
+      <soap:operation soapAction="http://tempuri.org/Estornar_Pagamento_Fatura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insere_OutrasCob_UC_Hist">
+      <soap:operation soapAction="http://tempuri.org/Insere_OutrasCob_UC_Hist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insere_Consumidor_Novo">
+      <soap:operation soapAction="http://tempuri.org/Insere_Consumidor_Novo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Atualiza_Consumidor_Novo">
+      <soap:operation soapAction="http://tempuri.org/Atualiza_Consumidor_Novo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSoap12" type="tns:WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insere_OutrasCob_UC">
+      <soap12:operation soapAction="http://tempuri.org/Insere_OutrasCob_UC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insere_Consumidor">
+      <soap12:operation soapAction="http://tempuri.org/Insere_Consumidor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pagar_Fatura">
+      <soap12:operation soapAction="http://tempuri.org/Pagar_Fatura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estornar_Pagamento_Fatura">
+      <soap12:operation soapAction="http://tempuri.org/Estornar_Pagamento_Fatura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insere_OutrasCob_UC_Hist">
+      <soap12:operation soapAction="http://tempuri.org/Insere_OutrasCob_UC_Hist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insere_Consumidor_Novo">
+      <soap12:operation soapAction="http://tempuri.org/Insere_Consumidor_Novo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Atualiza_Consumidor_Novo">
+      <soap12:operation soapAction="http://tempuri.org/Atualiza_Consumidor_Novo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS">
+    <wsdl:port name="WSSoap" binding="tns:WSSoap">
+      <soap:address location="http://189.22.39.23/e2comercialwsteste/ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSoap12" binding="tns:WSSoap12">
+      <soap12:address location="http://189.22.39.23/e2comercialwsteste/ws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

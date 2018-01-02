@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:WsPedidos" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:WsPedidos" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:WsPedidos">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ATUALIZAR_SAIDARequest">
+    <wsdl:part name="xml_string" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="ATUALIZAR_SAIDAResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="WsPedidosPortType">
+    <wsdl:operation name="ATUALIZAR_SAIDA">
+      <documentation>EFETUA A SAÍDA DOS PRODUTOS ATRAVÉS DE PEDIDO, BLOQUEIO, DESBLOQUEIO OU TRANSFERÊNCIA</documentation>
+      <wsdl:input message="tns:ATUALIZAR_SAIDARequest" />
+      <wsdl:output message="tns:ATUALIZAR_SAIDAResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsPedidosBinding" type="tns:WsPedidosPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="ATUALIZAR_SAIDA">
+      <soap:operation soapAction="urn:WsPedidos#ATUALIZAR_SAIDA" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WsPedidos" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WsPedidos" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsPedidos">
+    <wsdl:port name="WsPedidosPort" binding="tns:WsPedidosBinding">
+      <soap:address location="http://ajuri.homologacao.am.gov.br/index.php/ws_pedidos" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

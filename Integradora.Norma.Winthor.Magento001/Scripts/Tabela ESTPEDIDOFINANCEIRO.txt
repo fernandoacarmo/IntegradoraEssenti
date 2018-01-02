@@ -1,0 +1,14 @@
+﻿CREATE TABLE ESTPEDIDOFINANCEIRO
+     ( NUMPED           NUMBER(10)                      NOT NULL
+     , FORMAPAGTO       VARCHAR2(1) DEFAULT 'B'         NOT NULL --Deposito, Boleto ou Cartão
+     --Para baixa em boleto
+     , NUMTRANSACAO     NUMBER(10)                      NOT NULL --Boleto de destino ou movimentação bancária original
+     , PREST            VARCHAR2(2)                     NULL --Prest de destino
+     , RECNUMRECEITA    NUMBER(10)                      NULL --Contas a pagar de receita
+     , BOLETOQUITADO    VARCHAR2(1) DEFAULT 'N'         NOT NULL --Verifica se foi feito o tratamento de quitação
+     --Informativo da baixa
+     , VLUTILIZADO      NUMBER(22,6) DEFAULT 0          NOT NULL
+     , DTINCLUSAO       DATE        DEFAULT SYSDATE     NOT NULL
+     , CODUSUARIOINC    NUMBER(8)                       NOT NULL
+     , CONSTRAINT PK_ESTPEDIDOFINANCEIRO                PRIMARY KEY (NUMPED, FORMAPAGTO, NUMTRANSACAO)
+     )

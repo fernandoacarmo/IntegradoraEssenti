@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vx:RetornaAtuarEstoque status="ERROR" xmlns:vx="http://cema.nucci.com.br/custom/wms/integracao/ws/cema/webservice_Returns">
+  <vx:ticket version="v1">
+    <vx:pid>nucciCema</vx:pid>
+    <vx:nome>nucciwms-integra</vx:nome>
+    <vx:empresa>RV CONSULT TRANSPORTES</vx:empresa>
+    <vx:fornecedor>nucci.com.br</vx:fornecedor>
+    <vx:host>192.168.14.7</vx:host>
+    <vx:data-origem>br.com.nucci2016-01-06T05:00:06-04:00:2016-01-06T05:00:06-04:00</vx:data-origem>
+    <vx:versao>v1build1591</vx:versao>
+    <vx:id>br.com.nucci2016-01-06T05:00:06-04:00:2016-01-06T05:00:06-04:00</vx:id>
+    <vx:filial>
+      <vx:codigo>RV</vx:codigo>
+      <vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+      <vx:razao-social>RV CONSULT TRANSPORTES E LOGÍSTICA LTDA</vx:razao-social>
+    </vx:filial>
+  </vx:ticket>
+  <vx:target>
+    <vx:pid>nucciCema</vx:pid>
+    <vx:nome>AJURI</vx:nome>
+    <vx:empresa>RV</vx:empresa>
+    <vx:fornecedor>AJURI</vx:fornecedor>
+    <vx:host>10.20.1.234</vx:host>
+    <vx:data-origem>br.com.nucci2016-01-06T05:00:06-04:00:2016-01-06T05:00:06-04:00</vx:data-origem>
+    <vx:observacoes> Atualização não efetuada (sem itens selecionados)  </vx:observacoes>
+  </vx:target>
+  <vx:atuacoes>
+  </vx:atuacoes>
+</vx:RetornaAtuarEstoque>

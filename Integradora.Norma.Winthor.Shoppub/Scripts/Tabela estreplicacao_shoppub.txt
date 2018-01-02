@@ -1,0 +1,7 @@
+﻿CREATE TABLE ESTREPLICACAO_SHOPPUB
+           ( TABELA                         VARCHAR2(50)                        NOT NULL
+           , ACAO                           NUMBER(2,0)     DEFAULT 0           NOT NULL
+           , ID                             VARCHAR2(50)                        NOT NULL
+           , DTINCLUSAO                     DATE            DEFAULT SYSDATE     NOT NULL
+           , CONSTRAINT PK_ESTREPLICACAO_SHOPPUB
+                PRIMARY KEY (TABELA, ACAO, ID, DTINCLUSAO))

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:WsTransferencias" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:WsTransferencias" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:WsTransferencias">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SOLICITAR_BLOQUEIORequest">
+    <wsdl:part name="xml_string" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SOLICITAR_BLOQUEIOResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SOLICITAR_DESBLOQUEIORequest">
+    <wsdl:part name="xml_string" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SOLICITAR_DESBLOQUEIOResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SOLICITAR_ACERTORequest">
+    <wsdl:part name="xml_string" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SOLICITAR_ACERTOResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="INSERIR_LOTES_INVENTARIORequest">
+    <wsdl:part name="xml_string" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="INSERIR_LOTES_INVENTARIOResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="WsTransferenciasPortType">
+    <wsdl:operation name="SOLICITAR_BLOQUEIO">
+      <documentation>BLOQUEIA O ESTOQUE DO PRODUTO</documentation>
+      <wsdl:input message="tns:SOLICITAR_BLOQUEIORequest" />
+      <wsdl:output message="tns:SOLICITAR_BLOQUEIOResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SOLICITAR_DESBLOQUEIO">
+      <documentation>DESBLOQUEIA O ESTOQUE DO PRODUTO</documentation>
+      <wsdl:input message="tns:SOLICITAR_DESBLOQUEIORequest" />
+      <wsdl:output message="tns:SOLICITAR_DESBLOQUEIOResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SOLICITAR_ACERTO">
+      <documentation>BLOQUEIA O ESTOQUE DO PRODUTO</documentation>
+      <wsdl:input message="tns:SOLICITAR_ACERTORequest" />
+      <wsdl:output message="tns:SOLICITAR_ACERTOResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERIR_LOTES_INVENTARIO">
+      <documentation>ARMAZENA OS LOTES E ENDEREÇOS DOS PRODUTOS QUE SERÃO INVENTARIADOS</documentation>
+      <wsdl:input message="tns:INSERIR_LOTES_INVENTARIORequest" />
+      <wsdl:output message="tns:INSERIR_LOTES_INVENTARIOResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsTransferenciasBinding" type="tns:WsTransferenciasPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="SOLICITAR_BLOQUEIO">
+      <soap:operation soapAction="urn:WsTransferencias#SOLICITAR_BLOQUEIO" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WsTransferencias" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WsTransferencias" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SOLICITAR_DESBLOQUEIO">
+      <soap:operation soapAction="urn:WsTransferencias#SOLICITAR_DESBLOQUEIO" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WsTransferencias" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WsTransferencias" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SOLICITAR_ACERTO">
+      <soap:operation soapAction="urn:WsTransferencias#SOLICITAR_ACERTO" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WsTransferencias" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WsTransferencias" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERIR_LOTES_INVENTARIO">
+      <soap:operation soapAction="urn:WsTransferencias#INSERIR_LOTES_INVENTARIO" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WsTransferencias" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WsTransferencias" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsTransferencias">
+    <wsdl:port name="WsTransferenciasPort" binding="tns:WsTransferenciasBinding">
+      <soap:address location="http://ajuri.homologacao.am.gov.br/index.php/ws_transferencias" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

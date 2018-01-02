@@ -1,0 +1,9 @@
+﻿CREATE TABLE correspondencias
+    (correspondencia_id             NUMBER(10,0) NOT NULL,
+    dtinclusao                     DATE DEFAULT SYSDATE NOT NULL,
+    titulo                         VARCHAR2(150 BYTE) NOT NULL,
+    mensagem                       VARCHAR2(3000 BYTE) NOT NULL,
+    email                          VARCHAR2(150 BYTE) NOT NULL,
+    destinatario                   VARCHAR2(100 BYTE),
+    dtenvio                        DATE,
+	 CONSTRAINT pk_correspondencias PRIMARY KEY (correspondencia_id))

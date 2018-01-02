@@ -1,0 +1,44 @@
+﻿CREATE OR REPLACE TRIGGER ESG_ECOMMERCE_EMBALAGEM
+ AFTER
+  INSERT OR UPDATE
+    OF CODAUXILIAR, CODPROD, CODFILIAL, POFERTA, PVENDA, POFERTAWEB, PVENDAWEB, DESCRICAOWEB, PESOBRUTO, ALTURA, COMPRIMENTO, LARGURA, QTUNIT
+ ON PCEMBALAGEM
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+      vnACAO ESTREPLICACAO_ECOMMERCE.acao%type;
+      vsID   ESTREPLICACAO_ECOMMERCE.id%type;
+   BEGIN
+     vnAcao := 0; --Inserindo      
+
+     --Se for prenchimento destes campos não faz nada
+     IF (:NEW.CODAUXILIAR IS NULL)  
+     OR (:NEW.CODPROD IS NULL)  
+     OR (:NEW.QTUNIT IS NULL)  
+     OR (:NEW.DESCRICAOWEB IS NULL)  
+        THEN
+        vnACAO := -1;
+     END IF; 
+
+     IF vnACAO > -1 THEN
+     BEGIN
+      IF DELETING THEN
+          vnACAO := 2; --Excluindo
+          vsID := :OLD.ROWID;
+       ELSE
+           vsID := :NEW.ROWID;
+          IF UPDATING THEN
+            vnAcao := 1; -- Alterando
+          END IF;
+      END IF;
+
+       INSERT INTO ESTREPLICACAO_ECOMMERCE (TABELA, ACAO, ID)
+           VALUES ('VWEMBALAGENS'
+                  , vnACAO
+                  , vsID);
+      EXCEPTION
+        WHEN DUP_VAL_ON_INDEX THEN
+          NULL;
+       END;
+     END IF;
+   END;

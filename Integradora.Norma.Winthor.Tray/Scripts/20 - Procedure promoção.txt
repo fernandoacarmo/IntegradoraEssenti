@@ -1,0 +1,48 @@
+﻿CREATE OR REPLACE PROCEDURE esp_enviar_promocao_ecommece
+IS
+BEGIN
+   --Dentro de período de virgencia, envia todos os dias durante a promoção
+   INSERT INTO ESTREPLICACAO_ECOMMERCE
+              ( TABELA
+              , ID
+              , DTINCLUSAO)
+      SELECT 'VWTRAYPRODUTOS'
+           , PCPRODUT.ROWID
+           , SYSDATE
+        FROM PCPRODUT
+       WHERE PCPRODUT.NOMEECOMMERCE IS NOT NULL
+         AND PCPRODUT.ENVIAECOMMERCE = 'S' 
+         AND PCPRODUT.CODPROD IN(SELECT PCPRECOPROM.CODPROD
+                                   FROM PCPRECOPROM
+                                      , PCCONSUM
+                                      , PCFILIAL
+                                  WHERE PCPRECOPROM.NUMREGIAO = NVL(PCFILIAL.NUMREGIAOPADRAO, PCCONSUM.NUMREGIAOPADRAO)
+                                    AND PCFILIAL.CODIGO = '2'
+                                    AND PCPRECOPROM.CODCLI IS NULL
+                                    AND PCPRECOPROM.CODUSUR IS NULL
+                                    AND PCPRECOPROM.CODPRACA IS NULL
+                                    AND TRUNC(SYSDATE) BETWEEN PCPRECOPROM.DTINICIOVIGENCIA AND PCPRECOPROM.DTFIMVIGENCIA);
+
+--Envia todos os produtos cuja a promoção acabou no dia anterior
+   INSERT INTO ESTREPLICACAO_ECOMMERCE
+               (TABELA
+              , ID
+              , DTINCLUSAO)
+      SELECT 'VWTRAYPRODUTOS'
+           , PCPRODUT.ROWID
+           , SYSDATE
+        FROM PCPRODUT
+       WHERE PCPRODUT.NOMEECOMMERCE IS NOT NULL
+         AND PCPRODUT.ENVIAECOMMERCE = 'S' 
+         AND PCPRODUT.CODPROD IN(SELECT PCPRECOPROM.CODPROD
+                                   FROM PCPRECOPROM
+                                      , PCCONSUM
+                                      , PCFILIAL
+                                  WHERE PCPRECOPROM.NUMREGIAO = NVL(PCFILIAL.NUMREGIAOPADRAO, PCCONSUM.NUMREGIAOPADRAO)
+                                    AND PCFILIAL.CODIGO = '2'
+                                    AND PCPRECOPROM.CODCLI IS NULL
+                                    AND PCPRECOPROM.CODUSUR IS NULL
+                                    AND PCPRECOPROM.CODPRACA IS NULL
+                                    AND TRUNC(SYSDATE) - 1 = PCPRECOPROM.DTFIMVIGENCIA);
+
+END;

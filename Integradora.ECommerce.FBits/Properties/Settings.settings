@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Integradora.ECommerce.FBits.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Integradora_ECommerce_FBits_SyncCategoria" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncCategoria.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_br_com_ecommercestore_decisaoatacadista_integracao_SyncContaCorrente" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncContaCorrente.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncEstoque" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncEstoque.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncPedidoStatus" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncPedidoStatus.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncPedidoVenda" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncPedidoVenda.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncProduto" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncProduto.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncProdutoCategoria" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoCategoria.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncProdutoCombo" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoCombo.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncProdutoEstoque" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoEstoque.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncProdutoFornecedor" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoFornecedor.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncProdutoImagem" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoImagem.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncProdutoPreco" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoPreco.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncUsuario" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncUsuario.asmx</Value>
+    </Setting>
+    <Setting Name="Integradora_ECommerce_FBits_SyncUsuarioEndereco" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://integracao.decisaoentrega.com.br/modelo007/SyncUsuarioEndereco.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

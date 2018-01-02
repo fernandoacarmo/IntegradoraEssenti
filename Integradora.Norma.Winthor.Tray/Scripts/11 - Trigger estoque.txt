@@ -1,0 +1,56 @@
+﻿-- Start of DDL Script for Trigger LOCAL.ESG_ECOMMERCE_ESTOQUE
+-- Generated 24-mar-2017 11:28:22 from LOCAL@LOCAL
+
+CREATE OR REPLACE TRIGGER ESG_ECOMMERCE_ESTOQUE
+ AFTER
+   INSERT OR DELETE OR UPDATE OF QTPENDENTE, QTRESERV, QTESTGER, QTBLOQUEADA
+ ON PCEST
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+    vnacao   estreplicacao_ecommerce.acao%TYPE;
+    vsid     estreplicacao_ecommerce.id%TYPE;
+BEGIN
+    vnacao := 0;                                                   --Inserindo
+
+    --Se for prenchimento destes campos nao faz nada
+    IF    (:new.qtestger IS NULL)
+       OR (:new.qtreserv IS NULL)
+       OR (:new.qtbloqueada IS NULL)
+       OR (:new.codfilial not in ('2'))
+    THEN
+        vnacao := -1;
+    END IF;
+
+    IF vnacao > -1
+    THEN
+        BEGIN
+            vsid := :new.ROWID;
+
+            IF UPDATING
+            THEN
+                vnacao := 1;                                      -- Alterando
+            END IF;
+
+              INSERT INTO estreplicacao_ecommerce (tabela, acao, id)
+                SELECT   'ESVVTEXESTOQUE', vnacao, pcprodut.ROWID
+                  FROM   pcprodut
+                 WHERE   pcprodut.codprod = :new.codprod
+                         AND pcprodut.nomeecommerce IS NOT NULL
+                         AND NOT EXISTS
+                                (SELECT   1
+                                   FROM   estreplicacao_ecommerce
+                                  WHERE   estreplicacao_ecommerce.tabela ='ESVVTEXESTOQUE'
+                                          AND estreplicacao_ecommerce.id = pcprodut.ROWID);
+                      
+        EXCEPTION
+            WHEN DUP_VAL_ON_INDEX
+            THEN
+                NULL;
+        END;
+    END IF;
+END;
+/
+
+
+-- End of DDL Script for Trigger LOCAL.ESG_ECOMMERCE_ESTOQUE

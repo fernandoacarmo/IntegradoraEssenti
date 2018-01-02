@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3934fe6d-a51c-430e-b716-529c93aa152b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:37842/WebServiceVTiger.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WebServiceVTiger.xsd" MetadataType="Schema" ID="43185913-1363-44c1-b69b-35f854b0821d" SourceId="1" SourceUrl="http://localhost:37842/WebServiceVTiger.svc?xsd=xsd1" />
+    <MetadataFile FileName="WebServiceVTiger1.xsd" MetadataType="Schema" ID="77df81f0-c892-442d-8855-1c3063298c13" SourceId="1" SourceUrl="http://localhost:37842/WebServiceVTiger.svc?xsd=xsd3" />
+    <MetadataFile FileName="WebServiceVTiger2.xsd" MetadataType="Schema" ID="1f35fa87-0d29-46da-be17-958bc829ff33" SourceId="1" SourceUrl="http://localhost:37842/WebServiceVTiger.svc?xsd=xsd0" />
+    <MetadataFile FileName="WebServiceVTiger3.xsd" MetadataType="Schema" ID="8e6c485a-53a0-438d-b0ce-3c03a88efa1b" SourceId="1" SourceUrl="http://localhost:37842/WebServiceVTiger.svc?xsd=xsd2" />
+    <MetadataFile FileName="WebServiceVTiger.disco" MetadataType="Disco" ID="f54dc339-1258-4d87-97c6-feac8fbfa1ab" SourceId="1" SourceUrl="http://localhost:37842/WebServiceVTiger.svc?disco" />
+    <MetadataFile FileName="ServiceTrafego.wsdl" MetadataType="Wsdl" ID="d28b622e-6772-4af2-a40f-3283cb23ff06" SourceId="1" SourceUrl="http://localhost:37842/WebServiceVTiger.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

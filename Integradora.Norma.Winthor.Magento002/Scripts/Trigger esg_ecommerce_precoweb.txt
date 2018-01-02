@@ -1,0 +1,43 @@
+﻿-- Start of DDL Script for Trigger MACHADO.ESG_ECOMMERCE_PRECOWEB
+-- Generated 12/07/2016 22:38:15 from MACHADO@PROD
+
+CREATE OR REPLACE TRIGGER esg_ecommerce_precoweb
+ AFTER
+   INSERT OR UPDATE OF pvendaweb
+ ON pcembalagem
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+  vnACAO ESTREPLICACAO_ECOMMERCE.ACAO%TYPE;
+BEGIN
+  vnACAO := 0;
+  if (:NEW.CODFILIAL = '1') THEN
+    BEGIN
+      SELECT 1
+        INTO vnACAO
+        FROM PCPRODUT
+       WHERE PCPRODUT.codprod = :NEW.CODPROD
+         AND PCPRODUT.DTEXCLUSAO IS NULL
+         AND PCPRODUT.ENVIAECOMMERCE = 'S';
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      vnACAO := 0;
+    END;
+  END IF;
+
+  IF (vnACAO = 1) THEN
+    BEGIN
+      INSERT INTO estreplicacao_ECOMMERCE (tabela, acao, id)
+           VALUES ('PCEMBALAGEM', 0, :NEW.ROWID);
+    EXCEPTION
+         WHEN DUP_VAL_ON_INDEX
+         THEN
+           NULL;
+        END;
+  END IF;
+    
+END;
+/
+
+
+-- End of DDL Script for Trigger MACHADO.ESG_ECOMMERCE_PRECOWEB

@@ -1,0 +1,1884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceTrafego" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1824/ServiceTrafego.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1824/ServiceTrafego.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1824/ServiceTrafego.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Entity" />
+      <xsd:import schemaLocation="http://localhost:1824/ServiceTrafego.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Integradora.ERP.Corpem.Inherited" />
+      <xsd:import schemaLocation="http://localhost:1824/ServiceTrafego.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Integradora.WebserviceCorpem" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceTrafego_UpdateStatusPedidoSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusPedidoSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusPedidoSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusPedidoSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusPrePedidoSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusPrePedidoSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusPrePedidoSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusPrePedidoSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusPrePedidoSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusPrePedidoSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusPrePedidoSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusPrePedidoSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusPedidoSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusPedidoSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusPedidoSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusPedidoSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusEmbalagem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusEmbalagem" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusEmbalagem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusEmbalagemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusEndereco_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusEndereco" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusEndereco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusEnderecoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusGerente_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusGerente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusGerente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusGerenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusMarca_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusMarca" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusMarca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNcm_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNcm" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNcm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNcmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusRamoatividade_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusRamoatividade" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusRamoatividade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusRamoatividadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusRca_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusRca" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusRca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusRcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusInventario_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusInventario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusInventario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusInventarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListEmbalagem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListEmbalagem" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListEmbalagem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListEmbalagemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListEndereco_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListEndereco" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListEndereco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListEnderecoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListGerente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListGerente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListGerente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListGerenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListMarca_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListMarca" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListMarca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNcm_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListNcm" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNcm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListNcmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListRamoatividade_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListRamoatividade" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListRamoatividade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListRamoatividadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListRca_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListRca" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListRca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListRcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListSecao_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListSecao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListSecao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListSecaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListFilial_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListFilial" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListFilial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListFilialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListFornecedor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListFornecedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProduto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListKit_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListKit" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListKit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListKitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNotaEntrada_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListNotaEntrada" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNotaEntrada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListNotaEntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNotaEntradaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListNotaEntradaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNotaEntradaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListNotaEntradaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNotaSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListNotaSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNotaSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListNotaSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNotaSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListNotaSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListNotaSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListNotaSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListPedidoSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPedidoSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListPedidoSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPedidoSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListPedidoSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPedidoSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListPedidoSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPedidoSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListPrePedidoSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPrePedidoSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListPrePedidoSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPrePedidoSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListPrePedidoSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPrePedidoSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListPrePedidoSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPrePedidoSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListInventario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListInventario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_ListInventario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListInventarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateEmbalagem_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateEmbalagem" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateEmbalagem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateEmbalagemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateEndereco_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateEndereco" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateEndereco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateEnderecoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateGerente_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateGerente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateGerente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateGerenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateMarca_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMarca" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateMarca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNcm_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNcm" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNcm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNcmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateRamoatividade_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateRamoatividade" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateRamoatividade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateRamoatividadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateRca_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateRca" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateRca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateRcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateSecao_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateSecao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateSecao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateSecaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateFilial_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateFilial" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateFilial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateFilialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateFornecedor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateFornecedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateProduto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateKit_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateKit" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateKit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateKitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNotaEntrada_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotaEntrada" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNotaEntrada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotaEntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNotaEntradaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotaEntradaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNotaEntradaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotaEntradaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNotaSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotaSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNotaSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotaSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNotaSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotaSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateNotaSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotaSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdatePedidoSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePedidoSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdatePedidoSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePedidoSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdatePedidoSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePedidoSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdatePedidoSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePedidoSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdatePrePedidoSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePrePedidoSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdatePrePedidoSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePrePedidoSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdatePrePedidoSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePrePedidoSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdatePrePedidoSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePrePedidoSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateInventario_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateInventario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_InsertUpdateInventario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateInventarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteEmbalagem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmbalagem" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteEmbalagem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmbalagemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteEndereco_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEndereco" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteEndereco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEnderecoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteGerente_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGerente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteGerente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGerenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteMarca_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMarca" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteMarca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNcm_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNcm" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNcm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNcmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteRamoatividade_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRamoatividade" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteRamoatividade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRamoatividadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteRca_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRca" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteRca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteSecao_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSecao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteSecao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSecaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteFilial_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFilial" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteFilial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFilialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFornecedor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFornecedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteKit_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteKit" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteKit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteKitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNotaEntrada_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaEntrada" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNotaEntrada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaEntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNotaEntradaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaEntradaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNotaEntradaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaEntradaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNotaSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNotaSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNotaSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteNotaSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeletePedidoSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePedidoSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeletePedidoSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePedidoSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeletePedidoSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePedidoSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeletePedidoSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePedidoSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeletePrePedidoSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePrePedidoSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeletePrePedidoSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePrePedidoSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeletePrePedidoSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePrePedidoSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeletePrePedidoSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePrePedidoSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteInventario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInventario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_DeleteInventario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInventarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusSecao_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusSecao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusSecao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusSecaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusFilial_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusFilial" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusFilial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusFilialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusFornecedor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusFornecedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusProduto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusKit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusKit" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusKit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusKitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNotaEntrada_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNotaEntrada" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNotaEntrada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNotaEntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNotaEntradaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNotaEntradaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNotaEntradaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNotaEntradaItensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNotaSaida_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNotaSaida" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNotaSaida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNotaSaidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNotaSaidaItens_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNotaSaidaItens" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTrafego_UpdateStatusNotaSaidaItens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusNotaSaidaItensResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceTrafego">
+    <wsdl:operation name="UpdateStatusPedidoSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusPedidoSaida" message="tns:IServiceTrafego_UpdateStatusPedidoSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusPedidoSaidaResponse" message="tns:IServiceTrafego_UpdateStatusPedidoSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusPrePedidoSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusPrePedidoSaidaItens" message="tns:IServiceTrafego_UpdateStatusPrePedidoSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusPrePedidoSaidaItensResponse" message="tns:IServiceTrafego_UpdateStatusPrePedidoSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusPrePedidoSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusPrePedidoSaida" message="tns:IServiceTrafego_UpdateStatusPrePedidoSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusPrePedidoSaidaResponse" message="tns:IServiceTrafego_UpdateStatusPrePedidoSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusPedidoSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusPedidoSaidaItens" message="tns:IServiceTrafego_UpdateStatusPedidoSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusPedidoSaidaItensResponse" message="tns:IServiceTrafego_UpdateStatusPedidoSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusEmbalagem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusEmbalagem" message="tns:IServiceTrafego_UpdateStatusEmbalagem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusEmbalagemResponse" message="tns:IServiceTrafego_UpdateStatusEmbalagem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusEndereco">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusEndereco" message="tns:IServiceTrafego_UpdateStatusEndereco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusEnderecoResponse" message="tns:IServiceTrafego_UpdateStatusEndereco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusGerente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusGerente" message="tns:IServiceTrafego_UpdateStatusGerente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusGerenteResponse" message="tns:IServiceTrafego_UpdateStatusGerente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusMarca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusMarca" message="tns:IServiceTrafego_UpdateStatusMarca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusMarcaResponse" message="tns:IServiceTrafego_UpdateStatusMarca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNcm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNcm" message="tns:IServiceTrafego_UpdateStatusNcm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNcmResponse" message="tns:IServiceTrafego_UpdateStatusNcm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusRamoatividade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusRamoatividade" message="tns:IServiceTrafego_UpdateStatusRamoatividade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusRamoatividadeResponse" message="tns:IServiceTrafego_UpdateStatusRamoatividade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusRca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusRca" message="tns:IServiceTrafego_UpdateStatusRca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusRcaResponse" message="tns:IServiceTrafego_UpdateStatusRca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusSupervisor" message="tns:IServiceTrafego_UpdateStatusSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusSupervisorResponse" message="tns:IServiceTrafego_UpdateStatusSupervisor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusInventario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusInventario" message="tns:IServiceTrafego_UpdateStatusInventario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusInventarioResponse" message="tns:IServiceTrafego_UpdateStatusInventario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/GetData" message="tns:IServiceTrafego_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/GetDataResponse" message="tns:IServiceTrafego_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/GetDataUsingDataContract" message="tns:IServiceTrafego_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/GetDataUsingDataContractResponse" message="tns:IServiceTrafego_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListCliente" message="tns:IServiceTrafego_ListCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListClienteResponse" message="tns:IServiceTrafego_ListCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListEmbalagem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListEmbalagem" message="tns:IServiceTrafego_ListEmbalagem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListEmbalagemResponse" message="tns:IServiceTrafego_ListEmbalagem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListEndereco">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListEndereco" message="tns:IServiceTrafego_ListEndereco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListEnderecoResponse" message="tns:IServiceTrafego_ListEndereco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListGerente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListGerente" message="tns:IServiceTrafego_ListGerente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListGerenteResponse" message="tns:IServiceTrafego_ListGerente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMarca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListMarca" message="tns:IServiceTrafego_ListMarca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListMarcaResponse" message="tns:IServiceTrafego_ListMarca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListNcm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListNcm" message="tns:IServiceTrafego_ListNcm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListNcmResponse" message="tns:IServiceTrafego_ListNcm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRamoatividade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListRamoatividade" message="tns:IServiceTrafego_ListRamoatividade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListRamoatividadeResponse" message="tns:IServiceTrafego_ListRamoatividade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListRca" message="tns:IServiceTrafego_ListRca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListRcaResponse" message="tns:IServiceTrafego_ListRca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListSupervisor" message="tns:IServiceTrafego_ListSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListSupervisorResponse" message="tns:IServiceTrafego_ListSupervisor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListDepartamento" message="tns:IServiceTrafego_ListDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListDepartamentoResponse" message="tns:IServiceTrafego_ListDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSecao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListSecao" message="tns:IServiceTrafego_ListSecao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListSecaoResponse" message="tns:IServiceTrafego_ListSecao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFilial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListFilial" message="tns:IServiceTrafego_ListFilial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListFilialResponse" message="tns:IServiceTrafego_ListFilial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListFornecedor" message="tns:IServiceTrafego_ListFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListFornecedorResponse" message="tns:IServiceTrafego_ListFornecedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListProduto" message="tns:IServiceTrafego_ListProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListProdutoResponse" message="tns:IServiceTrafego_ListProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListKit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListKit" message="tns:IServiceTrafego_ListKit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListKitResponse" message="tns:IServiceTrafego_ListKit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListNotaEntrada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListNotaEntrada" message="tns:IServiceTrafego_ListNotaEntrada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListNotaEntradaResponse" message="tns:IServiceTrafego_ListNotaEntrada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListNotaEntradaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListNotaEntradaItens" message="tns:IServiceTrafego_ListNotaEntradaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListNotaEntradaItensResponse" message="tns:IServiceTrafego_ListNotaEntradaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListNotaSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListNotaSaida" message="tns:IServiceTrafego_ListNotaSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListNotaSaidaResponse" message="tns:IServiceTrafego_ListNotaSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListNotaSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListNotaSaidaItens" message="tns:IServiceTrafego_ListNotaSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListNotaSaidaItensResponse" message="tns:IServiceTrafego_ListNotaSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPedidoSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListPedidoSaida" message="tns:IServiceTrafego_ListPedidoSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListPedidoSaidaResponse" message="tns:IServiceTrafego_ListPedidoSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPedidoSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListPedidoSaidaItens" message="tns:IServiceTrafego_ListPedidoSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListPedidoSaidaItensResponse" message="tns:IServiceTrafego_ListPedidoSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPrePedidoSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListPrePedidoSaida" message="tns:IServiceTrafego_ListPrePedidoSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListPrePedidoSaidaResponse" message="tns:IServiceTrafego_ListPrePedidoSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPrePedidoSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListPrePedidoSaidaItens" message="tns:IServiceTrafego_ListPrePedidoSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListPrePedidoSaidaItensResponse" message="tns:IServiceTrafego_ListPrePedidoSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInventario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/ListInventario" message="tns:IServiceTrafego_ListInventario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/ListInventarioResponse" message="tns:IServiceTrafego_ListInventario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateCliente" message="tns:IServiceTrafego_InsertUpdateCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateClienteResponse" message="tns:IServiceTrafego_InsertUpdateCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateDepartamento" message="tns:IServiceTrafego_InsertUpdateDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateDepartamentoResponse" message="tns:IServiceTrafego_InsertUpdateDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateEmbalagem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateEmbalagem" message="tns:IServiceTrafego_InsertUpdateEmbalagem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateEmbalagemResponse" message="tns:IServiceTrafego_InsertUpdateEmbalagem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateEndereco">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateEndereco" message="tns:IServiceTrafego_InsertUpdateEndereco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateEnderecoResponse" message="tns:IServiceTrafego_InsertUpdateEndereco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateGerente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateGerente" message="tns:IServiceTrafego_InsertUpdateGerente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateGerenteResponse" message="tns:IServiceTrafego_InsertUpdateGerente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMarca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateMarca" message="tns:IServiceTrafego_InsertUpdateMarca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateMarcaResponse" message="tns:IServiceTrafego_InsertUpdateMarca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNcm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNcm" message="tns:IServiceTrafego_InsertUpdateNcm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNcmResponse" message="tns:IServiceTrafego_InsertUpdateNcm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateRamoatividade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateRamoatividade" message="tns:IServiceTrafego_InsertUpdateRamoatividade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateRamoatividadeResponse" message="tns:IServiceTrafego_InsertUpdateRamoatividade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateRca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateRca" message="tns:IServiceTrafego_InsertUpdateRca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateRcaResponse" message="tns:IServiceTrafego_InsertUpdateRca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateSupervisor" message="tns:IServiceTrafego_InsertUpdateSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateSupervisorResponse" message="tns:IServiceTrafego_InsertUpdateSupervisor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateSecao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateSecao" message="tns:IServiceTrafego_InsertUpdateSecao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateSecaoResponse" message="tns:IServiceTrafego_InsertUpdateSecao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateFilial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateFilial" message="tns:IServiceTrafego_InsertUpdateFilial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateFilialResponse" message="tns:IServiceTrafego_InsertUpdateFilial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateFornecedor" message="tns:IServiceTrafego_InsertUpdateFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateFornecedorResponse" message="tns:IServiceTrafego_InsertUpdateFornecedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateProduto" message="tns:IServiceTrafego_InsertUpdateProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateProdutoResponse" message="tns:IServiceTrafego_InsertUpdateProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateKit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateKit" message="tns:IServiceTrafego_InsertUpdateKit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateKitResponse" message="tns:IServiceTrafego_InsertUpdateKit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotaEntrada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNotaEntrada" message="tns:IServiceTrafego_InsertUpdateNotaEntrada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNotaEntradaResponse" message="tns:IServiceTrafego_InsertUpdateNotaEntrada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotaEntradaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNotaEntradaItens" message="tns:IServiceTrafego_InsertUpdateNotaEntradaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNotaEntradaItensResponse" message="tns:IServiceTrafego_InsertUpdateNotaEntradaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotaSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNotaSaida" message="tns:IServiceTrafego_InsertUpdateNotaSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNotaSaidaResponse" message="tns:IServiceTrafego_InsertUpdateNotaSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotaSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNotaSaidaItens" message="tns:IServiceTrafego_InsertUpdateNotaSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateNotaSaidaItensResponse" message="tns:IServiceTrafego_InsertUpdateNotaSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePedidoSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdatePedidoSaida" message="tns:IServiceTrafego_InsertUpdatePedidoSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdatePedidoSaidaResponse" message="tns:IServiceTrafego_InsertUpdatePedidoSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePedidoSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdatePedidoSaidaItens" message="tns:IServiceTrafego_InsertUpdatePedidoSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdatePedidoSaidaItensResponse" message="tns:IServiceTrafego_InsertUpdatePedidoSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePrePedidoSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdatePrePedidoSaida" message="tns:IServiceTrafego_InsertUpdatePrePedidoSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdatePrePedidoSaidaResponse" message="tns:IServiceTrafego_InsertUpdatePrePedidoSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePrePedidoSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdatePrePedidoSaidaItens" message="tns:IServiceTrafego_InsertUpdatePrePedidoSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdatePrePedidoSaidaItensResponse" message="tns:IServiceTrafego_InsertUpdatePrePedidoSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateInventario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateInventario" message="tns:IServiceTrafego_InsertUpdateInventario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/InsertUpdateInventarioResponse" message="tns:IServiceTrafego_InsertUpdateInventario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteCliente" message="tns:IServiceTrafego_DeleteCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteClienteResponse" message="tns:IServiceTrafego_DeleteCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmbalagem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteEmbalagem" message="tns:IServiceTrafego_DeleteEmbalagem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteEmbalagemResponse" message="tns:IServiceTrafego_DeleteEmbalagem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEndereco">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteEndereco" message="tns:IServiceTrafego_DeleteEndereco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteEnderecoResponse" message="tns:IServiceTrafego_DeleteEndereco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGerente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteGerente" message="tns:IServiceTrafego_DeleteGerente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteGerenteResponse" message="tns:IServiceTrafego_DeleteGerente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMarca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteMarca" message="tns:IServiceTrafego_DeleteMarca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteMarcaResponse" message="tns:IServiceTrafego_DeleteMarca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNcm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNcm" message="tns:IServiceTrafego_DeleteNcm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNcmResponse" message="tns:IServiceTrafego_DeleteNcm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRamoatividade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteRamoatividade" message="tns:IServiceTrafego_DeleteRamoatividade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteRamoatividadeResponse" message="tns:IServiceTrafego_DeleteRamoatividade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteRca" message="tns:IServiceTrafego_DeleteRca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteRcaResponse" message="tns:IServiceTrafego_DeleteRca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteSupervisor" message="tns:IServiceTrafego_DeleteSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteSupervisorResponse" message="tns:IServiceTrafego_DeleteSupervisor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteDepartamento" message="tns:IServiceTrafego_DeleteDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteDepartamentoResponse" message="tns:IServiceTrafego_DeleteDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSecao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteSecao" message="tns:IServiceTrafego_DeleteSecao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteSecaoResponse" message="tns:IServiceTrafego_DeleteSecao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFilial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteFilial" message="tns:IServiceTrafego_DeleteFilial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteFilialResponse" message="tns:IServiceTrafego_DeleteFilial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteFornecedor" message="tns:IServiceTrafego_DeleteFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteFornecedorResponse" message="tns:IServiceTrafego_DeleteFornecedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteKit" message="tns:IServiceTrafego_DeleteKit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteKitResponse" message="tns:IServiceTrafego_DeleteKit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteProduto" message="tns:IServiceTrafego_DeleteProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteProdutoResponse" message="tns:IServiceTrafego_DeleteProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaEntrada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNotaEntrada" message="tns:IServiceTrafego_DeleteNotaEntrada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNotaEntradaResponse" message="tns:IServiceTrafego_DeleteNotaEntrada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaEntradaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNotaEntradaItens" message="tns:IServiceTrafego_DeleteNotaEntradaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNotaEntradaItensResponse" message="tns:IServiceTrafego_DeleteNotaEntradaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNotaSaida" message="tns:IServiceTrafego_DeleteNotaSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNotaSaidaResponse" message="tns:IServiceTrafego_DeleteNotaSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNotaSaidaItens" message="tns:IServiceTrafego_DeleteNotaSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteNotaSaidaItensResponse" message="tns:IServiceTrafego_DeleteNotaSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePedidoSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeletePedidoSaida" message="tns:IServiceTrafego_DeletePedidoSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeletePedidoSaidaResponse" message="tns:IServiceTrafego_DeletePedidoSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePedidoSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeletePedidoSaidaItens" message="tns:IServiceTrafego_DeletePedidoSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeletePedidoSaidaItensResponse" message="tns:IServiceTrafego_DeletePedidoSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePrePedidoSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeletePrePedidoSaida" message="tns:IServiceTrafego_DeletePrePedidoSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeletePrePedidoSaidaResponse" message="tns:IServiceTrafego_DeletePrePedidoSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePrePedidoSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeletePrePedidoSaidaItens" message="tns:IServiceTrafego_DeletePrePedidoSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeletePrePedidoSaidaItensResponse" message="tns:IServiceTrafego_DeletePrePedidoSaidaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInventario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteInventario" message="tns:IServiceTrafego_DeleteInventario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/DeleteInventarioResponse" message="tns:IServiceTrafego_DeleteInventario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusCliente" message="tns:IServiceTrafego_UpdateStatusCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusClienteResponse" message="tns:IServiceTrafego_UpdateStatusCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusDepartamento" message="tns:IServiceTrafego_UpdateStatusDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusDepartamentoResponse" message="tns:IServiceTrafego_UpdateStatusDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusSecao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusSecao" message="tns:IServiceTrafego_UpdateStatusSecao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusSecaoResponse" message="tns:IServiceTrafego_UpdateStatusSecao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusFilial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusFilial" message="tns:IServiceTrafego_UpdateStatusFilial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusFilialResponse" message="tns:IServiceTrafego_UpdateStatusFilial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusFornecedor" message="tns:IServiceTrafego_UpdateStatusFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusFornecedorResponse" message="tns:IServiceTrafego_UpdateStatusFornecedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusProduto" message="tns:IServiceTrafego_UpdateStatusProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusProdutoResponse" message="tns:IServiceTrafego_UpdateStatusProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusKit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusKit" message="tns:IServiceTrafego_UpdateStatusKit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusKitResponse" message="tns:IServiceTrafego_UpdateStatusKit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNotaEntrada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNotaEntrada" message="tns:IServiceTrafego_UpdateStatusNotaEntrada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNotaEntradaResponse" message="tns:IServiceTrafego_UpdateStatusNotaEntrada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNotaEntradaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNotaEntradaItens" message="tns:IServiceTrafego_UpdateStatusNotaEntradaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNotaEntradaItensResponse" message="tns:IServiceTrafego_UpdateStatusNotaEntradaItens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNotaSaida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNotaSaida" message="tns:IServiceTrafego_UpdateStatusNotaSaida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNotaSaidaResponse" message="tns:IServiceTrafego_UpdateStatusNotaSaida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNotaSaidaItens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNotaSaidaItens" message="tns:IServiceTrafego_UpdateStatusNotaSaidaItens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTrafego/UpdateStatusNotaSaidaItensResponse" message="tns:IServiceTrafego_UpdateStatusNotaSaidaItens_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceTrafego" type="tns:IServiceTrafego">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateStatusPedidoSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusPedidoSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusPrePedidoSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusPrePedidoSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusPrePedidoSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusPrePedidoSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusPedidoSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusPedidoSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusEmbalagem">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusEmbalagem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusEndereco">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusEndereco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusGerente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusGerente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusMarca">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNcm">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusNcm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusRamoatividade">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusRamoatividade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusRca">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusRca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusSupervisor">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusInventario">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusInventario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCliente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListEmbalagem">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListEmbalagem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListEndereco">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListEndereco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListGerente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListGerente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMarca">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListNcm">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListNcm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRamoatividade">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListRamoatividade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRca">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListRca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSupervisor">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSecao">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListSecao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFilial">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListFilial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListFornecedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProduto">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListKit">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListKit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListNotaEntrada">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListNotaEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListNotaEntradaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListNotaEntradaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListNotaSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListNotaSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListNotaSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListNotaSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListPedidoSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListPedidoSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListPedidoSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListPedidoSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListPrePedidoSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListPrePedidoSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListPrePedidoSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListPrePedidoSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInventario">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/ListInventario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateCliente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateEmbalagem">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateEmbalagem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateEndereco">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateEndereco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateGerente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateGerente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMarca">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNcm">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateNcm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateRamoatividade">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateRamoatividade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateRca">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateRca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateSupervisor">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateSecao">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateSecao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateFilial">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateFilial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateFornecedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateProduto">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateKit">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateKit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotaEntrada">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateNotaEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotaEntradaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateNotaEntradaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotaSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateNotaSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotaSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateNotaSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePedidoSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdatePedidoSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePedidoSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdatePedidoSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePrePedidoSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdatePrePedidoSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePrePedidoSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdatePrePedidoSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateInventario">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/InsertUpdateInventario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCliente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmbalagem">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteEmbalagem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEndereco">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteEndereco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGerente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteGerente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMarca">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNcm">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteNcm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRamoatividade">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteRamoatividade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRca">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteRca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupervisor">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSecao">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteSecao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFilial">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteFilial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteFornecedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKit">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteKit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduto">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaEntrada">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteNotaEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaEntradaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteNotaEntradaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteNotaSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteNotaSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePedidoSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeletePedidoSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePedidoSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeletePedidoSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePrePedidoSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeletePrePedidoSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePrePedidoSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeletePrePedidoSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInventario">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/DeleteInventario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusCliente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusSecao">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusSecao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusFilial">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusFilial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusFornecedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusProduto">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusKit">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusKit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNotaEntrada">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusNotaEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNotaEntradaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusNotaEntradaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNotaSaida">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusNotaSaida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusNotaSaidaItens">
+      <soap:operation soapAction="http://tempuri.org/IServiceTrafego/UpdateStatusNotaSaidaItens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceTrafego">
+    <wsdl:port name="BasicHttpBinding_IServiceTrafego" binding="tns:BasicHttpBinding_IServiceTrafego">
+      <soap:address location="http://localhost:1824/ServiceTrafego.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,2 @@
+﻿create sequence seq_correspondencia;
+create sequence seq_estmarcaproduto;

@@ -1,0 +1,12 @@
+﻿CREATE TABLE ESTPCPPARAMETROS
+    (DESCRICAO                     VARCHAR2(100) NOT NULL,
+    VALOR                          VARCHAR2(100),
+    DTCADASTRO                     DATE DEFAULT SYSDATE NOT NULL,
+    DTALTERACAO                    DATE DEFAULT SYSDATE NOT NULL,
+    DTEXCLUSAO                     DATE,
+    CODUSUARIOINC                  NUMBER(6,0),
+    CODUSUARIOALT                  NUMBER(6,0),
+    CODUSUARIOEXC                  NUMBER(6,0),
+    OBSERVACAO                     VARCHAR2(500),
+    CONSTRAINT PK_ESTPCPPARAMETROS PRIMARY KEY (DESCRICAO))
+	

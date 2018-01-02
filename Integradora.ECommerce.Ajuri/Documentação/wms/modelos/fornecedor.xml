@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<vx:AlimentaEntidadeMestra
+  xmlns:vx='http://www.viaexpress.com.br/external/ViaExpress_external_integra.xsd'
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+  <vx:ticket>
+    <vx:pid>AJURI</vx:pid>
+    <vx:nome>AJURI</vx:nome>
+    <vx:empresa>RV</vx:empresa>
+    <vx:fornecedor>AJURI</vx:fornecedor>
+    <vx:host>10.20.1.234</vx:host>
+    <vx:data-origem>2016-05-04T14:30:02</vx:data-origem>
+    <vx:versao>1.0.0</vx:versao>
+    <vx:observacoes></vx:observacoes>
+    <vx:id>123</vx:id>
+    <vx:filial>
+      <vx:codigo>vx:codigo</vx:codigo>
+      <vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+      <vx:razao-social>vx:razao-social</vx:razao-social>
+    </vx:filial>
+  </vx:ticket>
+  <vx:entidades>
+    <vx:entidade>
+      <vx:tipo>JURIDICA</vx:tipo>
+      <vx:documento-federal>20.000.000/0515-55</vx:documento-federal>
+      <vx:documento-estadual>20.000.000/0515-55</vx:documento-estadual>
+      <vx:documento-municipal>20.000.000/0515-55
+      </vx:documento-municipal>
+      <vx:razao>IPIRANGA PRODUTOS DE PETROLEO S/A</vx:razao>
+      <vx:fantasia>IPP</vx:fantasia>
+      <vx:endereco>
+        <vx:tipo>COMERCIAL</vx:tipo>
+        <vx:cep>00.000-000</vx:cep>
+        <vx:logradouro-tipo></vx:logradouro-tipo>
+        <vx:logradouro>N/A</vx:logradouro>
+        <vx:numero>0</vx:numero>
+        <vx:bairro>N/A</vx:bairro>
+        <vx:cidade>N/A</vx:cidade>
+        <vx:uf>NA</vx:uf>
+      </vx:endereco>
+      <vx:is-cliente>NAO</vx:is-cliente>
+      <vx:is-fornecedor>SIM</vx:is-fornecedor>
+      <vx:is-fabricante>NAO</vx:is-fabricante>
+      <vx:is-destinatario>NAO</vx:is-destinatario>
+      <vx:observacoes></vx:observacoes>
+      <vx:livres>
+        <vx:livre>
+          <vx:indice>6</vx:indice>
+          <vx:nome>ID_AJURI</vx:nome>
+          <vx:valor>51555</vx:valor>
+        </vx:livre>
+      </vx:livres>
+    </vx:entidade>
+  </vx:entidades>
+</vx:AlimentaEntidadeMestra>

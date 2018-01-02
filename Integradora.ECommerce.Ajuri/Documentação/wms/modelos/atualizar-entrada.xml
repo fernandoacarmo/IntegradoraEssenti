@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vx:RetornaIO xmlns:vx="http://www.viaexpress.com.br/external/ViaExpress_external_integra.xsd">
+<vx:ticket version="v1">
+  <vx:pid>vxw-integra_v1build1948</vx:pid>
+  <vx:nome>vxw-integra</vx:nome>
+  <vx:empresa>RV CONSULT TRANSPORTES</vx:empresa>
+  <vx:fornecedor>nucci.com.br</vx:fornecedor>
+  <vx:host>192.168.14.7</vx:host>
+  <vx:data-origem>2014-11-04T16:00:13-04:00</vx:data-origem>
+  <vx:versao>v1build1948</vx:versao>
+  <vx:id>br.com.nucci2014-11-04T16:00:13-04:00</vx:id>
+  <vx:filial>
+    <vx:codigo>RV</vx:codigo>
+    <vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+    <vx:razao-social>RV CONSULT TRANSPORTES E LOGÃƒÂSTICA LTDA
+    </vx:razao-social>
+  </vx:filial>
+</vx:ticket>
+<vx:target>
+  <vx:pid>AjuriWS</vx:pid>
+  <vx:nome>Ajuri</vx:nome>
+  <vx:empresa>CEMA</vx:empresa>
+  <vx:fornecedor>Prodam</vx:fornecedor>
+  <vx:host>unknow</vx:host>
+  <vx:data-origem>2014-11-04T16:00:13-04:00</vx:data-origem>
+</vx:target>
+<vx:conferencias>
+  <vx:conferencia tipo="ENTRADA">
+    <vx:data>2014-11-04T16:00:13-04:00</vx:data>
+    <vx:cabecalho-chave>
+      <vx:cliente>
+        <vx:documento-federal>00.697.295/0001-05</vx:documento-federal>
+        <vx:razao-social>CEMA - CENTRAL DE MEDICAMENTOS DO AMAZONAS</vx:razao-social>
+      </vx:cliente>
+      <vx:divisao-chave>NF</vx:divisao-chave>
+      <vx:numero>0000126010</vx:numero>
+      <vx:data>2014-10-29</vx:data>
+      <vx:hora>11:06:14</vx:hora>
+      <vx:serie>.</vx:serie>
+      <vx:cfop>
+        <vx:codigo>1000</vx:codigo>
+        <vx:descricao></vx:descricao>
+      </vx:cfop>
+    </vx:cabecalho-chave>
+    <vx:entidade>
+      <vx:documento-federal>20.000.000/0113-30</vx:documento-federal>
+      <vx:razao-social></vx:razao-social>
+    </vx:entidade>
+    <vx:itens>
+      <vx:item>
+        <vx:resultado>LIBERADO</vx:resultado>
+        <vx:produto>
+          <vx:partnumber>3091</vx:partnumber>
+          <vx:descricao>Pirazinamida 500mg.</vx:descricao>
+        </vx:produto>
+        <vx:quantidade>500</vx:quantidade>
+        <vx:quantidade-processada>500</vx:quantidade-processada>
+        <vx:valor-unitario>0.1212</vx:valor-unitario>
+        <vx:lote>131668</vx:lote>
+        <vx:serial>108</vx:serial>
+        <vx:modelo>8</vx:modelo>
+        <vx:data-fabricacao>2013-09-30</vx:data-fabricacao>
+        <vx:data-vencimento>2015-09-30</vx:data-vencimento>
+      </vx:item>
+      <vx:item>
+        <vx:resultado>LIBERADO</vx:resultado>
+        <vx:produto>
+          <vx:partnumber>3091</vx:partnumber>
+          <vx:descricao>Pirazinamida 500mg.</vx:descricao>
+        </vx:produto>
+        <vx:quantidade>500</vx:quantidade>
+        <vx:quantidade-processada>500</vx:quantidade-processada>
+        <vx:valor-unitario>0.1212</vx:valor-unitario>
+        <vx:lote>131668</vx:lote>
+        <vx:serial>108</vx:serial>
+        <vx:modelo>8</vx:modelo>
+        <vx:data-fabricacao>2013-09-30</vx:data-fabricacao>
+        <vx:data-vencimento>2015-09-30</vx:data-vencimento>
+      </vx:item>
+    </vx:itens>
+    <vx:livres>
+      <vx:livre>
+        <vx:indice>6</vx:indice>
+        <vx:nome>TRANSACAO_ID_AJURI</vx:nome>
+        <vx:valor>126010</vx:valor>
+      </vx:livre>
+      <vx:livre>
+        <vx:indice>7</vx:indice>
+        <vx:nome>TRANSACAO_ID_CLIENTE</vx:nome>
+        <vx:valor>26</vx:valor>
+      </vx:livre>
+      <vx:livre>
+        <vx:indice>3</vx:indice>
+        <vx:nome>livre03</vx:nome>
+        <vx:valor>143894</vx:valor>
+      </vx:livre>
+    </vx:livres>
+  </vx:conferencia>
+</vx:conferencias>
+</vx:RetornaIO>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Integradora.WebServiceVTiger.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Integradora.WebServiceVTiger.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Pedido">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseTabelas">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:Cliente" />
+          <xs:element minOccurs="0" name="Codvendedor" type="xs:long" />
+          <xs:element minOccurs="0" name="Dtemissao" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Dtentrega" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Itens" nillable="true" type="tns:ArrayOfItemPedido" />
+          <xs:element minOccurs="0" name="Numpedido" type="xs:long" />
+          <xs:element minOccurs="0" name="Observacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Parcelas" nillable="true" type="tns:ArrayOfParcelaPedido" />
+          <xs:element minOccurs="0" name="Valordesconto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Valorfrete" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Valortotal" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Pedido" nillable="true" type="tns:Pedido" />
+  <xs:complexType name="BaseTabelas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dtalteracao" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Dtinclusao" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Obsintegracao" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseTabelas" nillable="true" type="tns:BaseTabelas" />
+  <xs:complexType name="Cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseTabelas">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CEP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CNPJCPF" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codcliente" type="xs:long" />
+          <xs:element minOccurs="0" name="Complemento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Inscricaoestadual" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nomefantasia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Razaosocial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="ArrayOfItemPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPedido" nillable="true" type="tns:ItemPedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemPedido" nillable="true" type="tns:ArrayOfItemPedido" />
+  <xs:complexType name="ItemPedido">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseTabelas">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codproduto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Numitem" type="xs:int" />
+          <xs:element minOccurs="0" name="Percentualdesconto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Precotabela" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Precovenda" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Quantidade" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ItemPedido" nillable="true" type="tns:ItemPedido" />
+  <xs:complexType name="ArrayOfParcelaPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParcelaPedido" nillable="true" type="tns:ParcelaPedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParcelaPedido" nillable="true" type="tns:ArrayOfParcelaPedido" />
+  <xs:complexType name="ParcelaPedido">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseTabelas">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodAutorizacao" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Dtvencimento" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NSU" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numparcela" type="xs:int" />
+          <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ParcelaPedido" nillable="true" type="tns:ParcelaPedido" />
+</xs:schema>

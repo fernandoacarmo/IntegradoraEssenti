@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpdateStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pData" type="tns:IntegracaoPedidoStatusInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IntegracaoPedidoStatusInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PedidoId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProdutoVarianteId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SituacaoPedidoId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rastreamento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataEvento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroNotaFiscal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChaveAcessoNFE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UrlNFE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SerieNFE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UrlRastreamento" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRastreamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pPedidoId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRastreamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteRastreamentoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pPedidoId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectStatusResult" type="tns:ArrayOfPedidoStatusInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPedidoStatusInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PedidoStatusInfo" nillable="true" type="tns:PedidoStatusInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PedidoStatusInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PedidoId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="tns:ArrayOfPedidoStatusPedidoInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPedidoStatusPedidoInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PedidoStatusPedidoInfo" nillable="true" type="tns:PedidoStatusPedidoInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PedidoStatusPedidoInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PedidoSituacaoPedidoId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PedidoId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="GatewayId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SituacaoPedidoId" type="tns:TipoEmail" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusEnvio" type="tns:StatusEnvio" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroAutorizacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroComprovanteVenda" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataAtualizacao" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoEmail">
+        <s:restriction base="s:string">
+          <s:enumeration value="PedidoPago" />
+          <s:enumeration value="AguardandoLiberacao" />
+          <s:enumeration value="CartaoTemporariamenteNegado" />
+          <s:enumeration value="CartaoNegado" />
+          <s:enumeration value="AvisoFraude" />
+          <s:enumeration value="SuspeitaFraude" />
+          <s:enumeration value="ExpiracaoBoleto" />
+          <s:enumeration value="PedidoCancelado" />
+          <s:enumeration value="PedidoEnviado" />
+          <s:enumeration value="PedidoAutorizado" />
+          <s:enumeration value="PedidoPreparadoEnvio" />
+          <s:enumeration value="PedidoDevolvido" />
+          <s:enumeration value="PedidoDocumento" />
+          <s:enumeration value="Encomendado" />
+          <s:enumeration value="Recebido" />
+          <s:enumeration value="Separado" />
+          <s:enumeration value="LembreteSenha" />
+          <s:enumeration value="AvisoExpiracaoBoleto" />
+          <s:enumeration value="AviseMe" />
+          <s:enumeration value="ConfirmacaoCadastro" />
+          <s:enumeration value="ConfirmacaoPedido" />
+          <s:enumeration value="IndicacaoAmigo" />
+          <s:enumeration value="LembreteBoleto" />
+          <s:enumeration value="AgradecimentoNews" />
+          <s:enumeration value="LembretePersonalizado" />
+          <s:enumeration value="DoubleOptIn" />
+          <s:enumeration value="AguardandoAlteracaoPagamento" />
+          <s:enumeration value="ConfirmacaoAssinatura" />
+          <s:enumeration value="CancelamentoAssinatura" />
+          <s:enumeration value="ConfirmacaoCadastroAutomatico" />
+          <s:enumeration value="EmailGenerico" />
+          <s:enumeration value="ListaCompraIndiqueAmigo" />
+          <s:enumeration value="ClienteRevendedorHabilitado" />
+          <s:enumeration value="PedidoDevolvidoCredito" />
+          <s:enumeration value="PedidoEntregue" />
+          <s:enumeration value="Aniversariante" />
+          <s:enumeration value="RetirarNaLoja" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="StatusEnvio">
+        <s:restriction base="s:string">
+          <s:enumeration value="NaoEnviado" />
+          <s:enumeration value="Enviado" />
+          <s:enumeration value="Desatualizado" />
+          <s:enumeration value="Cancelado" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SelectStatusAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectStatusAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectStatusAllResult" type="tns:ArrayOfPedidoStatusInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Complete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pPedidoId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRastreamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRastreamento" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRastreamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRastreamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectStatus" />
+  </wsdl:message>
+  <wsdl:message name="SelectStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectStatusAllSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectStatusAll" />
+  </wsdl:message>
+  <wsdl:message name="SelectStatusAllSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectStatusAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Complete" />
+  </wsdl:message>
+  <wsdl:message name="CompleteSoapOut">
+    <wsdl:part name="parameters" element="tns:CompleteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SyncPedidoStatusSoap">
+    <wsdl:operation name="UpdateStatus">
+      <wsdl:input message="tns:UpdateStatusSoapIn" />
+      <wsdl:output message="tns:UpdateStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRastreamento">
+      <wsdl:input message="tns:DeleteRastreamentoSoapIn" />
+      <wsdl:output message="tns:DeleteRastreamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectStatus">
+      <wsdl:input message="tns:SelectStatusSoapIn" />
+      <wsdl:output message="tns:SelectStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectStatusAll">
+      <wsdl:input message="tns:SelectStatusAllSoapIn" />
+      <wsdl:output message="tns:SelectStatusAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Complete">
+      <wsdl:input message="tns:CompleteSoapIn" />
+      <wsdl:output message="tns:CompleteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SyncPedidoStatusSoap" type="tns:SyncPedidoStatusSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRastreamento">
+      <soap:operation soapAction="http://tempuri.org/DeleteRastreamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectStatus">
+      <soap:operation soapAction="http://tempuri.org/SelectStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectStatusAll">
+      <soap:operation soapAction="http://tempuri.org/SelectStatusAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Complete">
+      <soap:operation soapAction="http://tempuri.org/Complete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SyncPedidoStatusSoap12" type="tns:SyncPedidoStatusSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRastreamento">
+      <soap12:operation soapAction="http://tempuri.org/DeleteRastreamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectStatus">
+      <soap12:operation soapAction="http://tempuri.org/SelectStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectStatusAll">
+      <soap12:operation soapAction="http://tempuri.org/SelectStatusAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Complete">
+      <soap12:operation soapAction="http://tempuri.org/Complete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SyncPedidoStatus">
+    <wsdl:port name="SyncPedidoStatusSoap" binding="tns:SyncPedidoStatusSoap">
+      <soap:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncPedidoStatus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SyncPedidoStatusSoap12" binding="tns:SyncPedidoStatusSoap12">
+      <soap12:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncPedidoStatus.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

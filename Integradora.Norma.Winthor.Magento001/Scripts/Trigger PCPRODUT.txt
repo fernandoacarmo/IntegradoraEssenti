@@ -1,0 +1,47 @@
+﻿CREATE OR REPLACE TRIGGER esg_ecommerce_produto
+ AFTER
+   INSERT OR DELETE OR UPDATE OF obs2, codprod, dtexclusao, dirfotoprod, alturam3, codauxiliar, magento_id, codfab, codmarca, codcategoria, pesoliq, descricao, obs, nomeecommerce, comprimentom3, codepto, codlinhaprod, codsec, nbm, larguram3
+ ON pcprodut
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+    vnacao   estreplicacao_ECOMMERCE.acao%TYPE;
+    vsid     estreplicacao_ECOMMERCE.id%TYPE;
+BEGIN
+    vnacao := 0;                                                   --Inserindo
+
+    --Se for prenchimento destes campos não faz nada
+        IF    (:new.codepto IS NULL)
+           OR (:new.codsec IS NULL)
+           OR (:new.nomeecommerce IS NULL)
+    THEN
+        vnacao := -1;
+    END IF;
+
+    IF vnacao > -1
+    THEN
+        BEGIN
+            IF DELETING OR (:new.dtexclusao IS NOT NULL)
+            THEN
+                vnacao := 2;                                       --Excluindo
+                vsid := :old.ROWID;
+            ELSE
+                vsid := :new.ROWID;
+
+                IF UPDATING
+                THEN
+                    vnacao := 1;                                  -- Alterando
+                END IF;
+            END IF;
+
+            INSERT INTO estreplicacao_ECOMMERCE (tabela, acao, id)
+              VALUES   ('VWMAGENTOPRODUTOS', vnacao, vsid);
+
+        EXCEPTION
+            WHEN DUP_VAL_ON_INDEX
+            THEN
+                NULL;
+        END;
+    END IF;
+END;
+/

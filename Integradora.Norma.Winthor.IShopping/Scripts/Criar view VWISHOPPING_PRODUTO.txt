@@ -1,0 +1,48 @@
+﻿CREATE OR REPLACE VIEW VWISHOPPING_PRODUTO
+AS
+SELECT PCEMBALAGEM.ROWID RID
+     , PCEMBALAGEM.CODFILIAL
+     , PCEMBALAGEM.CODAUXILIAR
+     , PCEMBALAGEM.CODISHOPPING ID --Identificação do produto no e-commerce
+     , PCEMBALAGEM.DESCRICAOWEB name --Nome do produto.
+     , PCEMBALAGEM.CODPROD cod_ref --Código de referência do produto.
+     , NVL(PCEMBALAGEM.situacaoweb,'S') allow_buy --Permitir a compra deste produto.
+     , PCMARCA.MARCA model --Modelo/Marca do produto.
+     , CASE WHEN TRUNC(SYSDATE) BETWEEN PCEMBALAGEM.dtofertawebini AND PCEMBALAGEM.dtofertawebfim
+            THEN DECODE(NVL(PCEMBALAGEM.POFERTAWEB,0), 0, NVL(PCEMBALAGEM.PVENDAWEB,0), PCEMBALAGEM.POFERTAWEB)
+            ELSE NVL(PCEMBALAGEM.PVENDAWEB,0)
+       END price --Preço de venda do produto.
+     , NVL(PCEMBALAGEM.PESOLIQ,0) weight --Peso do produto.
+     , NVL(PCEMBALAGEM.COMPRIMENTO,0) comprimento --Comprimento
+     , NVL(PCEMBALAGEM.LARGURA, 0) largura --largura
+     , NVL(PCEMBALAGEM.ALTURA, 0) altura --altura
+     , PCEMBALAGEM.descricaoweb description_small --Breve descrição do produto.
+     , PCEMBALAGEM.infoprodweb description_full --Completa descrição do produto.
+     , 'S' check_stock --Tipo de monitoramento do estoque.
+     , (NVL(PCEST.QTESTGER,0) - NVL(PCEST.QTBLOQUEADA,0) - NVL(PCEST.QTRESERV,0)) / NVL(PCEMBALAGEM.QTUNIT,1) quantity --Quantidade em estoque do produto
+     , 0 quantity_max_buy --Quantidade máxima de compra deste produto.
+     , 0 quantity_min_buy --Quantidade mínima de compra deste produto.
+     , 1 quantity_critical --Quantidade critica em que o estoque deve chegar para realizar a notificação.
+     , PCPRODUT.CODFAB manufacturer_id --Código de cadastro do fabricante deste produto.
+     , NULL availability --Texto de disponibilidade deste produto.
+     , 'S' isFreeShipping --Frete-Grátis (sim/não = true/false).
+     , 'N' highlight --Destaque (sim/não = true/false).
+     , CASE WHEN TRUNC(SYSDATE) BETWEEN PCEMBALAGEM.dtofertawebini AND PCEMBALAGEM.dtofertawebfim
+            THEN 'S'
+            ELSE 'N'
+       END hotDeal --Super Oferta (sim/não = true/false).
+     , 'N' newRelease --Lançamento (sim/não = true/false).
+     , 'N' exclusivo --Exclusivo (sim/não = true/false).
+  FROM PCEMBALAGEM
+     , PCPRODUT
+     , PCMARCA
+     , PCEST
+ WHERE PCEMBALAGEM.CODPROD = PCPRODUT.CODPROD
+   AND PCPRODUT.CODMARCA = PCMARCA.CODMARCA(+)
+   AND NVL(PCEMBALAGEM.excluido, 'N') = 'N' 
+   AND NVL(PCEMBALAGEM.pvendaweb,0) > 0 
+   AND PCEMBALAGEM.dtinativo IS NULL
+   AND PCEMBALAGEM.DESCRICAOWEB IS NOT NULL
+   AND PCEMBALAGEM.CODPROD = PCEST.CODPROD
+   AND PCEMBALAGEM.CODFILIAL = PCEST.CODFILIAL
+   

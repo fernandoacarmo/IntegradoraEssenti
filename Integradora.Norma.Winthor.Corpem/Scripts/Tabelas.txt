@@ -1,0 +1,413 @@
+﻿CREATE TABLE ESTFORNECEDOR
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , NOME              VARCHAR2(100)                       NOT NULL
+            , TIPOPESSOA        VARCHAR2(1)     DEFAULT 'J'         NOT NULL
+            , CNPJ_CPF          VARCHAR2(14)                        NULL
+            , IE                VARCHAR2(20)    DEFAULT 'ISENTO'    NOT NULL
+            , ENDERECO          VARCHAR2(100)                       NULL
+            , CODIBGE           NUMBER(10)                          NULL
+            , CIDADE            VARCHAR2(50)                        NULL
+            , ESTADO            VARCHAR2(2)                         NULL
+            , BAIRRO            VARCHAR2(50)                        NULL
+            , NUMERO            VARCHAR2(15)                        NULL
+            , CEP               VARCHAR2(10)                        NULL
+            , TELEFONE          VARCHAR2(15)                        NULL
+            , CELULAR           VARCHAR2(15)                        NULL
+            , FAX               VARCHAR2(15)                        NULL
+            , EMAIL             VARCHAR2(100)                       NULL
+            , TIPOFORNECEDOR    VARCHAR2(1)     DEFAULT 'R'         NOT NULL
+            , DTALTERACAO        DATE                               NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTFORNECEDOR                    PRIMARY KEY (CODIGO)
+            );
+             
+CREATE TABLE ESTCLIENTE
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , NOME              VARCHAR2(100)                       NOT NULL
+            , TIPOPESSOA        VARCHAR2(1)     DEFAULT 'J'         NOT NULL
+            , CNPJ_CPF          VARCHAR2(14)                        NULL
+            , IE                VARCHAR2(20)    DEFAULT 'ISENTO'    NOT NULL
+            , ENDERECO          VARCHAR2(100)                       NULL
+            , CODIBGE           NUMBER(10)                          NULL
+            , CIDADE            VARCHAR2(50)                        NULL
+            , ESTADO            VARCHAR2(2)                         NULL
+            , BAIRRO            VARCHAR2(50)                        NULL
+            , NUMERO            VARCHAR2(15)                        NULL
+            , CEP               VARCHAR2(10)                        NULL
+            , TELEFONE          VARCHAR2(15)                        NULL
+            , CELULAR           VARCHAR2(15)                        NULL
+            , FAX               VARCHAR2(15)                        NULL
+            , EMAIL             VARCHAR2(100)                       NULL
+            , CODRAMOATIVIDADE  NUMBER(6)                           NULL  
+            , DTALTERACAO        DATE                               NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTCLIENTE                       PRIMARY KEY (CODIGO)
+            );
+             
+CREATE TABLE ESTENDERECO
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODCLIENTE        NUMBER(6)                           NOT NULL
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , ENDERECO          VARCHAR2(100)                       NULL
+            , CODIBGE           NUMBER(10)                          NULL
+            , CIDADE            VARCHAR2(50)                        NULL
+            , ESTADO            VARCHAR2(2)                         NULL
+            , BAIRRO            VARCHAR2(50)                        NULL
+            , NUMERO            VARCHAR2(15)                        NULL
+            , CEP               VARCHAR2(10)                        NULL
+            , TELEFONE          VARCHAR2(15)                        NULL
+            , CELULAR           VARCHAR2(15)                        NULL
+            , FAX               VARCHAR2(15)                        NULL
+            , EMAIL             VARCHAR2(100)                       NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTENDERECO                      PRIMARY KEY (CODCLIENTE, CODIGO)
+            );
+
+CREATE TABLE ESTPRODUTO
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , EMBALAGEM         VARCHAR2(12)                        NULL
+            , UNIDADE           VARCHAR2(2)                         NULL
+            , NCM               VARCHAR2(15)                        NULL
+			, CODFABRICA		VARCHAR2(30)                        NULL 
+            , CODBARRA          NUMBER(20)                          NULL
+            , CODSECAO          NUMBER(6)                           NOT NULL
+            , CODMARCA          NUMBER(6)                           NULL  
+            , CODNCM            VARCHAR2(15)                        NULL
+            , QTUNITARIA        NUMBER(22,6)    DEFAULT 1           NOT NULL
+            , QTEMBALAGEM       NUMBER(22,6)    DEFAULT 1           NOT NULL
+            , PESOBRUTO         NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , PESOLIQUIDO       NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , COMPRIMENTO       NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , LARGURA           NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , ALTURA            NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , VOLUME            NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , DESCRICAO         VARCHAR2(100)                       NOT NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTPRODUTO                       PRIMARY KEY (CODIGO)
+            );
+
+CREATE TABLE ESTKIT
+             ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+             , CODIGO           NUMBER(6)                           NOT NULL
+             , CODINSUMO        NUMBER(6)                           NOT NULL
+             , QTDE             NUMBER(12,6)    DEFAULT 1           NOT NULL
+             , DTALTERACAO      DATE                                NULL
+             , DTINCLUSAO       DATE            DEFAULT SYSDATE     NOT NULL
+             , OBSINTEGRACAO    VARCHAR2(4000)                      NULL
+             , CONSTRAINT       PK_ESTKIT       PRIMARY KEY (CODIGO, CODINSUMO)
+             );
+     
+CREATE TABLE ESTEMBALAGEM
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODBARRA          NUMBER(20)                          NOT NULL
+            , CODFILIAL         VARCHAR2(2)                         NOT NULL
+            , CODPRODUTO        NUMBER(6)                           NOT NULL
+            , DESCRICAO         VARCHAR2(100)                       NOT NULL
+            , EMBALAGEM         VARCHAR2(12)                        NULL
+            , UNIDADE           VARCHAR2(2)                         NULL
+            , QTUNITARIA        NUMBER(22,6)    DEFAULT 1           NOT NULL
+            , PESOBRUTO         NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , PESOLIQUIDO       NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , COMPRIMENTO       NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , LARGURA           NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , ALTURA            NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , VOLUME            NUMBER(22,6)    DEFAULT 0           NOT NULL            
+            , DTALTERACAO       DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTEMBALAGEM                     PRIMARY KEY (CODBARRA, CODFILIAL)
+            );
+
+CREATE TABLE ESTDEPARTAMENTO
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , DESCRICAO         VARCHAR2(100)                       NOT NULL
+            , DTALTERACAO       DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTDEPARTAMENTO                  PRIMARY KEY (CODIGO)
+            );
+             
+CREATE TABLE ESTSECAO
+            ( SEMAFORO          NUMBER(2)		DEFAULT 0           NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , CODDEPARTAMENTO   NUMBER(6)                           NOT NULL
+            , DESCRICAO         VARCHAR2(100)                       NOT NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTSECAO                         PRIMARY KEY (CODIGO)
+            );
+             
+CREATE TABLE ESTMARCA
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , DESCRICAO         VARCHAR2(100)                       NOT NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTMARCA                         PRIMARY KEY (CODIGO)
+            );
+
+CREATE TABLE ESTNCM
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            VARCHAR2(15)                        NOT NULL
+            , DESCRICAO         VARCHAR2(100)                       NOT NULL
+            , NCM               NUMBER(10)                          NOT NULL
+            , CAPITULO          NUMBER(2)                           NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTNCM                           PRIMARY KEY (CODIGO)
+            );
+
+CREATE TABLE ESTRAMOATIVIDADE
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , DESCRICAO         VARCHAR2(100)                       NOT NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTRAMOATIVIDADE                 PRIMARY KEY (CODIGO)
+            );
+
+CREATE TABLE ESTRCA
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , NOME              VARCHAR2(100)                       NOT NULL
+            , CODSUPERVISOR     NUMBER(6)                           NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTRCA                           PRIMARY KEY (CODIGO)
+            );
+
+CREATE TABLE ESTSUPERVISOR
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , NOME              VARCHAR2(100)                       NOT NULL
+            , CODGERENTE        NUMBER(6)                           NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTSUPERVISOR                    PRIMARY KEY (CODIGO)
+            );
+
+CREATE TABLE ESTGERENTE
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(6)                           NOT NULL
+            , NOME              VARCHAR2(100)                       NOT NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTGERENTE                       PRIMARY KEY (CODIGO)
+            );
+
+CREATE TABLE ESTFILIAL
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            VARCHAR2(2)                         NOT NULL
+            , NOME              VARCHAR2(100)                       NOT NULL
+            , TIPOPESSOA        VARCHAR2(1)     DEFAULT 'J'         NOT NULL
+            , CNPJ_CPF          VARCHAR2(14)                        NULL
+            , IE                VARCHAR2(20)    DEFAULT 'ISENTO'    NOT NULL
+            , ENDERECO          VARCHAR2(100)                       NULL
+            , CODIBGE           NUMBER(10)                          NULL
+            , CIDADE            VARCHAR2(50)                        NULL
+            , ESTADO            VARCHAR2(2)                         NULL
+            , BAIRRO            VARCHAR2(50)                        NULL
+            , NUMERO            VARCHAR2(15)                        NULL
+            , CEP               VARCHAR2(10)                        NULL
+            , TELEFONE          VARCHAR2(15)                        NULL
+            , CELULAR           VARCHAR2(15)                        NULL
+            , FAX               VARCHAR2(15)                        NULL
+            , EMAIL             VARCHAR2(100)                       NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTFILIAL                        PRIMARY KEY (CODIGO)
+            );
+
+CREATE TABLE ESTNOTASAIDA
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , NUMTRANSACAO      NUMBER(10)                          NOT NULL
+            , CODFILIAL         VARCHAR2(2)                         NOT NULL
+            , CNPJ_FILIAL       VARCHAR2(14)                        NULL
+            , CODCLIENTE        NUMBER(6)                           NOT NULL --Código do cliente
+            , CNPJ_CPF          VARCHAR2(14)                        NULL
+            , CNPJ_EMITENTE     VARCHAR2(14)                        NULL
+            , CODTRANSPORTADORA NUMBER(6)                           NULL --Código da transportadora
+            , TIPOFRETE         VARCHAR2(1)     DEFAULT 'C'         NOT NULL
+			, TIPONOTA          VARCHAR2(2)     DEFAULT 'VN'        NOT NULL
+			, SERIE             VARCHAR2(3)                         NULL
+            , DTEMISSAO         DATE                                NULL
+            , NUMNOTA           NUMBER(10)                          NULL
+            , NUMPEDIDO         NUMBER(10)                          NULL
+            , VLTOTAL           NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , CHAVENFE          VARCHAR2(50)                        NULL
+            , QTITENS           NUMBER(6)                           NULL 
+            , DTFATURAMENTO     DATE                                NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTNOTASAIDA                     PRIMARY KEY (NUMTRANSACAO)
+            );
+            
+CREATE TABLE ESTNOTASAIDAITENS
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , NUMTRANSACAO      NUMBER(10)                          NOT NULL
+            , CODPRODUTO        NUMBER(6)                           NOT NULL
+            , NUMSEQ            NUMBER(6)       DEFAULT 1           NOT NULL
+            , VLUNITARIO        NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QUANTIDADE        NUMBER(22,6)    DEFAULT 0           NOT NULL
+			, VLTOTAL           NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTATENDIDO        NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTCORTE           NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTNOTASAIDAITENS                PRIMARY KEY (NUMTRANSACAO, CODPRODUTO, NUMSEQ)
+            );
+             
+CREATE TABLE ESTNOTAENTRADA
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , NUMTRANSACAO      NUMBER(10)                          NOT NULL
+            , CODFILIAL         VARCHAR2(2)                         NOT NULL
+            , CNPJ_FILIAL       VARCHAR2(14)                        NULL
+            , CNPJ_EMITENTE     VARCHAR2(14)                        NULL
+            , CODFORNECEDOR     NUMBER(6)                           NOT NULL
+            , CNPJ_CPF          VARCHAR2(14)                        NULL
+            , CODTRANSPORTADORA NUMBER(6)                           NULL --Código da transportadora
+            , TIPOFRETE         VARCHAR2(1)     DEFAULT 'C'         NOT NULL
+			, TIPONOTA          VARCHAR2(2)     DEFAULT 'CO'        NOT NULL
+			, SERIE             VARCHAR2(3)                         NULL
+            , DTEMISSAO         DATE                                NULL
+			, NUMCONFERENCIA    NUMBER(10)
+            , NUMNOTA           NUMBER(10)                          NULL
+            , NUMPEDIDO         NUMBER(10)                          NULL
+            , VLTOTAL           NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , CHAVENFE          VARCHAR2(50)                        NULL
+            , QTITENS           NUMBER(6)                           NULL 
+            , DTFATURAMENTO     DATE                                NULL
+            , DTALTERACAO        DATE                               NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTNOTAENTRADA                   PRIMARY KEY (NUMTRANSACAO)
+            );
+            
+CREATE TABLE ESTNOTAENTRADAITENS
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , NUMTRANSACAO      NUMBER(10)                          NOT NULL
+            , CODPRODUTO        NUMBER(6)                           NOT NULL
+            , NUMSEQ            NUMBER(6)       DEFAULT 1           NOT NULL
+            , VLUNITARIO        NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QUANTIDADE        NUMBER(22,6)    DEFAULT 0           NOT NULL
+			, VLTOTAL           NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTARMAZENADA      NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTAVARIA          NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , DTALTERACAO        DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTNOTAENTRADAITENS              PRIMARY KEY (NUMTRANSACAO, CODPRODUTO, NUMSEQ)
+            );
+
+CREATE TABLE ESTPEDIDOSAIDA
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , NUMPEDIDO         NUMBER(10)                          NOT NULL
+            , CODFILIAL         VARCHAR2(2)                         NOT NULL
+            , CNPJ_FILIAL       VARCHAR2(14)                        NULL
+            , CODCLIENTE        NUMBER(6)                           NOT NULL
+            , CNPJ_CPF          VARCHAR2(14)                        NULL
+            , CNPJ_EMITENTE     VARCHAR2(14)                        NULL
+            , CODENDERECO       NUMBER(6)                           NULL
+            , CODRCA            NUMBER(6)                           NULL
+            , CODSUPERVISOR     NUMBER(6)                           NULL
+            , CODGERENTE        NUMBER(6)                           NULL
+            , CODPROFISSIONAL   NUMBER(6)                           NULL
+            , CODTRANSPORTADORA NUMBER(6)                           NULL --Código da transportadora
+            , TIPOFRETE         VARCHAR2(1)     DEFAULT 'C'         NOT NULL
+            , NUMNOTA           NUMBER(10)                          NULL
+            , VLTOTAL           NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTITENS           NUMBER(6)                           NULL 
+            , DTALTERACAO       DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTPEDIDOSAIDA                   PRIMARY KEY (NUMPEDIDO)
+            );
+            
+CREATE TABLE ESTPEDIDOSAIDAITENS
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , NUMPEDIDO         NUMBER(10)                          NOT NULL
+            , CODPRODUTO        NUMBER(6)                           NOT NULL
+            , NUMSEQ            NUMBER(6)       DEFAULT 1           NOT NULL
+            , QUANTIDADE        NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTATENDIDO        NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTCORTE           NUMBER(22,6)    DEFAULT 0           NOT NULL
+			, VLUNITARIO        NUMBER(22,6)    DEFAULT 0           NOT NULL
+			, VLTOTAL           NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , DTALTERACAO       DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTPEDIDOSAIDAITENS              PRIMARY KEY (NUMPEDIDO, CODPRODUTO, NUMSEQ)
+            );
+
+CREATE TABLE ESTPREPEDIDOSAIDA
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , NUMPEDIDO         NUMBER(10)                          NOT NULL
+            , CODFILIAL         VARCHAR2(2)                         NOT NULL
+            , CNPJ_FILIAL       VARCHAR2(14)                        NULL
+            , CODCLIENTE        NUMBER(6)                           NOT NULL
+            , CNPJ_CPF          VARCHAR2(14)                        NULL
+            , CNPJ_EMITENTE     VARCHAR2(14)                        NULL
+            , CODENDERECO       NUMBER(6)                           NULL
+            , CODRCA            NUMBER(6)                           NULL
+            , CODSUPERVISOR     NUMBER(6)                           NULL
+            , CODGERENTE        NUMBER(6)                           NULL
+            , CODPROFISSIONAL   NUMBER(6)                           NULL
+            , CODTRANSPORTADORA NUMBER(6)                           NULL --Código da transportadora
+            , TIPOFRETE         VARCHAR2(1)     DEFAULT 'C'         NOT NULL
+            , NUMNOTA           NUMBER(10)                          NULL
+            , VLTOTAL           NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTITENS           NUMBER(6)                           NULL 
+            , DTALTERACAO       DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTPREPEDIDOSAIDA                PRIMARY KEY (NUMPEDIDO)
+            );
+            
+CREATE TABLE ESTPREPEDIDOSAIDAITENS
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , NUMPEDIDO         NUMBER(10)                          NOT NULL
+            , CODPRODUTO        NUMBER(6)                           NOT NULL
+            , NUMSEQ            NUMBER(6)       DEFAULT 1           NOT NULL
+            , QUANTIDADE        NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTATENDIDO        NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , QTCORTE           NUMBER(22,6)    DEFAULT 0           NOT NULL
+			, VLUNITARIO        NUMBER(22,6)    DEFAULT 0           NOT NULL
+			, VLTOTAL           NUMBER(22,6)    DEFAULT 0           NOT NULL
+            , DTALTERACAO       DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTPREPEDIDOSAIDAITENS              PRIMARY KEY (NUMPEDIDO, CODPRODUTO, NUMSEQ)
+            );
+
+CREATE TABLE ESTINVENTARIO
+            ( SEMAFORO          VARCHAR2(2)		                    NOT NULL 
+            , CODIGO            NUMBER(10)                          NOT NULL --Código unico para uma lista de inventários
+			, CODFILIAL         VARCHAR2(2)                         NOT NULL
+            , CODPRODUTO        NUMBER(6)                           NOT NULL
+			, QUANTIDADE        NUMBER(22,6)    DEFAULT 0           NOT NULL
+			--Campos padrão que existe em todas as outras tabelas
+            , DTALTERACAO        DATE                               NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTINVENTARIO                    PRIMARY KEY (CODIGO, CODFILIAL, CODPRODUTO)
+            );

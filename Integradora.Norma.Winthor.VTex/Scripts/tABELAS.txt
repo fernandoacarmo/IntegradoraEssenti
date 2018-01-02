@@ -1,0 +1,41 @@
+﻿CREATE TABLE ESTPEDIDOECOMMERCE
+       ( NUMPEDWEB      VARCHAR2(30)                    NOT NULL
+	   , NUMPEDRCA      NUMBER(10)                      NULL
+       , QTVEZES        NUMBER(2)       DEFAULT 0       NOT NULL
+       , DTINCLUSAO     DATE            DEFAULT SYSDATE NOT NULL
+	   , DTULTIMA       DATE            DEFAULT SYSDATE NOT NULL
+	   , IMPORTADO      VARCHAR2(1)     DEFAULT 'N'     NOT NULL
+       , OBSERVACAO     VARCHAR2(3000)                  NULL
+       , CONSTRAINT PK_ESTPEDIDOECOMMERCE PRIMARY KEY (NUMPEDWEB))
+
+CREATE TABLE ESTCLIENTE_ECOMMERCE
+            ( NUMPEDRCA         NUMBER(10)		                    NOT NULL 
+            , CODCLI            NUMBER(6)                           NULL
+            , NOME              VARCHAR2(100)                       NULL
+            , TIPOPESSOA        VARCHAR2(1)     DEFAULT 'J'         NOT NULL
+            , CNPJ_CPF          VARCHAR2(14)                        NULL
+            , IE                VARCHAR2(20)    DEFAULT 'ISENTO'    NOT NULL
+            , ENDERECO          VARCHAR2(100)                       NULL
+            , CODIBGE           NUMBER(10)                          NULL
+            , CIDADE            VARCHAR2(50)                        NULL
+            , ESTADO            VARCHAR2(2)                         NULL
+            , BAIRRO            VARCHAR2(50)                        NULL
+            , NUMERO            VARCHAR2(15)                        NULL
+            , CEP               VARCHAR2(10)                        NULL
+            , TELEFONE          VARCHAR2(15)                        NULL
+            , CELULAR           VARCHAR2(15)                        NULL
+            , FAX               VARCHAR2(15)                        NULL
+            , EMAIL             VARCHAR2(100)                       NULL
+            , CODRAMOATIVIDADE  NUMBER(6)                           NULL 
+			, DTLIBERACAOPJ     DATE                                NULL
+            , CODUSUARIOLIBPJ   NUMBER(8)                           NULL
+			, DTLIBERACAOMP     DATE                                NULL
+            , CODUSUARIOLIBMP   NUMBER(8)                           NULL
+			, VLPEDIDO          NUMBER(22,6) DEFAULT 0              NOT NULL
+			, VLPARCELAS        NUMBER(22,6) DEFAULT 0              NOT NULL
+            , DTALTERACAO       DATE                                NULL
+            , DTINCLUSAO        DATE            DEFAULT SYSDATE     NOT NULL
+            , OBSINTEGRACAO     VARCHAR2(4000)                      NULL
+            , CONSTRAINT        PK_ESTCLIENTE_ECOMMERCE                       
+			  PRIMARY KEY (CODCLI, NUMPEDRCA)
+            );

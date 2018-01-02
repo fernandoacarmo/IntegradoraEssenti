@@ -1,0 +1,27 @@
+﻿CREATE OR REPLACE 
+PROCEDURE esp_enviar_embalagem_ecommece
+IS
+BEGIN
+--Envia todos os produtos cuja a promoção acabou no dia anterior
+   INSERT INTO ESTREPLICACAO_ECOMMERCE
+               (TABELA
+              , ID
+              , DTINCLUSAO)
+      SELECT 'VWEMBALAGENS'
+           , PCEMBALAGEM.ROWID
+           , SYSDATE
+        FROM PCEMBALAGEM
+       WHERE TRUNC(SYSDATE) - 1 = TRUNC(PCEMBALAGEM.DTOFERTAWEBFIM)
+         AND PCEMBALAGEM.CODFILIAL IN ('3');
+
+
+END;
+/
+
+=================================================
+--Job para rodar meia-noite + 1 minuto
+DECLARE
+  jobno NUMBER;
+BEGIN
+  DBMS_JOB.submit(jobno,'ESP_ENVIAR_EMBALAGEM_ECOMMECE;',TRUNC(SYSDATE) +1 + (1/1440));
+end;

@@ -1,0 +1,24 @@
+﻿CREATE OR REPLACE TRIGGER ESG_ECOMMERCE_NOTAFISCAL
+ AFTER
+   INSERT OR UPDATE OF CHAVENFE
+ ON PCNFSAID
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+BEGIN
+  IF  (:NEW.NUMPEDCLI IS NOT NULL)
+  AND (:NEW.CHAVENFE  IS NOT NULL)
+  AND (:NEW.CODFILIAL = '3') THEN
+  --Caso a acao seja maior que -1 grava o registro para ser replicado
+    BEGIN
+      INSERT INTO ESTREPLICACAO_ECOMMERCE (TABELA, ACAO, ID)
+           VALUES ( 'PCNFSAID' --Tabela que sera processada
+                  , 0   --Acao a ser realizada
+                  , :NEW.ROWID  --Registro a ser importado
+                  );
+    EXCEPTION
+    WHEN DUP_VAL_ON_INDEX THEN
+         NULL;
+    END;
+  END IF;
+ END;
+/

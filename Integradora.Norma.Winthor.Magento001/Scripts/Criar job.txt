@@ -1,0 +1,20 @@
+﻿DECLARE --Rodar job a meia noite + 1 minuto
+   NUMERO_JOB   NUMBER;
+BEGIN
+   DBMS_JOB.SUBMIT(JOB => NUMERO_JOB, 
+                   WHAT => 'begin esp_enviar_produto_ecommece; end;', 
+                   NEXT_DATE => SYSDATE, 
+                   INTERVAL => 'TRUNC(SYSDATE) +1 + (1/1440)');
+   COMMIT;
+END;
+
+
+DECLARE --Rodar job de hora em hora
+   NUMERO_JOB   NUMBER;
+BEGIN
+   DBMS_JOB.SUBMIT(JOB => NUMERO_JOB, 
+                   WHAT => 'begin ESK_FINANCEIRO.analisar_pedido_cartao(NULL); end;', 
+                   NEXT_DATE => SYSDATE, 
+                   INTERVAL => 'SYSDATE+1/24');
+   COMMIT;
+END;

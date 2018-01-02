@@ -1,0 +1,9 @@
+﻿CREATE TABLE ESTREPLICACAO_CORPEM
+           ( TABELA                         VARCHAR2(50)                        NOT NULL
+           , ACAO                           NUMBER(2,0)     DEFAULT 0           NOT NULL
+           , ID                             VARCHAR2(50)                        NOT NULL
+           , DTINCLUSAO                     DATE            DEFAULT SYSDATE     NOT NULL
+           , DTREPLICACAO                   DATE
+           , DTREPLICACAOWMS                DATE
+           , CONSTRAINT PK_ESTREPLICACAO_CORPEM 
+                PRIMARY KEY (TABELA, ACAO, ID, DTINCLUSAO))

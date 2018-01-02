@@ -1,0 +1,1 @@
+﻿alter table pcmarca add IDFABRICANTE_SHOPPUB NUMBER(10);

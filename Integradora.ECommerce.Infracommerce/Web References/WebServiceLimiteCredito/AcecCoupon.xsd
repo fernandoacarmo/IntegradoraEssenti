@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:aceco="http://www.accurate.com/acec/coupon" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.accurate.com/acec/coupon" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="coupon">
+    <sequence>
+      <element name="couponId" type="string">
+        <annotation>
+          <documentation>Coupon Hash Number</documentation>
+        </annotation>
+      </element>
+      <element name="value" type="decimal">
+        <annotation>
+          <documentation>Coupon amount</documentation>
+        </annotation>
+      </element>
+      <element name="dueDate" type="date">
+        <annotation>
+          <documentation>Due Date</documentation>
+        </annotation>
+      </element>
+      <element name="status" type="string">
+        <annotation>
+          <documentation>Coupon Status: (A) Active (C) Cancelled or (R) Reactivated</documentation>
+        </annotation>
+      </element>
+      <element name="customerDocumentNr" type="decimal">
+        <annotation>
+          <documentation>Customer Document Number</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="voucherType" type="string" />
+      <element minOccurs="0" name="issuer" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="coupons">
+    <sequence>
+      <element maxOccurs="unbounded" ref="aceco:coupon" />
+    </sequence>
+  </complexType>
+  <element name="coupon" type="aceco:coupon" />
+  <element name="coupons" type="aceco:coupons" />
+</schema>

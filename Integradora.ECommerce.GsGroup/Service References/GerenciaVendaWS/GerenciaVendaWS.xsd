@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.integrador.gs.com.br/" targetNamespace="http://ws.integrador.gs.com.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="NoSuchAlgorithmException" type="tns:NoSuchAlgorithmException" />
+  <xs:element name="setCancelaVenda" type="tns:setCancelaVenda" />
+  <xs:element name="setCancelaVendaResponse" type="tns:setCancelaVendaResponse" />
+  <xs:element name="setIdentificaCliente" type="tns:setIdentificaCliente" />
+  <xs:element name="setIdentificaClienteResponse" type="tns:setIdentificaClienteResponse" />
+  <xs:element name="setImportaProduto" type="tns:setImportaProduto" />
+  <xs:element name="setImportaProdutoResponse" type="tns:setImportaProdutoResponse" />
+  <xs:element name="setNotificaVenda" type="tns:setNotificaVenda" />
+  <xs:element name="setNotificaVendaResponse" type="tns:setNotificaVendaResponse" />
+  <xs:complexType name="setCancelaVenda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Venda" type="tns:wsVenda" />
+      <xs:element minOccurs="0" name="Hash" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="wsVenda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigosat" type="xs:string" />
+      <xs:element minOccurs="0" name="cpf" type="xs:string" />
+      <xs:element minOccurs="0" name="datahora" type="xs:dateTime" />
+      <xs:element name="loja" type="xs:int" />
+      <xs:element name="numerocupom" type="xs:int" />
+      <xs:element minOccurs="0" name="pdv" type="xs:string" />
+      <xs:element name="valor" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCancelaVendaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:wsRetorno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="wsRetorno">
+    <xs:sequence>
+      <xs:element name="codigopreco" type="xs:int" />
+      <xs:element name="codigoretorno" type="xs:int" />
+      <xs:element minOccurs="0" name="informacaocliente" type="xs:string" />
+      <xs:element minOccurs="0" name="msgretorno" type="xs:string" />
+      <xs:element name="saldocliente" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setImportaProduto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lProduto" type="tns:wsProduto" />
+      <xs:element minOccurs="0" name="Hash" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="wsProduto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="categoria" type="xs:string" />
+      <xs:element minOccurs="0" name="codigobarraproduto" type="xs:string" />
+      <xs:element minOccurs="0" name="descricaoproduto" type="xs:string" />
+      <xs:element name="loja" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setImportaProdutoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:wsRetornoProduto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="wsRetornoProduto">
+    <xs:sequence>
+      <xs:element name="erros" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="infoerros" nillable="true" type="tns:erroProduto" />
+      <xs:element name="inseridos" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="erroProduto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigobarraproduto" type="xs:string" />
+      <xs:element name="codigoerro" type="xs:int" />
+      <xs:element minOccurs="0" name="msgerro" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setIdentificaCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CPF" type="xs:string" />
+      <xs:element minOccurs="0" name="Hash" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setIdentificaClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:wsRetorno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NoSuchAlgorithmException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setNotificaVenda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Venda" type="tns:wsVenda" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lVenda" type="tns:wsItemVenda" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lPagamento" type="tns:wsPagamento" />
+      <xs:element minOccurs="0" name="Hash" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="wsItemVenda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigobarraproduto" type="xs:string" />
+      <xs:element minOccurs="0" name="descricaoproduto" type="xs:string" />
+      <xs:element name="quantidade" type="xs:double" />
+      <xs:element name="valorunitario" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="wsPagamento">
+    <xs:sequence>
+      <xs:element name="codigoformapagamento" type="xs:int" />
+      <xs:element name="valor" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setNotificaVendaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:wsRetorno" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

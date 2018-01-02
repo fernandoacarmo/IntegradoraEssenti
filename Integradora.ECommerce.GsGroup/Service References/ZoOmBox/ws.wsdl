@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ValidaLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramCodigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramCPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramSenha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaLoginResult" type="tns:Autenticacao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Autenticacao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Sucesso" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DadosUsuario" type="tns:DadosUsuario" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormasPagamento" type="tns:ArrayOfFormasPagamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DadosUsuario">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Sucesso" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoLoja" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeLoja" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeUsuario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoLoja" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFormasPagamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FormasPagamento" nillable="true" type="tns:FormasPagamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FormasPagamento">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtemDadosUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramCodigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtemDadosUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtemDadosUsuarioResult" type="tns:DadosUsuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarSenha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramCodigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramCPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarSenhaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarSenhaResult" type="tns:RecuperacaoSenha" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RecuperacaoSenha">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Sucesso" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AlterarSenha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramCodigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramCPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramSenhaAtual" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramNovaSenha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarSenhaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlterarSenhaResult" type="tns:AlteracaoSenha" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AlteracaoSenha">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Sucesso" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramCPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramCodigoUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarClienteResult" type="tns:DadosCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DadosCliente">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Sucesso" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Saldo" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Pontuar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramCodigoUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramCPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramValorGasto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramFormaPagamento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PontuarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PontuarResult" type="tns:Pontuacao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Pontuacao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Sucesso" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoLoja" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Vips" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarFormasPagamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarFormasPagamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarFormasPagamentoResult" type="tns:ArrayOfFormasPagamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperaCupomParaImpressao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoPlataforma" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperaCupomParaImpressaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperaCupomParaImpressaoResult" type="tns:Impressao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Impressao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Sucesso" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Texto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataHora" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperaCuponsImpressos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoPlataforma" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperaCuponsImpressosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperaCuponsImpressosResult" type="tns:ArrayOfImpressao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfImpressao">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Impressao" nillable="true" type="tns:Impressao" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GerarErroImpressora">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="paramImpressora" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramMensagemErro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramCodigoErro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GerarErroImpressoraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GerarErroImpressoraResult" type="tns:ErroImpressora" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ErroImpressora">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Sucesso" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="setNotificaVenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numeroCupom" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataHora" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="loja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pdv" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="categoriaProduto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="hash" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setNotificaVendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setNotificaVendaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReprocessarVendas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReprocessarVendasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReprocessarVendasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Autenticacao" nillable="true" type="tns:Autenticacao" />
+      <s:element name="DadosUsuario" nillable="true" type="tns:DadosUsuario" />
+      <s:element name="RecuperacaoSenha" nillable="true" type="tns:RecuperacaoSenha" />
+      <s:element name="AlteracaoSenha" nillable="true" type="tns:AlteracaoSenha" />
+      <s:element name="DadosCliente" nillable="true" type="tns:DadosCliente" />
+      <s:element name="Pontuacao" nillable="true" type="tns:Pontuacao" />
+      <s:element name="ArrayOfFormasPagamento" nillable="true" type="tns:ArrayOfFormasPagamento" />
+      <s:element name="Impressao" nillable="true" type="tns:Impressao" />
+      <s:element name="ArrayOfImpressao" nillable="true" type="tns:ArrayOfImpressao" />
+      <s:element name="ErroImpressora" nillable="true" type="tns:ErroImpressora" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidaLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaLogin" />
+  </wsdl:message>
+  <wsdl:message name="ValidaLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtemDadosUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtemDadosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ObtemDadosUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtemDadosUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSenhaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarSenha" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSenhaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterarSenha" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterarSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarCliente" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="PontuarSoapIn">
+    <wsdl:part name="parameters" element="tns:Pontuar" />
+  </wsdl:message>
+  <wsdl:message name="PontuarSoapOut">
+    <wsdl:part name="parameters" element="tns:PontuarResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarFormasPagamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarFormasPagamento" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarFormasPagamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarFormasPagamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCupomParaImpressaoSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperaCupomParaImpressao" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCupomParaImpressaoSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperaCupomParaImpressaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCuponsImpressosSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperaCuponsImpressos" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCuponsImpressosSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperaCuponsImpressosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GerarErroImpressoraSoapIn">
+    <wsdl:part name="parameters" element="tns:GerarErroImpressora" />
+  </wsdl:message>
+  <wsdl:message name="GerarErroImpressoraSoapOut">
+    <wsdl:part name="parameters" element="tns:GerarErroImpressoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="setNotificaVendaSoapIn">
+    <wsdl:part name="parameters" element="tns:setNotificaVenda" />
+  </wsdl:message>
+  <wsdl:message name="setNotificaVendaSoapOut">
+    <wsdl:part name="parameters" element="tns:setNotificaVendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReprocessarVendasSoapIn">
+    <wsdl:part name="parameters" element="tns:ReprocessarVendas" />
+  </wsdl:message>
+  <wsdl:message name="ReprocessarVendasSoapOut">
+    <wsdl:part name="parameters" element="tns:ReprocessarVendasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaLoginHttpGetIn">
+    <wsdl:part name="paramCodigo" type="s:string" />
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramSenha" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidaLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:Autenticacao" />
+  </wsdl:message>
+  <wsdl:message name="ObtemDadosUsuarioHttpGetIn">
+    <wsdl:part name="paramCodigo" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtemDadosUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:DadosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSenhaHttpGetIn">
+    <wsdl:part name="paramCodigo" type="s:string" />
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSenhaHttpGetOut">
+    <wsdl:part name="Body" element="tns:RecuperacaoSenha" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaHttpGetIn">
+    <wsdl:part name="paramCodigo" type="s:string" />
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramSenhaAtual" type="s:string" />
+    <wsdl:part name="paramNovaSenha" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaHttpGetOut">
+    <wsdl:part name="Body" element="tns:AlteracaoSenha" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClienteHttpGetIn">
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramCodigoUsuario" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClienteHttpGetOut">
+    <wsdl:part name="Body" element="tns:DadosCliente" />
+  </wsdl:message>
+  <wsdl:message name="PontuarHttpGetIn">
+    <wsdl:part name="paramCodigoUsuario" type="s:string" />
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramValorGasto" type="s:string" />
+    <wsdl:part name="paramFormaPagamento" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PontuarHttpGetOut">
+    <wsdl:part name="Body" element="tns:Pontuacao" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarFormasPagamentoHttpGetIn">
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarFormasPagamentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfFormasPagamento" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCupomParaImpressaoHttpGetIn">
+    <wsdl:part name="codigoPlataforma" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCupomParaImpressaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:Impressao" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCuponsImpressosHttpGetIn">
+    <wsdl:part name="codigoPlataforma" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCuponsImpressosHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfImpressao" />
+  </wsdl:message>
+  <wsdl:message name="GerarErroImpressoraHttpGetIn">
+    <wsdl:part name="paramImpressora" type="s:string" />
+    <wsdl:part name="paramMensagemErro" type="s:string" />
+    <wsdl:part name="paramCodigoErro" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GerarErroImpressoraHttpGetOut">
+    <wsdl:part name="Body" element="tns:ErroImpressora" />
+  </wsdl:message>
+  <wsdl:message name="setNotificaVendaHttpGetIn">
+    <wsdl:part name="documento" type="s:string" />
+    <wsdl:part name="numeroCupom" type="s:string" />
+    <wsdl:part name="dataHora" type="s:string" />
+    <wsdl:part name="loja" type="s:string" />
+    <wsdl:part name="pdv" type="s:string" />
+    <wsdl:part name="categoriaProduto" type="s:string" />
+    <wsdl:part name="valor" type="s:string" />
+    <wsdl:part name="hash" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setNotificaVendaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ReprocessarVendasHttpGetIn" />
+  <wsdl:message name="ReprocessarVendasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidaLoginHttpPostIn">
+    <wsdl:part name="paramCodigo" type="s:string" />
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramSenha" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidaLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:Autenticacao" />
+  </wsdl:message>
+  <wsdl:message name="ObtemDadosUsuarioHttpPostIn">
+    <wsdl:part name="paramCodigo" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtemDadosUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:DadosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSenhaHttpPostIn">
+    <wsdl:part name="paramCodigo" type="s:string" />
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSenhaHttpPostOut">
+    <wsdl:part name="Body" element="tns:RecuperacaoSenha" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaHttpPostIn">
+    <wsdl:part name="paramCodigo" type="s:string" />
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramSenhaAtual" type="s:string" />
+    <wsdl:part name="paramNovaSenha" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaHttpPostOut">
+    <wsdl:part name="Body" element="tns:AlteracaoSenha" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClienteHttpPostIn">
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramCodigoUsuario" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClienteHttpPostOut">
+    <wsdl:part name="Body" element="tns:DadosCliente" />
+  </wsdl:message>
+  <wsdl:message name="PontuarHttpPostIn">
+    <wsdl:part name="paramCodigoUsuario" type="s:string" />
+    <wsdl:part name="paramCPF" type="s:string" />
+    <wsdl:part name="paramValorGasto" type="s:string" />
+    <wsdl:part name="paramFormaPagamento" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PontuarHttpPostOut">
+    <wsdl:part name="Body" element="tns:Pontuacao" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarFormasPagamentoHttpPostIn">
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarFormasPagamentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfFormasPagamento" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCupomParaImpressaoHttpPostIn">
+    <wsdl:part name="codigoPlataforma" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCupomParaImpressaoHttpPostOut">
+    <wsdl:part name="Body" element="tns:Impressao" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCuponsImpressosHttpPostIn">
+    <wsdl:part name="codigoPlataforma" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaCuponsImpressosHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfImpressao" />
+  </wsdl:message>
+  <wsdl:message name="GerarErroImpressoraHttpPostIn">
+    <wsdl:part name="paramImpressora" type="s:string" />
+    <wsdl:part name="paramMensagemErro" type="s:string" />
+    <wsdl:part name="paramCodigoErro" type="s:string" />
+    <wsdl:part name="paramChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GerarErroImpressoraHttpPostOut">
+    <wsdl:part name="Body" element="tns:ErroImpressora" />
+  </wsdl:message>
+  <wsdl:message name="setNotificaVendaHttpPostIn">
+    <wsdl:part name="documento" type="s:string" />
+    <wsdl:part name="numeroCupom" type="s:string" />
+    <wsdl:part name="dataHora" type="s:string" />
+    <wsdl:part name="loja" type="s:string" />
+    <wsdl:part name="pdv" type="s:string" />
+    <wsdl:part name="categoriaProduto" type="s:string" />
+    <wsdl:part name="valor" type="s:string" />
+    <wsdl:part name="hash" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setNotificaVendaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ReprocessarVendasHttpPostIn" />
+  <wsdl:message name="ReprocessarVendasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="WSSoap">
+    <wsdl:operation name="ValidaLogin">
+      <wsdl:input message="tns:ValidaLoginSoapIn" />
+      <wsdl:output message="tns:ValidaLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtemDadosUsuario">
+      <wsdl:input message="tns:ObtemDadosUsuarioSoapIn" />
+      <wsdl:output message="tns:ObtemDadosUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSenha">
+      <wsdl:input message="tns:RecuperarSenhaSoapIn" />
+      <wsdl:output message="tns:RecuperarSenhaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <wsdl:input message="tns:AlterarSenhaSoapIn" />
+      <wsdl:output message="tns:AlterarSenhaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCliente">
+      <wsdl:input message="tns:RecuperarClienteSoapIn" />
+      <wsdl:output message="tns:RecuperarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pontuar">
+      <wsdl:input message="tns:PontuarSoapIn" />
+      <wsdl:output message="tns:PontuarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarFormasPagamento">
+      <wsdl:input message="tns:RecuperarFormasPagamentoSoapIn" />
+      <wsdl:output message="tns:RecuperarFormasPagamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCupomParaImpressao">
+      <wsdl:input message="tns:RecuperaCupomParaImpressaoSoapIn" />
+      <wsdl:output message="tns:RecuperaCupomParaImpressaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCuponsImpressos">
+      <wsdl:input message="tns:RecuperaCuponsImpressosSoapIn" />
+      <wsdl:output message="tns:RecuperaCuponsImpressosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GerarErroImpressora">
+      <wsdl:input message="tns:GerarErroImpressoraSoapIn" />
+      <wsdl:output message="tns:GerarErroImpressoraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setNotificaVenda">
+      <wsdl:input message="tns:setNotificaVendaSoapIn" />
+      <wsdl:output message="tns:setNotificaVendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReprocessarVendas">
+      <wsdl:input message="tns:ReprocessarVendasSoapIn" />
+      <wsdl:output message="tns:ReprocessarVendasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSHttpGet">
+    <wsdl:operation name="ValidaLogin">
+      <wsdl:input message="tns:ValidaLoginHttpGetIn" />
+      <wsdl:output message="tns:ValidaLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtemDadosUsuario">
+      <wsdl:input message="tns:ObtemDadosUsuarioHttpGetIn" />
+      <wsdl:output message="tns:ObtemDadosUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSenha">
+      <wsdl:input message="tns:RecuperarSenhaHttpGetIn" />
+      <wsdl:output message="tns:RecuperarSenhaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <wsdl:input message="tns:AlterarSenhaHttpGetIn" />
+      <wsdl:output message="tns:AlterarSenhaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCliente">
+      <wsdl:input message="tns:RecuperarClienteHttpGetIn" />
+      <wsdl:output message="tns:RecuperarClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pontuar">
+      <wsdl:input message="tns:PontuarHttpGetIn" />
+      <wsdl:output message="tns:PontuarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarFormasPagamento">
+      <wsdl:input message="tns:RecuperarFormasPagamentoHttpGetIn" />
+      <wsdl:output message="tns:RecuperarFormasPagamentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCupomParaImpressao">
+      <wsdl:input message="tns:RecuperaCupomParaImpressaoHttpGetIn" />
+      <wsdl:output message="tns:RecuperaCupomParaImpressaoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCuponsImpressos">
+      <wsdl:input message="tns:RecuperaCuponsImpressosHttpGetIn" />
+      <wsdl:output message="tns:RecuperaCuponsImpressosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GerarErroImpressora">
+      <wsdl:input message="tns:GerarErroImpressoraHttpGetIn" />
+      <wsdl:output message="tns:GerarErroImpressoraHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setNotificaVenda">
+      <wsdl:input message="tns:setNotificaVendaHttpGetIn" />
+      <wsdl:output message="tns:setNotificaVendaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReprocessarVendas">
+      <wsdl:input message="tns:ReprocessarVendasHttpGetIn" />
+      <wsdl:output message="tns:ReprocessarVendasHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSHttpPost">
+    <wsdl:operation name="ValidaLogin">
+      <wsdl:input message="tns:ValidaLoginHttpPostIn" />
+      <wsdl:output message="tns:ValidaLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtemDadosUsuario">
+      <wsdl:input message="tns:ObtemDadosUsuarioHttpPostIn" />
+      <wsdl:output message="tns:ObtemDadosUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSenha">
+      <wsdl:input message="tns:RecuperarSenhaHttpPostIn" />
+      <wsdl:output message="tns:RecuperarSenhaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <wsdl:input message="tns:AlterarSenhaHttpPostIn" />
+      <wsdl:output message="tns:AlterarSenhaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCliente">
+      <wsdl:input message="tns:RecuperarClienteHttpPostIn" />
+      <wsdl:output message="tns:RecuperarClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pontuar">
+      <wsdl:input message="tns:PontuarHttpPostIn" />
+      <wsdl:output message="tns:PontuarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarFormasPagamento">
+      <wsdl:input message="tns:RecuperarFormasPagamentoHttpPostIn" />
+      <wsdl:output message="tns:RecuperarFormasPagamentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCupomParaImpressao">
+      <wsdl:input message="tns:RecuperaCupomParaImpressaoHttpPostIn" />
+      <wsdl:output message="tns:RecuperaCupomParaImpressaoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCuponsImpressos">
+      <wsdl:input message="tns:RecuperaCuponsImpressosHttpPostIn" />
+      <wsdl:output message="tns:RecuperaCuponsImpressosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GerarErroImpressora">
+      <wsdl:input message="tns:GerarErroImpressoraHttpPostIn" />
+      <wsdl:output message="tns:GerarErroImpressoraHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setNotificaVenda">
+      <wsdl:input message="tns:setNotificaVendaHttpPostIn" />
+      <wsdl:output message="tns:setNotificaVendaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReprocessarVendas">
+      <wsdl:input message="tns:ReprocessarVendasHttpPostIn" />
+      <wsdl:output message="tns:ReprocessarVendasHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSSoap" type="tns:WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidaLogin">
+      <soap:operation soapAction="http://tempuri.org/ValidaLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtemDadosUsuario">
+      <soap:operation soapAction="http://tempuri.org/ObtemDadosUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSenha">
+      <soap:operation soapAction="http://tempuri.org/RecuperarSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <soap:operation soapAction="http://tempuri.org/AlterarSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCliente">
+      <soap:operation soapAction="http://tempuri.org/RecuperarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pontuar">
+      <soap:operation soapAction="http://tempuri.org/Pontuar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarFormasPagamento">
+      <soap:operation soapAction="http://tempuri.org/RecuperarFormasPagamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCupomParaImpressao">
+      <soap:operation soapAction="http://tempuri.org/RecuperaCupomParaImpressao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCuponsImpressos">
+      <soap:operation soapAction="http://tempuri.org/RecuperaCuponsImpressos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerarErroImpressora">
+      <soap:operation soapAction="http://tempuri.org/GerarErroImpressora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setNotificaVenda">
+      <soap:operation soapAction="http://tempuri.org/setNotificaVenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprocessarVendas">
+      <soap:operation soapAction="http://tempuri.org/ReprocessarVendas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSoap12" type="tns:WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidaLogin">
+      <soap12:operation soapAction="http://tempuri.org/ValidaLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtemDadosUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ObtemDadosUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSenha">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarSenha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <soap12:operation soapAction="http://tempuri.org/AlterarSenha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCliente">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pontuar">
+      <soap12:operation soapAction="http://tempuri.org/Pontuar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarFormasPagamento">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarFormasPagamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCupomParaImpressao">
+      <soap12:operation soapAction="http://tempuri.org/RecuperaCupomParaImpressao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCuponsImpressos">
+      <soap12:operation soapAction="http://tempuri.org/RecuperaCuponsImpressos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerarErroImpressora">
+      <soap12:operation soapAction="http://tempuri.org/GerarErroImpressora" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setNotificaVenda">
+      <soap12:operation soapAction="http://tempuri.org/setNotificaVenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprocessarVendas">
+      <soap12:operation soapAction="http://tempuri.org/ReprocessarVendas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpGet" type="tns:WSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ValidaLogin">
+      <http:operation location="/ValidaLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtemDadosUsuario">
+      <http:operation location="/ObtemDadosUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSenha">
+      <http:operation location="/RecuperarSenha" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <http:operation location="/AlterarSenha" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCliente">
+      <http:operation location="/RecuperarCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pontuar">
+      <http:operation location="/Pontuar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarFormasPagamento">
+      <http:operation location="/RecuperarFormasPagamento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCupomParaImpressao">
+      <http:operation location="/RecuperaCupomParaImpressao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCuponsImpressos">
+      <http:operation location="/RecuperaCuponsImpressos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerarErroImpressora">
+      <http:operation location="/GerarErroImpressora" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setNotificaVenda">
+      <http:operation location="/setNotificaVenda" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprocessarVendas">
+      <http:operation location="/ReprocessarVendas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpPost" type="tns:WSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ValidaLogin">
+      <http:operation location="/ValidaLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtemDadosUsuario">
+      <http:operation location="/ObtemDadosUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSenha">
+      <http:operation location="/RecuperarSenha" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <http:operation location="/AlterarSenha" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCliente">
+      <http:operation location="/RecuperarCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pontuar">
+      <http:operation location="/Pontuar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarFormasPagamento">
+      <http:operation location="/RecuperarFormasPagamento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCupomParaImpressao">
+      <http:operation location="/RecuperaCupomParaImpressao" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaCuponsImpressos">
+      <http:operation location="/RecuperaCuponsImpressos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerarErroImpressora">
+      <http:operation location="/GerarErroImpressora" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setNotificaVenda">
+      <http:operation location="/setNotificaVenda" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprocessarVendas">
+      <http:operation location="/ReprocessarVendas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS">
+    <wsdl:port name="WSSoap" binding="tns:WSSoap">
+      <soap:address location="http://ws.club.gsgroup.com.br/ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSoap12" binding="tns:WSSoap12">
+      <soap12:address location="http://ws.club.gsgroup.com.br/ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSHttpGet" binding="tns:WSHttpGet">
+      <http:address location="http://ws.club.gsgroup.com.br/ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSHttpPost" binding="tns:WSHttpPost">
+      <http:address location="http://ws.club.gsgroup.com.br/ws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

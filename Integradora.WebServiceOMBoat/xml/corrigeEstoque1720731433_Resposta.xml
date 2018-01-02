@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RetornaCorrigeEstoque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" status="ERROR">
+  <ticket version="v1">
+    <pid xmlns="vx">IntegracaoOMBoat</pid>
+    <nome xmlns="vx">IntegracaoOMBoat</nome>
+    <empresa xmlns="vx">OMBoat</empresa>
+    <fornecedor xmlns="vx">OMBoat</fornecedor>
+    <host xmlns="vx">fe80::c006:3416:c57:635e%11</host>
+    <data-origem xmlns="vx">2016-12-14T12:29:11+12:29</data-origem>
+    <versao xmlns="vx">v1build1948</versao>
+    <observacoes xmlns="vx">Erro ao cadastrar transferência/acerto de estoque: System.FormatException: Cadeia de caracteres não foi reconhecida como DateTime válido.
+   em System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   em System.Convert.ToDateTime(String value)
+   em Integradora.WebServiceOMBoat.Cadastrar.ImportarEstoqueTransferenciaAcerto(Correcao DadosAjuri) na f:\Desenvolvimento3\Projetos\CSharp\Integradora\Integradora.WebServiceOMBoat\Cadastrar.cs:linha 1546</observacoes>
+    <id xmlns="vx">IntegracaoOMBoat2016-12-14T12:29:11+12:29</id>
+    <filial xmlns="vx">
+      <codigo>OMBoat</codigo>
+      <documento-federal>17.026.052/0001-30</documento-federal>
+      <razao-social>OM BOAT LOCACAO DE EMBARCACOES LTDA.</razao-social>
+    </filial>
+  </ticket>
+  <target>
+    <pid xmlns="vx">AjuriWS</pid>
+    <nome xmlns="vx">Ajuri</nome>
+    <empresa xmlns="vx">CEMA</empresa>
+    <fornecedor xmlns="vx">Prodam</fornecedor>
+    <host xmlns="vx">unknow</host>
+    <data-origem xmlns="vx">2016-12-14T12:29:11+12:29</data-origem>
+    <observacoes xmlns="vx">Erro ao cadastrar transferência/acerto de estoque: System.FormatException: Cadeia de caracteres não foi reconhecida como DateTime válido.
+   em System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   em System.Convert.ToDateTime(String value)
+   em Integradora.WebServiceOMBoat.Cadastrar.ImportarEstoqueTransferenciaAcerto(Correcao DadosAjuri) na f:\Desenvolvimento3\Projetos\CSharp\Integradora\Integradora.WebServiceOMBoat\Cadastrar.cs:linha 1546</observacoes>
+  </target>
+  <correcoes>
+    <correcao tipo="?">
+      <filial>
+        <codigo>?</codigo>
+        <documento-federal>?</documento-federal>
+        <razao-social>?</razao-social>
+      </filial>
+      <cliente>
+        <documento-federal>?</documento-federal>
+        <razao-social>?</razao-social>
+      </cliente>
+      <origem>
+        <produto>
+          <partnumber>?</partnumber>
+        </produto>
+        <quantidade-unidades>?</quantidade-unidades>
+        <lote>?</lote>
+        <serial>?</serial>
+        <modelo>?</modelo>
+        <fabricacao>?</fabricacao>
+        <vencimento>?</vencimento>
+      </origem>
+      <destino>
+        <produto>
+          <partnumber>?</partnumber>
+        </produto>
+        <quantidade-unidades>?</quantidade-unidades>
+        <lote>?</lote>
+        <serial>?</serial>
+        <modelo>?</modelo>
+        <fabricacao>?</fabricacao>
+        <vencimento>?</vencimento>
+      </destino>
+      <livres>
+        <livre>
+          <indice>?</indice>
+          <nome>?</nome>
+          <valor>?</valor>
+        </livre>
+      </livres>
+    </correcao>
+  </correcoes>
+</RetornaCorrigeEstoque>

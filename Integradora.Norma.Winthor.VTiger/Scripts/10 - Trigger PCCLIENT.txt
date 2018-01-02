@@ -1,0 +1,46 @@
+﻿CREATE OR REPLACE TRIGGER esg_vtiger_cliente
+ AFTER
+   INSERT OR DELETE OR UPDATE OF Cgcent, rg, codcli, Cliente, Email, Emailnfe, Telcelent, 
+                                 Telent, Municent, Municcob, Estent, Estcob, Enderent, 
+								 Endercob, Cepent, Cepcob,  Faxcli, dtexclusao
+ ON pcclient
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+    vnacao   estreplicacao_vtiger.acao%TYPE;
+    vsid     estreplicacao_vtiger.id%TYPE;
+BEGIN
+    vnacao := 0;                                                   --Inserindo
+    --Se for prenchimento destes campos não faz nada
+    IF (:new.codcli IS NULL) OR (:NEW.CGCENT IS NULL)
+    THEN
+        vnacao := -1;
+    END IF;
+
+    IF vnacao > -1
+    THEN
+        BEGIN
+            IF DELETING OR (:new.dtexclusao IS NOT NULL)
+            THEN
+                vnacao := 2;                                       --Excluindo
+                vsid := :old.ROWID;
+            ELSE
+                vsid := :new.ROWID;
+
+                IF UPDATING
+                THEN
+                    vnacao := 1;                                   -- Alterando
+                END IF;
+            END IF;
+
+            INSERT INTO estreplicacao_vtiger (tabela, acao, id)
+              VALUES   ('PCCLIENT', vnacao, vsid);
+
+        EXCEPTION
+            WHEN DUP_VAL_ON_INDEX
+            THEN
+                NULL;
+        END;
+    END IF;
+END;
+/

@@ -1,0 +1,22 @@
+﻿CREATE OR REPLACE PROCEDURE ESP_TITULO_NAO_ENVIADOS_USEALL
+IS
+BEGIN
+  INSERT INTO ESTREPLICACAO_ECOMMERCE ( TABELA
+                                      , ID
+                                      , ACAO
+                                      )
+  SELECT 'PCPREST'
+       , PCPREST.ROWID
+       , DECODE(PCPREST.DTESTORNO, NULL, 1, 2)
+    FROM PCPREST
+   WHERE PCPREST.ROWID NOT IN (SELECT ID 
+                                 FROM ESTREPLICACAO_ECOMMERCE 
+                                WHERE TABELA = 'PCPREST')
+     AND PCPREST.NUMTRANSVENDA NOT IN (SELECT REGISTRO 
+                                         FROM ESTREGISTROIMPORTADO@DBLUSEALL 
+                                        WHERE COLUNA = 'NUMTRANSVENDA' 
+                                          AND TABELA = 'PCPREST') 
+     AND PCPREST.DTPAG IS NOT NULL  
+     AND PCPREST.DTPAG > '01-MAY-2016'
+     AND PCPREST.CODCOB in ('NFE');
+END;     

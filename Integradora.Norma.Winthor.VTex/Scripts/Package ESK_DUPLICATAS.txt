@@ -1,0 +1,423 @@
+﻿CREATE OR REPLACE PACKAGE ESK_DUPLICATAS
+IS
+  PROCEDURE ANALISAR_VENDA_ECOMMERCE(PNNUMPEDWEB    IN   NUMBER);
+END;
+/
+CREATE OR REPLACE 
+PACKAGE BODY ESK_DUPLICATAS
+IS
+
+  FUNCTION OBTERDATAVENCIMENTO( psCODMARKETPLACE IN VARCHAR, pnDATAFATURAMENTO IN DATE) return DATE
+  IS vdDATAVENCIMENTO PCPREST.DTVENC%TYPE;
+     vsTIPOPAGTO      ESTMARKETPLACE.TIPOPAGTO%TYPE; 
+     vnDIAVENCIMENTO  ESTMARKETPLACE_PERIODO.DIAVENCTO%TYPE;
+     vnDIAATUAL       ESTMARKETPLACE_PERIODO.DIAVENCTO%TYPE;
+     vnMESATUAL       ESTMARKETPLACE_PERIODO.DIAVENCTO%TYPE;
+     vnANOATUAL       NUMBER(4);
+  BEGIN
+    BEGIN
+      SELECT ESTMARKETPLACE.TIPOPAGTO
+           , CASE WHEN ESTMARKETPLACE.TIPOPAGTO = 'P'
+                  THEN NVL((SELECT ESTMARKETPLACE_PERIODO.DIAVENCTO
+                              FROM ESTMARKETPLACE_PERIODO 
+                             WHERE ESTMARKETPLACE.MARKETPLACE_ID = ESTMARKETPLACE_PERIODO.MARKETPLACE_ID
+                               AND TO_NUMBER(TO_CHAR(pnDATAFATURAMENTO, 'DD')) BETWEEN DIAINICIO AND DIAFINAL), TO_NUMBER(TO_CHAR(pnDATAFATURAMENTO, 'DD')))
+                  ELSE ESTMARKETPLACE.DIAVENCTO
+             END DIAVENCTO
+           , TO_NUMBER(TO_CHAR(pnDATAFATURAMENTO, 'DD'))   
+           , TO_NUMBER(TO_CHAR(pnDATAFATURAMENTO, 'MM'))   
+           , TO_NUMBER(TO_CHAR(pnDATAFATURAMENTO, 'YYYY'))   
+        INTO vsTIPOPAGTO
+           , vnDIAVENCIMENTO
+           , vnDIAATUAL
+           , vnMESATUAL
+           , vnANOATUAL
+        FROM ESTMARKETPLACE
+       WHERE ESTMARKETPLACE.MARKETPLACE_ID = PSCODMARKETPLACE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      vsTIPOPAGTO := 'X'; 
+    END;
+    
+    IF vsTIPOPAGTO <> 'X' THEN
+      if vsTIPOPAGTO = 'D' THEN --Soma o número de dias na data atual
+         vdDATAVENCIMENTO := TRUNC(pnDATAFATURAMENTO) + vnDIAVENCIMENTO;
+      ELSIF vsTIPOPAGTO in ('F', 'P') THEN --Soma o número de dias na data atual
+         IF vnDIAVENCIMENTO < vnDIAATUAL THEN
+           IF vnMESATUAL = 12 THEN
+              vnMESATUAL := 1;
+           ELSE
+             vnMESATUAL := vnMESATUAL + 1;
+           END IF;
+         END IF;
+         vdDATAVENCIMENTO := TO_DATE(vnDIAVENCIMENTO || '/' || vnMESATUAL || '/' || vnANOATUAL, 'DD-MM-YYYY');
+      END IF;
+    ELSE
+      vdDATAVENCIMENTO := TRUNC(pnDATAFATURAMENTO);
+    END IF;
+   
+    RETURN vdDATAVENCIMENTO;
+  END OBTERDATAVENCIMENTO;
+
+  PROCEDURE GERAR_CREDITOCLIENTE( PNNUMPED IN NUMBER
+                                , PNVALOR IN NUMBER
+                                , PNCODCLI IN NUMBER
+                                , PSCODFILIAL IN VARCHAR
+                                , PNCODBANCO IN NUMBER
+                                , PSOBSERVACAO IN VARCHAR
+                                , PNMATRICULA IN NUMBER)
+  IS
+  BEGIN
+     INSERT INTO PCCRECLI
+               ( DTLANC
+               , HORA
+               , MINUTO
+               , CODIGO
+               , CODCLI
+               , CODFILIAL
+               , VALOR
+               , CODFUNC
+               , CODFUNCLANC
+               , ORIGEM
+               , HISTORICO
+               , NUMERARIO
+               , CODROTINA
+               , NUMPED
+               , CODMOVIMENTO
+               , NUMTRANS
+               )
+        VALUES( TRUNC(SYSDATE)
+              , TO_CHAR(SYSDATE, 'HH24')
+              , TO_CHAR(SYSDATE, 'MI')
+              , DFSEQ_PCCRECLI.NEXTVAL
+              , PNCODCLI
+              , PSCODFILIAL
+              , PNVALOR
+              , PNMATRICULA
+              , PNMATRICULA
+              , 'M'
+              , NVL(PSOBSERVACAO, 'Recebimento antecipado')
+              , 'S'
+              , 9803
+              , PNNUMPED
+              , PNCODBANCO
+              , NULL
+              );
+  END;
+
+  PROCEDURE DESDOBRAR_VARIOS_CODCOB
+         ( PNNUMTRANSACAO IN   NUMBER
+         , PNNUMPEDWEB    IN   NUMBER
+         , PNMATRICULA    IN   NUMBER
+         , PNCODROTINA    IN   NUMBER)
+  IS
+     vnPRESTTEF PCPRESTTEMP.PRESTTEF%TYPE;
+     vsNSUTEF PCPRESTTEMP.NSUTEF%TYPE;
+     vnVALORTITULOS_PCPRESTTEMP PCPRESTTEMP.VALOR%TYPE;
+     vnVALORTITULOS_PCPREST     PCPRESTTEMP.VALOR%TYPE;
+     vdDATAVENCIMENTO           PCPREST.DTVENC%TYPE;
+     vnNUMPED PCPEDC.NUMPED%TYPE;
+
+     VOLINHATITULO PCPREST%ROWTYPE;
+     VNNOVOPREST PCPREST.PREST%TYPE;
+     VNTAXAADMINISTRATIVA PCCOBCARTAOFILIAL.PERCTXADMINCC%TYPE;
+  BEGIN
+     vsNSUTEF := 'X';
+       --Copiando um dos títulos para a base dos demais
+       BEGIN
+         SELECT *
+           INTO VOLINHATITULO
+           FROM PCPREST
+          WHERE NUMTRANSVENDA = PNNUMTRANSACAO
+            AND ROWNUM = 1;
+       EXCEPTION
+         WHEN NO_DATA_FOUND THEN
+            vsNSUTEF := 'N';
+       END;
+       
+       IF vsNSUTEF = 'X' THEN
+         --Pegando valor total das parcelas
+         SELECT SUM(PCPREST.VALOR)
+           INTO vnVALORTITULOS_PCPREST
+           FROM PCPREST
+          WHERE NUMTRANSVENDA = PNNUMTRANSACAO;
+  
+         --Pegando valor total das parcelas
+         SELECT SUM(PCPRESTTEMP.VALOR)
+           INTO vnVALORTITULOS_PCPRESTTEMP
+           FROM PCPRESTTEMP
+          WHERE PCPRESTTEMP.NUMPEDWEB = PNNUMPEDWEB;
+  
+         --Quitar títulos encontrados;
+         UPDATE PCPREST
+            SET DTPAG = TRUNC(SYSDATE)
+              , VPAGO = VALOR
+              , DTBAIXA = TRUNC(SYSDATE)
+              , CODBAIXA = PNMATRICULA
+              --Fechamento
+              , DTFECHA = TRUNC(SYSDATE)
+              , CODFUNCFECHA = PNMATRICULA
+              , HORAFECHA = TO_CHAR(SYSDATE, 'HH24')
+              , MINUTOFECHA = TO_CHAR(SYSDATE, 'MI')
+              --Caixa motorista
+              , DTCXMOT = TRUNC(SYSDATE)
+              , CODFUNCCXMOT = PNMATRICULA
+              --Desdobramento
+              , DTDESD = TRUNC(SYSDATE)
+              , HORADESD = TO_CHAR(SYSDATE, 'HH24')
+              , MINUTODESD = TO_CHAR(SYSDATE, 'MI')
+              , CODCOB = 'DESD'
+              , ROTDESD = PNCODROTINA
+              , CODFUNCDESD = PNMATRICULA
+          WHERE NUMTRANSVENDA = PNNUMTRANSACAO
+            AND CODCOB <> 'DESD';
+  
+         --Listando os condições dos títulos a ser gerados
+         FOR PARCELAMENTOWEB IN (SELECT NVL(PCCOB.CODCLICC, PCPRESTTEMP.CODCLI) CODCLI
+                                      , NVL(PCPEDCTEMP.CODFILIALNF, PCPEDCTEMP.CODFILIAL) CODFILIAL
+                                      , PCPRESTTEMP.CODUSUR
+                                      , PCPRESTTEMP.CODCOB
+                                      , PCPRESTTEMP.VALOR
+                                      , PCPRESTTEMP.CODAUTTEF
+                                      , PCPEDC.NUMPED
+                                      , DECODE (TRIM(PCPRESTTEMP.NSUTEF), NULL, '1', TRIM(PCPRESTTEMP.NSUTEF)) NSUTEF
+                                      , PCCOBCARTAO.CODOPERADORACARTAO
+                                      , PCPEDCTEMP.OBS2 CODMARKETPLACE
+                                      , CASE WHEN PCPEDCTEMP.OBS2 is NULL
+                                             THEN NVL(PCPRESTTEMP.DTVENC, TRUNC(PCPRESTTEMP.DTEMISSAO + (NVL(PCPRESTTEMP.PREST,1) * 30))) 
+                                             WHEN (PCPEDCTEMP.OBS2 is NOT NULL) AND (TRUNC(PCPEDC.DTFAT) = TRUNC(PCPRESTTEMP.DTINCLUSAO))
+                                             THEN  NVL(PCPRESTTEMP.DTVENC, TRUNC(PCPRESTTEMP.DTEMISSAO + (NVL(PCPRESTTEMP.PREST,1) * 30))) 
+                                             ELSE NULL
+                                        END DTVENCIMENTO
+                                      , NVL(PCCOB.CODCOBCC, PCCOB.CODCOB) CODCOBCC
+                                      , PCCOB.PRAZOCC
+                                      , NVL(PCPRESTTEMP.DTTRANSACAOCC, TRUNC(PCPRESTTEMP.DTINCLUSAO)) DTTRANSACAOCC
+                                      , TRUNC(PCPRESTTEMP.DTINCLUSAO) DTINCLUSAO
+                                      , NVL(PCCOB.PERCTXADMINCC,0) PERCTXADMINCC
+                                      , COUNT(*) OVER (PARTITION BY PCPRESTTEMP.CODCOB||PCPRESTTEMP.NSUTEF) QTPARCELAS
+                                      , TRUNC(PCPEDC.DTFAT) DTFAT
+                                   FROM PCPRESTTEMP
+                                      , PCCOB
+                                      , PCCOB PCCOBCARTAO
+                                      , PCPEDCTEMP
+                                      , PCPEDC
+                                  WHERE PCPRESTTEMP.NUMPEDWEB = PNNUMPEDWEB
+                                    AND PCPRESTTEMP.CODCOB = PCCOB.CODCOB
+                                    AND PCPRESTTEMP.TIPOINTEGRACAO = 'W'
+                                    AND PCPEDCTEMP.TIPOINTEGRACAO = 'W'
+                                    AND PCCOB.CODCOBCC = PCCOBCARTAO.CODCOB
+                                    AND PCPRESTTEMP.NUMPEDWEB = PCPEDCTEMP.NUMPEDWEB
+                                    AND NVL(PCCOB.CARTAO,'N') = 'S'
+                                    AND PCPEDCTEMP.NUMPED = PCPEDC.NUMPED
+                                  ORDER
+                                     BY PCPRESTTEMP.CODCOB
+                                      , DECODE (TRIM(PCPRESTTEMP.NSUTEF), NULL, '1', TRIM(PCPRESTTEMP.NSUTEF))
+                                      , LPAD(PCPRESTTEMP.PREST,2,'0')
+                                      )
+         LOOP
+           vnNUMPED := PARCELAMENTOWEB.NUMPED;
+         
+           BEGIN --Obter taxa administrativa por filial
+             SELECT NVL(PERCTXADMINCC, 0) PERCTXADMINCC
+               INTO VNTAXAADMINISTRATIVA
+               FROM PCCOBCARTAOFILIAL
+              WHERE CODFILIAL                  = PARCELAMENTOWEB.CODFILIAL
+                AND CODCOB                     = PARCELAMENTOWEB.CODCOB
+                AND PARCELAMENTOWEB.QTPARCELAS BETWEEN NVL(FAIXAINIQTPARCTXADM, 1) AND NVL(FAIXAFIMQTPARCTXADM, 999999);
+           EXCEPTION
+           WHEN NO_DATA_FOUND THEN
+             VNTAXAADMINISTRATIVA := 0;
+           END;
+  
+           IF (PARCELAMENTOWEB.CODMARKETPLACE IS NOT NULL) AND (PARCELAMENTOWEB.DTVENCIMENTO IS NULL) THEN
+             vdDATAVENCIMENTO := OBTERDATAVENCIMENTO(PARCELAMENTOWEB.CODMARKETPLACE, PARCELAMENTOWEB.DTFAT);
+           ELSE
+             vdDATAVENCIMENTO := PARCELAMENTOWEB.DTVENCIMENTO;
+           END IF;
+           --Caso a taxa administrativa esteja zerado, busca o que foi informado na cobrança
+           IF (VNTAXAADMINISTRATIVA = 0) THEN
+              VNTAXAADMINISTRATIVA := PARCELAMENTOWEB.PERCTXADMINCC;
+           END IF;
+  
+           BEGIN --Obter o maior prest utilizado
+             SELECT TO_CHAR(MAX(TO_NUMBER(A.PREST))+1)
+               INTO VNNOVOPREST
+               FROM PCPREST A
+              WHERE A.NUMTRANSVENDA = PNNUMTRANSACAO;
+           EXCEPTION
+           WHEN NO_DATA_FOUND THEN
+             VNNOVOPREST := '1';
+           END;
+  
+           --Reinicia o contador
+           IF vsNSUTEF <> PARCELAMENTOWEB.NSUTEF THEN
+              vsNSUTEF   := PARCELAMENTOWEB.NSUTEF;
+              vnPRESTTEF := 0;
+           END IF;
+  
+           --Implementando a contagem
+           vnPRESTTEF := vnPRESTTEF +1;
+  
+           --Gerando o novo titulo
+           SELECT PARCELAMENTOWEB.VALOR
+                , PARCELAMENTOWEB.VALOR
+                , VNNOVOPREST
+                , vnPRESTTEF
+                , PNMATRICULA
+                , PNMATRICULA
+                , TO_CHAR(SYSDATE, 'HH24')
+                , TO_CHAR(SYSDATE, 'MI')
+                , PNCODROTINA
+                , PARCELAMENTOWEB.CODCOBCC
+                , PARCELAMENTOWEB.CODCOB
+                , PARCELAMENTOWEB.CODAUTTEF
+                , PARCELAMENTOWEB.NSUTEF
+                , PARCELAMENTOWEB.DTINCLUSAO
+                , PARCELAMENTOWEB.CODCLI
+                , vdDATAVENCIMENTO
+                , VNTAXAADMINISTRATIVA
+                , (PARCELAMENTOWEB.VALOR * VNTAXAADMINISTRATIVA) / 100
+                , PARCELAMENTOWEB.CODOPERADORACARTAO
+                , PARCELAMENTOWEB.DTTRANSACAOCC
+                --Fechamento
+                , TRUNC(SYSDATE) --DTFECHA
+                , PNMATRICULA --CODFUNCFECHA
+                , TO_CHAR(SYSDATE, 'HH24') --HORAFECHA 
+                , TO_CHAR(SYSDATE, 'MI') --MINUTOFECHA
+                , TRUNC(SYSDATE) --DTCXMOT
+                , PNMATRICULA --CODFUNCCXMOT                
+             INTO VOLINHATITULO.VALOR
+                , VOLINHATITULO.VALORORIG
+                , VOLINHATITULO.PREST
+                , VOLINHATITULO.PRESTTEF
+                , VOLINHATITULO.CODFUNCULTALTER
+                , VOLINHATITULO.CODFUNCDESD
+                , VOLINHATITULO.HORADESD
+                , VOLINHATITULO.MINUTODESD
+                , VOLINHATITULO.ROTDESD
+                , VOLINHATITULO.CODCOB
+                , VOLINHATITULO.CODCOBORIG
+                , VOLINHATITULO.CODAUTORIZACAOTEF
+                , VOLINHATITULO.NSUTEF
+                , VOLINHATITULO.DTTRANSACAOCC
+                , VOLINHATITULO.CODCLI
+                , VOLINHATITULO.DTVENC
+                , VOLINHATITULO.PERDESC
+                , VOLINHATITULO.VALORDESC
+                , VOLINHATITULO.CODADMCARTAO
+                , VOLINHATITULO.DTTRANSACAOCC
+                --Fechamento
+                , VOLINHATITULO.DTFECHA
+                , VOLINHATITULO.CODFUNCFECHA
+                , VOLINHATITULO.HORAFECHA 
+                , VOLINHATITULO.MINUTOFECHA 
+                , VOLINHATITULO.DTCXMOT
+                , VOLINHATITULO.CODFUNCCXMOT               
+             FROM DUAL;
+  
+            --Fazendo o desdobramento
+            FOR ANTIGOS IN (SELECT PCPREST.NUMTRANSVENDA
+                                 , PCPREST.PREST
+                              FROM PCPREST
+                             WHERE PCPREST.NUMTRANSVENDA = PNNUMTRANSACAO
+                               AND PCPREST.CODCOB = 'DESD'
+                             ORDER
+                                BY PCPREST.NUMTRANSVENDA
+                                 , PCPREST.PREST)
+            LOOP
+              -- Desdobrando o título
+              INSERT INTO PCDESD
+                         ( NUMTRANSVENDADEST
+                         , PRESTDEST
+                         , CODCLIDEST
+                         , NUMTRANSVENDAORIG
+                         , PRESTORIG
+                         , CODCLIORIG
+                         , DTLANC
+                         , CODFUNCCXMOT
+                         , CODROTINA
+                         )
+                  VALUES ( VOLINHATITULO.NUMTRANSVENDA
+                         , VOLINHATITULO.PREST
+                         , VOLINHATITULO.CODCLI
+                         , ANTIGOS.NUMTRANSVENDA
+                         , ANTIGOS.PREST
+                         , VOLINHATITULO.CODCLI
+                         , TRUNC(SYSDATE)
+                         , PNMATRICULA
+                         , PNCODROTINA
+                         );
+            END LOOP;
+  
+          --INSERINDO O NOVO TITULO
+          INSERT INTO PCPREST
+               VALUES VOLINHATITULO;
+  
+          END LOOP;
+  
+      IF vnVALORTITULOS_PCPRESTTEMP > vnVALORTITULOS_PCPREST  THEN
+         GERAR_CREDITOCLIENTE( PNNUMPEDWEB
+                             , vnVALORTITULOS_PCPRESTTEMP - vnVALORTITULOS_PCPREST
+                             , VOLINHATITULO.CODCLI
+                             , VOLINHATITULO.CODFILIAL
+                             , VOLINHATITULO.CODBANCO
+                             , 'DIF ENTRE NOTA E FINANCEIRO PED. No.' || TO_CHAR(vnNUMPED)
+                             , PNMATRICULA);
+      END IF;
+    END IF;  
+  END;
+
+
+  PROCEDURE ANALISAR_VENDA_ECOMMERCE(PNNUMPEDWEB    IN   NUMBER)
+  IS
+  BEGIN
+    --Localiza pedidos que deve ser ajustados
+    FOR TITULOS IN (SELECT PCPEDCTEMP.NUMPED
+                         , PCPEDCTEMP.NUMPEDRCA
+                         , PCPEDCTEMP.NUMPEDWEB
+                         , PCPEDCTEMP.CODCLI
+                         , PCPEDC.NUMTRANSVENDA
+                         , PCPEDCTEMP.CODEMITENTE
+                         , 9899 CODROTINA
+                         , COUNT(DISTINCT PCPRESTTEMP.CODCOB || PCPRESTTEMP.NSUTEF) QTCOBRANCA
+                         , MAX(NVL(PCCOB.CARTAO,'N')) VENDAPORCARTAO
+                      FROM PCPEDCTEMP
+                         , PCPEDC
+                         , PCPRESTTEMP
+                         , PCCOB
+                     WHERE PCPEDCTEMP.ESC_AJUSTARFINANCEIRO = 'S'
+                       AND PCPRESTTEMP.TIPOINTEGRACAO = 'W'
+                       AND PCPEDCTEMP.TIPOINTEGRACAO = 'W'
+                       AND PCPEDCTEMP.NUMPEDWEB = PCPRESTTEMP.NUMPEDWEB
+                       AND PCPRESTTEMP.CODCOB = PCCOB.CODCOB
+                       AND PCPEDCTEMP.NUMPED = PCPEDC.NUMPED
+                       AND PCPEDC.DTFAT IS NOT NULL
+                       AND PCPEDC.DTCANCEL IS NULL
+                       AND PCPEDCTEMP.IMPORTADO = 'S'
+                       AND ((PCPEDCTEMP.NUMPEDWEB = PNNUMPEDWEB) OR (NVL(PNNUMPEDWEB,-1) = -1))
+                     GROUP
+                        BY PCPEDCTEMP.NUMPED
+                         , PCPEDCTEMP.NUMPEDRCA
+                         , PCPEDCTEMP.NUMPEDWEB
+                         , PCPEDCTEMP.CODCLI
+                         , PCPEDC.NUMTRANSVENDA
+                         , PCPEDCTEMP.CODEMITENTE )
+    LOOP
+       --Atualizar os dados de pagamento com cartão
+       IF (TITULOS.VENDAPORCARTAO = 'S') THEN
+          DESDOBRAR_VARIOS_CODCOB( TITULOS.NUMTRANSVENDA
+                                 , TITULOS.NUMPEDWEB
+                                 , TITULOS.CODEMITENTE
+                                 , TITULOS.CODROTINA
+                                 );
+       END IF;
+
+       --Marca para não ser processado mais
+       UPDATE PCPEDCTEMP
+          SET PCPEDCTEMP.ESC_AJUSTARFINANCEIRO = 'N'
+        WHERE PCPEDCTEMP.NUMPED = TITULOS.NUMPED
+          AND PCPEDCTEMP.NUMPEDRCA = TITULOS.NUMPEDRCA
+          AND PCPEDCTEMP.CODCLI = TITULOS.CODCLI;
+    END LOOP;
+  END;
+END;

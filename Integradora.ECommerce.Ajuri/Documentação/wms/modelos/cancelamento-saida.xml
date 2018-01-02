@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?><vx:CancelarIO xmlns:vx='http://www.viaexpress.com.br/external/ViaExpress_external_integra.xsd' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+<vx:ticket>
+	<vx:pid>AJURI</vx:pid>
+	<vx:nome>AJURI</vx:nome>
+	<vx:empresa>RV</vx:empresa>
+	<vx:fornecedor>AJURI</vx:fornecedor>
+	<vx:host>200.208.181.15</vx:host>
+	<vx:data-origem>2016-05-16T14:54:21</vx:data-origem>
+	<vx:versao>1.0.0</vx:versao>
+	<vx:observacoes></vx:observacoes>
+	<vx:id>123</vx:id>
+<vx:filial>
+	<vx:codigo>vx:codigo</vx:codigo>
+	<vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+	<vx:razao-social>vx:razao-social</vx:razao-social>
+</vx:filial>
+</vx:ticket>
+<vx:gerador>
+	<vx:login>AJURI</vx:login>
+	<vx:nome>AJURI</vx:nome>
+	<vx:atribuicao>GERADOR</vx:atribuicao>
+	<vx:host>200.208.181.15</vx:host>
+	<vx:data>2016-05-16T14:54:21</vx:data>
+	<vx:operacao>EXPORTAR_DADOS</vx:operacao>
+	<vx:pid>AJURI</vx:pid>
+</vx:gerador>
+<vx:documentos>
+<vx:cancelamento tipo="SAIDA">
+<vx:filial>
+	<vx:codigo></vx:codigo>
+	<vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+	<vx:razao-social></vx:razao-social>
+</vx:filial>
+<vx:cabecalho>
+<vx:cliente>
+	<vx:documento-federal>00.697.295/0001-05</vx:documento-federal>
+	<vx:razao-social></vx:razao-social>
+</vx:cliente>
+	<vx:divisao-chave>PED</vx:divisao-chave>
+	<vx:numero>0004771376</vx:numero>
+	<vx:data>2016-05-16</vx:data>
+	<vx:hora>14:52:36</vx:hora>
+	<vx:serie>.</vx:serie>
+<vx:cfop>
+	<vx:codigo>1000</vx:codigo>
+	<vx:descricao></vx:descricao>
+</vx:cfop>
+</vx:cabecalho>
+<vx:entidade>
+	<vx:documento-federal>30.000.000/0003-78</vx:documento-federal>
+</vx:entidade>
+<vx:livres>
+<vx:livre>
+	<vx:indice>6</vx:indice>
+	<vx:nome>TRANSACAO_ID_AJURI</vx:nome>
+	<vx:valor>4771376</vx:valor>
+</vx:livre>
+<vx:livre>
+	<vx:indice>7</vx:indice>
+	<vx:nome>TRANSACAO_ID_CLIENTE</vx:nome>
+	<vx:valor>26</vx:valor>
+</vx:livre>
+</vx:livres>
+<vx:motivo>
+	<vx:codigo>CANCELAR</vx:codigo>
+</vx:motivo>
+</vx:cancelamento>
+</vx:documentos>
+</vx:CancelarIO>

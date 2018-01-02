@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{612CEAC8-0CF2-42A8-80C2-4D98501C10C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.ECommerce.FBits</RootNamespace>
+    <AssemblyName>Integradora.ECommerce.FBits</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Integracao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncContaCorrente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncCategoria\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncEstoque\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncPedidoStatus\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncPedidoVenda\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncProdutoCategoria\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncProdutoCombo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncProdutoEstoque\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncProdutoFornecedor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncProdutoImagem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncProdutoPreco\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncProduto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncUsuarioEndereco\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SyncUsuario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Webservices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce\Integradora.ECommerce.csproj">
+      <Project>{128091e7-33fd-47af-b892-98b499c0e87b}</Project>
+      <Name>Integradora.ECommerce</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncCategoria.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncCategoria\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncCategoria.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncCategoria</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncContaCorrente.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncContaCorrente\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncContaCorrente.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_br_com_ecommercestore_decisaoatacadista_integracao_SyncContaCorrente</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncEstoque.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncEstoque\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncEstoque.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncEstoque</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncPedidoStatus.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncPedidoStatus\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncPedidoStatus.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncPedidoStatus</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncPedidoVenda.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncPedidoVenda\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncPedidoVenda.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncPedidoVenda</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncProduto.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncProduto\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncProduto.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncProduto</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoCategoria.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncProdutoCategoria\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoCategoria.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncProdutoCategoria</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoCombo.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncProdutoCombo\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoCombo.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncProdutoCombo</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoEstoque.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncProdutoEstoque\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoEstoque.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncProdutoEstoque</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoFornecedor.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncProdutoFornecedor\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoFornecedor.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncProdutoFornecedor</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoImagem.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncProdutoImagem\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoImagem.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncProdutoImagem</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoPreco.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncProdutoPreco\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoPreco.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncProdutoPreco</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncUsuario.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncUsuario\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncUsuario.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncUsuario</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://integracao.decisaoentrega.com.br/modelo007/SyncUsuarioEndereco.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SyncUsuarioEndereco\</RelPath>
+      <UpdateFromURL>http://integracao.decisaoentrega.com.br/modelo007/SyncUsuarioEndereco.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Integradora_ECommerce_FBits_SyncUsuarioEndereco</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncContaCorrente\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncContaCorrente\SyncContaCorrente.wsdl" />
+    <None Include="Web References\SyncCategoria\IntegracaoCategoriaInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SyncCategoria\IntegracaoCategoriaSelectInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SyncCategoria\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncCategoria\SyncCategoria.wsdl" />
+    <None Include="Web References\SyncEstoque\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncEstoque\SyncEstoque.wsdl" />
+    <None Include="Web References\SyncPedidoStatus\PedidoStatusInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SyncPedidoStatus\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncPedidoStatus\SyncPedidoStatus.wsdl" />
+    <None Include="Web References\SyncPedidoVenda\IntegracaoPedidoVendaInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SyncPedidoVenda\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncPedidoVenda\SyncPedidoVenda.disco" />
+    <None Include="Web References\SyncPedidoVenda\SyncPedidoVenda.wsdl" />
+    <None Include="Web References\SyncProdutoCategoria\IntegracaoProdutoCategoriaInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SyncProdutoCategoria\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncProdutoCategoria\SyncProdutoCategoria.wsdl" />
+    <None Include="Web References\SyncProdutoCombo\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncProdutoCombo\SyncProdutoCombo.wsdl" />
+    <None Include="Web References\SyncProdutoEstoque\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncProdutoEstoque\SyncProdutoEstoque.wsdl" />
+    <None Include="Web References\SyncProdutoFornecedor\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncProdutoFornecedor\SyncProdutoFornecedor.wsdl" />
+    <None Include="Web References\SyncProdutoImagem\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncProdutoImagem\SyncProdutoImagem.wsdl" />
+    <None Include="Web References\SyncProdutoPreco\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncProdutoPreco\SyncProdutoPreco.wsdl" />
+    <None Include="Web References\SyncProduto\IntegracaoProdutoSkuInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SyncProduto\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncProduto\SyncProduto.wsdl" />
+    <None Include="Web References\SyncUsuarioEndereco\IntegracaoUsuarioEnderecoInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SyncUsuarioEndereco\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SyncUsuarioEndereco\SyncUsuarioEndereco.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SyncUsuario\IntegracaoUsuarioInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SyncUsuario\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SyncUsuario\SyncUsuario.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncCategoria\SyncCategoria.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncEstoque\SyncEstoque.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncPedidoStatus\SyncPedidoStatus.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncProduto\SyncProduto.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncProdutoCategoria\SyncProdutoCategoria.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncProdutoCombo\SyncProdutoCombo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncProdutoEstoque\SyncProdutoEstoque.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncProdutoFornecedor\SyncProdutoFornecedor.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncProdutoImagem\SyncProdutoImagem.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncProdutoPreco\SyncProdutoPreco.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncUsuario\SyncUsuario.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncUsuarioEndereco\SyncUsuarioEndereco.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SyncContaCorrente\SyncContaCorrente.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

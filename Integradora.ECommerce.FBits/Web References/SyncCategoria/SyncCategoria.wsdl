@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:IntegracaoCategoriaInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IntegracaoCategoriaInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoriaClientePaiId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoriaClienteId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemsResult" type="tns:ArrayOfIntegracaoCategoriaInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIntegracaoCategoriaInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IntegracaoCategoriaInfo" nillable="true" type="tns:IntegracaoCategoriaInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoriaClienteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectResult" type="tns:IntegracaoCategoriaInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoriaIdByCodigoCategoriaInterno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoriaInternoId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoriaIdByCodigoCategoriaInternoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCategoriaIdByCodigoCategoriaInternoResult" type="tns:ArrayOfIntegracaoCategoriaSelectInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIntegracaoCategoriaSelectInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IntegracaoCategoriaSelectInfo" nillable="true" type="tns:IntegracaoCategoriaSelectInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IntegracaoCategoriaSelectInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoriaId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoriaClienteId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListaCategoriaIdByCodigoCategoriaInterno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoriaInternoId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListaCategoriaIdByCodigoCategoriaInternoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListaCategoriaIdByCodigoCategoriaInternoResult" type="tns:ArrayOfIntegracaoCategoriaSelectInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoriaClienteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItems" />
+  </wsdl:message>
+  <wsdl:message name="GetItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Select" />
+  </wsdl:message>
+  <wsdl:message name="SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriaIdByCodigoCategoriaInternoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategoriaIdByCodigoCategoriaInterno" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriaIdByCodigoCategoriaInternoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoriaIdByCodigoCategoriaInternoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListaCategoriaIdByCodigoCategoriaInternoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListaCategoriaIdByCodigoCategoriaInterno" />
+  </wsdl:message>
+  <wsdl:message name="GetListaCategoriaIdByCodigoCategoriaInternoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListaCategoriaIdByCodigoCategoriaInternoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SyncCategoriaSoap">
+    <wsdl:operation name="Insert">
+      <wsdl:input message="tns:InsertSoapIn" />
+      <wsdl:output message="tns:InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <wsdl:input message="tns:GetItemsSoapIn" />
+      <wsdl:output message="tns:GetItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <wsdl:input message="tns:SelectSoapIn" />
+      <wsdl:output message="tns:SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaIdByCodigoCategoriaInterno">
+      <wsdl:input message="tns:GetCategoriaIdByCodigoCategoriaInternoSoapIn" />
+      <wsdl:output message="tns:GetCategoriaIdByCodigoCategoriaInternoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCategoriaIdByCodigoCategoriaInterno">
+      <wsdl:input message="tns:GetListaCategoriaIdByCodigoCategoriaInternoSoapIn" />
+      <wsdl:output message="tns:GetListaCategoriaIdByCodigoCategoriaInternoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SyncCategoriaSoap" type="tns:SyncCategoriaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <soap:operation soapAction="http://tempuri.org/GetItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <soap:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaIdByCodigoCategoriaInterno">
+      <soap:operation soapAction="http://tempuri.org/GetCategoriaIdByCodigoCategoriaInterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCategoriaIdByCodigoCategoriaInterno">
+      <soap:operation soapAction="http://tempuri.org/GetListaCategoriaIdByCodigoCategoriaInterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SyncCategoriaSoap12" type="tns:SyncCategoriaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap12:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <soap12:operation soapAction="http://tempuri.org/GetItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <soap12:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaIdByCodigoCategoriaInterno">
+      <soap12:operation soapAction="http://tempuri.org/GetCategoriaIdByCodigoCategoriaInterno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCategoriaIdByCodigoCategoriaInterno">
+      <soap12:operation soapAction="http://tempuri.org/GetListaCategoriaIdByCodigoCategoriaInterno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SyncCategoria">
+    <wsdl:port name="SyncCategoriaSoap" binding="tns:SyncCategoriaSoap">
+      <soap:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncCategoria.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SyncCategoriaSoap12" binding="tns:SyncCategoriaSoap12">
+      <soap12:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncCategoria.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

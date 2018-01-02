@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vx:RetornaInventario xmlns:vx="http://www.viaexpress.com.br/external/ViaExpress_external_integra.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" tipo="RETORNOLOTE" xsi:schemaLocation="http://www.viaexpress.com.br/external/ViaExpress_external_integra.xsd">
+<vx:inventario_id>3</vx:inventario_id>
+<vx:data-origem>2013-12-04</vx:data-origem>
+<vx:itens>
+  <vx:item>
+    <vx:resultado>LIBERADO</vx:resultado>
+    <vx:produto>
+      <vx:partnumber>14690</vx:partnumber>
+    </vx:produto>
+    <vx:quantidade>5</vx:quantidade>
+    <vx:quantidade-processada>5</vx:quantidade-processada>
+    <vx:valor-unitario>0</vx:valor-unitario>
+    <vx:lote>2692</vx:lote>
+    <vx:serial>37</vx:serial>
+    <vx:modelo>1073</vx:modelo>
+    <vx:data-fabricacao>2012-07-11</vx:data-fabricacao>
+    <vx:data-vencimento>2015-07-14</vx:data-vencimento>
+    <vx:localizacao>1-B-40-1</vx:localizacao>
+    <vx:embalagem>
+      <vx:codigo></vx:codigo>
+      <vx:descricao>1</vx:descricao>
+    </vx:embalagem>
+  </vx:item>
+</vx:itens>
+<vx:livres>
+  <vx:livre>
+    <vx:indice>1</vx:indice>
+    <vx:nome>TRANSACAO_ID_CLIENTE</vx:nome>
+    <vx:valor>26</vx:valor>
+  </vx:livre>
+</vx:livres>
+</vx:RetornaInventario>
+
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vx:RetornaIO xmlns:vx="http://www.viaexpress.com.br/external/ViaExpress_external_integra.xsd">
+<vx:ticket version="v1">
+  <vx:pid>vxw-integra_v1build1948</vx:pid>
+  <vx:nome>vxw-integra</vx:nome>
+  <vx:empresa>RV CONSULT TRANSPORTES</vx:empresa>
+  <vx:fornecedor>nucci.com.br</vx:fornecedor>
+  <vx:host>192.168.14.7</vx:host>
+  <vx:data-origem>2015-07-28T14:43:18-04:00</vx:data-origem>
+  <vx:versao>v1build1948</vx:versao>
+  <vx:id>br.com.nucci2015-07-28T14:43:18-04:00</vx:id>
+  <vx:filial>
+    <vx:codigo>RV</vx:codigo>
+    <vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+    <vx:razao-social>RV CONSULT TRANSPORTES E LOGÍSITCALTDA</vx:razao-social>
+  </vx:filial>
+</vx:ticket>
+<vx:target>
+  <vx:pid>AjuriWS</vx:pid>
+  <vx:nome>Ajuri</vx:nome>
+  <vx:empresa>CEMA</vx:empresa>
+  <vx:fornecedor>Prodam</vx:fornecedor>
+  <vx:host>unknow</vx:host>
+  <vx:data-origem>2015-07-28T14:43:18-04:00</vx:data-origem>
+</vx:target>
+<vx:conferencias>
+  <vx:conferencia tipo="SAIDA">
+    <vx:data>2015-07-28T14:43:18-04:00</vx:data>
+    <vx:cabecalho-chave>
+      <vx:cliente>
+        <vx:documento-federal>00.697.295/0001-05</vx:documento-federal>
+        <vx:razao-social>CEMA - CENTRAL DE MEDICAMENTOS DO AMAZONAS
+        </vx:razao-social>
+      </vx:cliente>
+      <vx:divisao-chave>PED</vx:divisao-chave>
+      <vx:numero>0003415936</vx:numero>
+      <vx:data>2015-05-21</vx:data>
+      <vx:hora>14:22:34</vx:hora>
+      <vx:serie>.</vx:serie>
+      <vx:cfop>
+        <vx:codigo>1000</vx:codigo>
+        <vx:descricao>.</vx:descricao>
+      </vx:cfop>
+    </vx:cabecalho-chave>
+    <vx:entidade>
+      <vx:documento-federal>30.000.000/0001-93</vx:documento-federal>
+      <vx:razao-social>UM - MAR</vx:razao-social>
+    </vx:entidade>
+    <vx:itens>
+      <vx:item>
+        <vx:resultado>LIBERADO</vx:resultado>
+        <vx:produto>
+          <vx:partnumber>3822</vx:partnumber>
+          <vx:descricao>Algodao hidrÃ³filo 500g, em camadas contÃ­nuas, c/
+            papel apropriado em toda</vx:descricao>
+        </vx:produto>
+        <vx:quantidade>3</vx:quantidade>
+        <vx:quantidade-processada>3</vx:quantidade-processada>
+        <vx:valor-unitario>8.95</vx:valor-unitario>
+        <vx:lote>0014276A</vx:lote>
+        <vx:serial>37</vx:serial>
+        <vx:modelo>219</vx:modelo>
+        <vx:data-fabricacao>2014-11-28</vx:data-fabricacao>
+        <vx:data-vencimento>2019-11-28</vx:data-vencimento>
+      </vx:item>
+      <vx:item>
+        <vx:resultado>LIBERADO</vx:resultado>
+        <vx:produto>
+          <vx:partnumber>3835</vx:partnumber>
+          <vx:descricao>Bolsa de transferÃªncia de sangue 150ml, com:
+            protetor, perfurador, tubo de</vx:descricao>
+        </vx:produto>
+        <vx:quantidade>5</vx:quantidade>
+        <vx:quantidade-processada>5</vx:quantidade-processada>
+        <vx:valor-unitario>4.99</vx:valor-unitario>
+        <vx:lote>011514</vx:lote>
+        <vx:serial>37</vx:serial>
+        <vx:modelo>37</vx:modelo>
+        <vx:data-fabricacao>2014-03-31</vx:data-fabricacao>
+        <vx:data-vencimento>2016-03-31</vx:data-vencimento>
+      </vx:item>
+    </vx:itens>
+    <vx:livres>
+      <vx:livre>
+        <vx:indice>6</vx:indice>
+        <vx:nome>TRANSACAO_ID_AJURI</vx:nome>
+        <vx:valor>3415936</vx:valor>
+      </vx:livre>
+      <vx:livre>
+        <vx:indice>7</vx:indice>
+        <vx:nome>TRANSACAO_ID_CLIENTE</vx:nome>
+        <vx:valor>26</vx:valor>
+      </vx:livre>
+      <vx:livre>
+        <vx:indice>3</vx:indice>
+        <vx:nome>livre03</vx:nome>
+        <vx:valor>0</vx:valor>
+      </vx:livre>
+    </vx:livres>
+  </vx:conferencia>
+</vx:conferencias>
+</vx:RetornaIO>

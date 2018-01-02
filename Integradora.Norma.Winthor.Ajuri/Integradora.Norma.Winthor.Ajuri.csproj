@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4875DB08-A412-40E2-A10C-64C6C68C515E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.Norma.Winthor.Ajuri</RootNamespace>
+    <AssemblyName>Integradora.Norma.Winthor.Ajuri</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enviar.cs" />
+    <Compile Include="EnviarAjuri.cs" />
+    <Compile Include="EnviarWinthor.cs" />
+    <Compile Include="Processo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receber.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Database.Oracle\Integradora.Database.Oracle.csproj">
+      <Project>{5bfaa3c1-e7fc-4f38-ac3b-3ca6ef9e5134}</Project>
+      <Name>Integradora.Database.Oracle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Database\Integradora.Database.csproj">
+      <Project>{04e32b6d-2847-4beb-aab4-0561433bf63d}</Project>
+      <Name>Integradora.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce.Ajuri\Integradora.ECommerce.Ajuri.csproj">
+      <Project>{82cf5f52-f262-4fb0-af3f-cf29b5677f7e}</Project>
+      <Name>Integradora.ECommerce.Ajuri</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ECommerce\Integradora.ECommerce.csproj">
+      <Project>{128091e7-33fd-47af-b892-98b499c0e87b}</Project>
+      <Name>Integradora.ECommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP.Winthor\Integradora.ERP.Winthor.csproj">
+      <Project>{01442edb-670d-4cc0-877d-00967fa880b1}</Project>
+      <Name>Integradora.ERP.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP\Integradora.ERP.csproj">
+      <Project>{c2e10202-5c91-4b33-8f2f-a6e92982b5d6}</Project>
+      <Name>Integradora.ERP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Mensageiro\Integradora.Mensageiro.csproj">
+      <Project>{8cdcbc5a-3b1c-433b-8bf0-7dedbd6400be}</Project>
+      <Name>Integradora.Mensageiro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma.Winthor\Integradora.Norma.Winthor.csproj">
+      <Project>{11e5eaeb-d83b-4d84-bedd-51fd6a7870e3}</Project>
+      <Name>Integradora.Norma.Winthor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.Norma\Integradora.Norma.csproj">
+      <Project>{164dd693-513a-42da-9b8b-032e2f502504}</Project>
+      <Name>Integradora.Norma</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

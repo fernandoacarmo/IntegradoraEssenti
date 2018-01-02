@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vx:RetornaCorrigeEstoque status="SUCCESS" xmlns:vx="http://cema.nucci.com.br/custom/wms/integracao/ws/cema/webservice_Returns">
+  <vx:ticket version="v1">
+    <vx:pid>nucciCema</vx:pid>
+    <vx:nome>nucciwms-integra</vx:nome>
+    <vx:empresa>RV CONSULT TRANSPORTES</vx:empresa>
+    <vx:fornecedor>nucci.com.br</vx:fornecedor>
+    <vx:host>192.168.14.7</vx:host>
+    <vx:data-origem>br.com.nucci2016-01-14T17:54:14-04:00:2016-01-14T17:54:14-04:00</vx:data-origem>
+    <vx:versao>v1build1591</vx:versao>
+    <vx:id>br.com.nucci2016-01-14T17:54:14-04:00:2016-01-14T17:54:14-04:00</vx:id>
+    <vx:filial>
+      <vx:codigo>RV</vx:codigo>
+      <vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+      <vx:razao-social>RV CONSULT TRANSPORTES E LOGÍSTICA LTDA</vx:razao-social>
+    </vx:filial>
+  </vx:ticket>
+  <vx:target>
+    <vx:pid>nucciCema</vx:pid>
+    <vx:nome>AJURI</vx:nome>
+    <vx:empresa>RV</vx:empresa>
+    <vx:fornecedor>AJURI</vx:fornecedor>
+    <vx:host>10.20.1.234</vx:host>
+    <vx:data-origem>br.com.nucci2016-01-14T17:54:14-04:00:2016-01-14T17:54:14-04:00</vx:data-origem>
+    <vx:observacoes>1 acoes.</vx:observacoes>
+  </vx:target>
+  <vx:correcoes>
+    <vx:correcao tipo="TRANSFERENCIA">
+      <vx:filial>
+        <vx:codigo>RV</vx:codigo>
+        <vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+        <vx:razao-social>RV CONSULT TRANSPORTES E LOGÍSTICA LTDA</vx:razao-social>
+      </vx:filial>
+      <vx:cliente>
+        <vx:documento-federal>00.697.295/0001-05</vx:documento-federal>
+        <vx:razao-social>CEMA - CENTRAL DE MEDICAMENTOS DO AMAZONAS</vx:razao-social>
+      </vx:cliente>
+      <vx:origem>
+        <vx:produto>
+          <vx:partnumber>4912</vx:partnumber>
+        </vx:produto>
+        <vx:quantidade-unidades>36</vx:quantidade-unidades>
+        <vx:lote>5052046043</vx:lote>
+        <vx:serial>354</vx:serial>
+        <vx:modelo>615</vx:modelo>
+        <vx:fabricacao>2015-02-01</vx:fabricacao>
+        <vx:vencimento>2016-02-01</vx:vencimento>
+      </vx:origem>
+      <vx:destino>
+        <vx:produto>
+          <vx:partnumber>4912</vx:partnumber>
+        </vx:produto>
+        <vx:quantidade-unidades>36</vx:quantidade-unidades>
+        <vx:lote>5052046043</vx:lote>
+        <vx:serial>37</vx:serial>
+        <vx:modelo>615</vx:modelo>
+        <vx:fabricacao>2015-02-01</vx:fabricacao>
+        <vx:vencimento>2016-02-01</vx:vencimento>
+      </vx:destino>
+      <vx:livres>
+        <vx:livre>
+          <vx:indice>6</vx:indice>
+          <vx:nome>TRANSACAO_ID_AJURI</vx:nome>
+          <vx:valor>4655596</vx:valor>
+        </vx:livre>
+        <vx:livre>
+          <vx:indice>7</vx:indice>
+          <vx:nome>TRANSACAO_ID_CLIENTE</vx:nome>
+          <vx:valor>26</vx:valor>
+        </vx:livre>
+        <vx:livre>
+          <vx:indice>1</vx:indice>
+          <vx:nome>DOCUMENTO_CEMA</vx:nome>
+          <vx:valor>362/2016</vx:valor>
+        </vx:livre>
+      </vx:livres>
+    </vx:correcao>
+  </vx:correcoes>
+</vx:RetornaCorrigeEstoque>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vou="http://www.accurate.com/acec/VoucherServices" name="VoucherServices" targetNamespace="http://www.accurate.com/acec/VoucherServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="schemas/VoucherServices.xsd" namespace="http://www.accurate.com/acec/VoucherServices" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="replaceVoucherRequest">
+    <wsdl:part name="payload" element="vou:replaceVoucherRequest" />
+  </wsdl:message>
+  <wsdl:message name="replaceVoucherResponse">
+    <wsdl:part name="payload" element="vou:replaceVoucherResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VoucherServices">
+    <wsdl:operation name="replaceVoucher">
+      <wsdl:input message="vou:replaceVoucherRequest" />
+      <wsdl:output message="vou:replaceVoucherResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VoucherServicesBinding" type="vou:VoucherServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="replaceVoucher">
+      <soap:operation soapAction="replaceVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VoucherServices">
+    <wsdl:port name="VoucherServices_pt" binding="vou:VoucherServicesBinding">
+      <soap:address location="https://ws-unilever-hcp.infracommerce.com.br/UnileverSvc/Voucher" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

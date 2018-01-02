@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="SOAP-ENV" elementFormDefault="qualified" targetNamespace="SOAP-ENV" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ResponseOf">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="request-ticket" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="request-date" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="response-ticket" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pid" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="message" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="detail" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="status" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

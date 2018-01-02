@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:cli="http://www.accurate.com/acec/Customer" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.accurate.com/acec/CustomerServices" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../../DataModel/AcecCustomer.xsd" namespace="http://www.accurate.com/acec/Customer" />
+  <xs:element name="notifyCustomerCreationRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cli:customer" />
+        <xs:element minOccurs="0" name="storeId" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="notifyCustomerCreationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateCustomerRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cli:customer" />
+        <xs:element minOccurs="0" name="storeId" type="xs:string" />
+        <xs:element minOccurs="0" name="status" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

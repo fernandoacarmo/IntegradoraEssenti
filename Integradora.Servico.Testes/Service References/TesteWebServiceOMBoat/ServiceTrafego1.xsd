@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://cema.nucci.com.br/custom/wms/integracao/ws/cema/webservice_Returns" elementFormDefault="qualified" targetNamespace="http://cema.nucci.com.br/custom/wms/integracao/ws/cema/webservice_Returns" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Integradora.WebServiceOMBoat/ServiceTrafego.svc?xsd=xsd1" namespace="vx" />
+  <xs:complexType name="Motivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="codigo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetornaAtuarEstoque">
+    <xs:sequence>
+      <xs:element xmlns:q1="vx" minOccurs="0" maxOccurs="1" ref="q1:ticket" />
+      <xs:element minOccurs="0" maxOccurs="1" name="target" type="tns:Target" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="atuacoes" type="tns:Atuacao" />
+    </xs:sequence>
+    <xs:attribute name="status" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Target">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="pid" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="empresa" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="fornecedor" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="host" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="data-origem" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="observacoes" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Atuacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="descricao" type="xs:string" />
+      <xs:element xmlns:q2="vx" minOccurs="0" maxOccurs="1" name="cliente" type="q2:Cliente" />
+      <xs:element minOccurs="0" maxOccurs="1" name="motivo" type="tns:Motivo" />
+      <xs:element xmlns:q3="vx" minOccurs="0" maxOccurs="1" name="produto" type="q3:Produto" />
+      <xs:element minOccurs="0" maxOccurs="1" name="lote" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="serial" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="modelo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="data-fabricacao" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="data-vencimento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="predio" type="tns:Predio" />
+      <xs:element minOccurs="0" maxOccurs="1" name="almoxarifado" type="tns:Almoxarifado" />
+      <xs:element minOccurs="0" maxOccurs="1" name="posicao" type="tns:Posicao" />
+      <xs:element minOccurs="0" maxOccurs="1" name="fornecedor" type="tns:Fornecedor" />
+      <xs:element xmlns:q4="vx" minOccurs="0" maxOccurs="1" name="livres" type="q4:Livres" />
+      <xs:element minOccurs="0" maxOccurs="1" name="quantidade-unidades" type="xs:string" />
+      <xs:element xmlns:q5="vx" minOccurs="0" maxOccurs="1" name="tipo" type="q5:Tipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Predio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="descricao" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Almoxarifado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="descricao" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Posicao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="rua" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="coluna" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nivel" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Fornecedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="documento-federal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="razao-social" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Correcao">
+    <xs:sequence>
+      <xs:element xmlns:q6="vx" minOccurs="0" maxOccurs="1" name="filial" type="q6:Filial" />
+      <xs:element xmlns:q7="vx" minOccurs="0" maxOccurs="1" name="cliente" type="q7:Cliente" />
+      <xs:element minOccurs="0" maxOccurs="1" name="origem" type="tns:Origem" />
+      <xs:element minOccurs="0" maxOccurs="1" name="destino" type="tns:Destino" />
+      <xs:element xmlns:q8="vx" minOccurs="0" maxOccurs="1" name="livres" type="q8:Livres" />
+      <xs:element xmlns:q9="vx" minOccurs="0" maxOccurs="1" name="tipo" type="q9:Tipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Origem">
+    <xs:sequence>
+      <xs:element xmlns:q10="vx" minOccurs="0" maxOccurs="1" name="produto" type="q10:Produto" />
+      <xs:element minOccurs="0" maxOccurs="1" name="quantidade-unidades" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="lote" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="serial" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="modelo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="fabricacao" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vencimento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Destino">
+    <xs:sequence>
+      <xs:element xmlns:q11="vx" minOccurs="0" maxOccurs="1" name="produto" type="q11:Produto" />
+      <xs:element minOccurs="0" maxOccurs="1" name="quantidade-unidades" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="lote" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="serial" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="modelo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="fabricacao" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vencimento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetornaCorrigeEstoque">
+    <xs:sequence>
+      <xs:element xmlns:q12="vx" minOccurs="0" maxOccurs="1" ref="q12:ticket" />
+      <xs:element minOccurs="0" maxOccurs="1" name="target" type="tns:Target" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="correcoes" type="tns:Correcao" />
+    </xs:sequence>
+    <xs:attribute name="status" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

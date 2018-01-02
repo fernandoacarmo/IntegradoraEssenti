@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:WsEntradas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:WsEntradas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:WsEntradas">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ATUALIZAR_ENTRADARequest">
+    <wsdl:part name="xml_string" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="ATUALIZAR_ENTRADAResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="WsEntradasPortType">
+    <wsdl:operation name="ATUALIZAR_ENTRADA">
+      <documentation>RECEBE A NOTA CONFERIDA PELO VIA EXPRESS E FAZ AS CONSISTÊNCIAS</documentation>
+      <wsdl:input message="tns:ATUALIZAR_ENTRADARequest" />
+      <wsdl:output message="tns:ATUALIZAR_ENTRADAResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsEntradasBinding" type="tns:WsEntradasPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="ATUALIZAR_ENTRADA">
+      <soap:operation soapAction="urn:WsEntradas#ATUALIZAR_ENTRADA" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WsEntradas" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WsEntradas" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsEntradas">
+    <wsdl:port name="WsEntradasPort" binding="tns:WsEntradasBinding">
+      <soap:address location="http://ajuri.homologacao.am.gov.br/index.php/ws_entradas" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

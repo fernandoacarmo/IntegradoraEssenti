@@ -1,0 +1,88 @@
+	<?xml version="1.0" encoding="UTF-8"?>
+	<vx:RetornaAtuarEstoque status="SUCCESS" xmlns:vx="http://cema.nucci.com.br/custom/wms/integracao/ws/cema/webservice_Returns">
+	  <vx:ticket version="v1">
+		<vx:pid>nucciCema</vx:pid>
+		<vx:nome>nucciwms-integra</vx:nome>
+		<vx:empresa>RV CONSULT TRANSPORTES</vx:empresa>
+		<vx:fornecedor>nucci.com.br</vx:fornecedor>
+		<vx:host>192.168.14.7</vx:host>
+		<vx:data-origem>br.com.nucci2016-01-06T16:10:16-04:00:2016-01-06T16:10:16-04:00</vx:data-origem>
+		<vx:versao>v1build1591</vx:versao>
+		<vx:id>br.com.nucci2016-01-06T16:10:16-04:00:2016-01-06T16:10:16-04:00</vx:id>
+		<vx:filial>
+		  <vx:codigo>RV</vx:codigo>
+		  <vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+		  <vx:razao-social>RV CONSULT TRANSPORTES E LOGÍSTICA LTDA</vx:razao-social>
+		</vx:filial>
+	  </vx:ticket>
+	  <vx:target>
+		<vx:pid>nucciCema</vx:pid>
+		<vx:nome>AJURI</vx:nome>
+		<vx:empresa>RV</vx:empresa>
+		<vx:fornecedor>AJURI</vx:fornecedor>
+		<vx:host>10.20.1.234</vx:host>
+		<vx:data-origem>br.com.nucci2016-01-06T16:10:16-04:00:2016-01-06T16:10:16-04:00</vx:data-origem>
+		<vx:observacoes>1 acoes.</vx:observacoes>
+	  </vx:target>
+	  <vx:atuacoes>
+		<vx:atuacao tipo="DESBLOQUEAR">
+		  <vx:descricao>DESBLOQUEAR</vx:descricao>
+		  <vx:cliente>
+			<vx:documento-federal>00.697.295/0001-05</vx:documento-federal>
+			<vx:razao-social>CEMA - CENTRAL DE MEDICAMENTOS DO AMAZONAS</vx:razao-social>
+		  </vx:cliente>
+		  <vx:motivo>
+			<vx:codigo>BLOQUEADO</vx:codigo>
+		  </vx:motivo>
+		  <vx:produto>
+			<vx:partnumber>1507</vx:partnumber>
+			<vx:descricao>FRALDA DESCARTÃ¡VEL GERIÃ¡TRICA TAM. GRANDE, MATERIAL IMPERMEÃ¡VEL, C/ CAMA</vx:descricao>
+		  </vx:produto>
+		  <vx:lote>S/L</vx:lote>
+		  <vx:serial>37</vx:serial>
+		  <vx:modelo>1037</vx:modelo>
+		  <vx:data-fabricacao>2015-05-28</vx:data-fabricacao>
+		  <vx:data-vencimento>2018-05-28</vx:data-vencimento>
+		  <vx:predio>
+			<vx:codigo>CE</vx:codigo>
+			<vx:descricao>CEMA</vx:descricao>
+		  </vx:predio>
+		  <vx:almoxarifado>
+			<vx:codigo>MC</vx:codigo>
+			<vx:descricao>MEDICAMENTO</vx:descricao>
+		  </vx:almoxarifado>
+		  <vx:posicao>
+			<vx:rua>1</vx:rua>
+			<vx:coluna>1</vx:coluna>
+			<vx:nivel>1</vx:nivel>
+		  </vx:posicao>
+		  <vx:fornecedor>
+			<vx:documento-federal></vx:documento-federal>
+			<vx:razao-social></vx:razao-social>
+		  </vx:fornecedor>
+		  <vx:livres>
+			<vx:livre>
+			  <vx:indice>1</vx:indice>
+			  <vx:nome>TIPO_OPERACAO_AJURI</vx:nome>
+			  <vx:valor>D</vx:valor>
+			</vx:livre>
+			<vx:livre>
+			  <vx:indice>6</vx:indice>
+			  <vx:nome>TRANSACAO_ID_AJURI</vx:nome>
+			  <vx:valor>4647280</vx:valor>
+			</vx:livre>
+			<vx:livre>
+			  <vx:indice>7</vx:indice>
+			  <vx:nome>TRANSACAO_ID_CLIENTE</vx:nome>
+			  <vx:valor>26</vx:valor>
+			</vx:livre>
+			<vx:livre>
+			  <vx:indice>8</vx:indice>
+			  <vx:nome>PRAZO_RESERVA</vx:nome>
+			  <vx:valor></vx:valor>
+			</vx:livre>
+		  </vx:livres>
+		  <vx:quantidade-unidades>120</vx:quantidade-unidades>
+		</vx:atuacao>
+	  </vx:atuacoes>
+	</vx:RetornaAtuarEstoque>

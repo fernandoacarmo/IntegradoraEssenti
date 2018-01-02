@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pData" type="tns:IntegracaoProdutoCombo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IntegracaoProdutoCombo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FabricanteId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="urlVideo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaComponentes" type="tns:ArrayOfIntegracaoProdutoComboComponente" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIntegracaoProdutoComboComponente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IntegracaoProdutoComboComponente" nillable="true" type="tns:IntegracaoProdutoComboComponente" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IntegracaoProdutoComboComponente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Variante" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SyncProdutoComboSoap">
+    <wsdl:operation name="Insert">
+      <wsdl:input message="tns:InsertSoapIn" />
+      <wsdl:output message="tns:InsertSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SyncProdutoComboSoap" type="tns:SyncProdutoComboSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SyncProdutoComboSoap12" type="tns:SyncProdutoComboSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap12:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SyncProdutoCombo">
+    <wsdl:port name="SyncProdutoComboSoap" binding="tns:SyncProdutoComboSoap">
+      <soap:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoCombo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SyncProdutoComboSoap12" binding="tns:SyncProdutoComboSoap12">
+      <soap12:address location="http://integracao.decisaoentrega.com.br/modelo007/SyncProdutoCombo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

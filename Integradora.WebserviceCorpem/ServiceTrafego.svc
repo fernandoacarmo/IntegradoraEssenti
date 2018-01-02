@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Integradora.WebserviceCorpem.ServiceTrafego" CodeBehind="ServiceTrafego.svc.cs" %>

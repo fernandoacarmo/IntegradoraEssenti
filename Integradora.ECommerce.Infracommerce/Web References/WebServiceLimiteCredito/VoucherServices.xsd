@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:cou="http://www.accurate.com/acec/coupon" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" targetNamespace="http://www.accurate.com/acec/VoucherServices" version="1.0" jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../../DataModel/AcecCoupon.xsd" namespace="http://www.accurate.com/acec/coupon" />
+  <xs:annotation>
+    <xs:appinfo>
+      <jaxb:globalBindings generateIsSetMethod="true" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+        <xjc:serializable uid="1" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" />
+      </jaxb:globalBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="replaceVoucherRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" ref="cou:coupons" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="replaceVoucherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="success" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

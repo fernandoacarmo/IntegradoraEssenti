@@ -1,0 +1,51 @@
+﻿-- Start of DDL Script for Trigger LOCAL.ESG_ECOMMERCE_PRODUTO
+-- Generated 24-mar-2017 11:23:18 from LOCAL@LOCAL
+
+CREATE OR REPLACE TRIGGER ESG_ECOMMERCE_PRODUTO
+ AFTER
+   INSERT OR DELETE OR UPDATE OF CODPROD, DTEXCLUSAO, DESCRICAO, CODAUXILIAR, NOMEECOMMERCE, CODMARCA
+ ON PCPRODUT
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+    vnacao   estreplicacao_ecommerce.acao%TYPE;
+    vsid     estreplicacao_ecommerce.id%TYPE;
+BEGIN
+    vnacao := 0;                                                   --Inserindo
+
+    --Se for prenchimento destes campos não faz nada
+    IF    (:new.nomeecommerce IS NULL)
+    THEN
+        vnacao := -1;
+    END IF;
+
+    IF vnacao > -1
+    THEN
+        BEGIN
+            IF DELETING OR (:new.dtexclusao IS NOT NULL)
+            THEN
+                vnacao := 2;                                       --Excluindo
+                vsid := :old.ROWID;
+            ELSE
+                vsid := :new.ROWID;
+
+                IF UPDATING
+                THEN
+                    vnacao := 1;                                  -- Alterando
+                END IF;
+            END IF;
+
+            INSERT INTO estreplicacao_ecommerce (tabela, acao, id)
+              VALUES   ('VWTRAYPRODUTOS', vnacao, vsid);
+
+        EXCEPTION
+            WHEN DUP_VAL_ON_INDEX
+            THEN
+                NULL;
+        END;
+    END IF;
+END;
+/
+
+
+-- End of DDL Script for Trigger LOCAL.ESG_ECOMMERCE_PRODUTO

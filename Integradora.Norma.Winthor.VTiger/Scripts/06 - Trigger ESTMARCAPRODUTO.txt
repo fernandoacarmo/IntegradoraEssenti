@@ -1,0 +1,27 @@
+﻿CREATE OR REPLACE TRIGGER esg_embalagem_para_marca_vtiger
+ AFTER
+   INSERT OR UPDATE OF embalagem
+ ON friopeca.pcprodut
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE vnExiste NUMBER;
+BEGIN
+  IF :NEW.NOMEECOMMERCE IS NOT NULL THEN
+  
+    BEGIN --Verificando se a marca já existe na tabela
+      SELECT 1
+        INTO vnExiste
+        FROM VTIGER.ESTMARCAPRODUTO
+       WHERE VTIGER.ESTMARCAPRODUTO.DESCRICAO = UPPER(TRIM(NVL(:NEW.EMBALAGEM, ' ')));
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      vnExiste := 0;
+    END;
+  
+    if vnExiste = 0 THEN --Caso não exista, insere a nova
+       INSERT INTO VTIGER.ESTMARCAPRODUTO (MARCA_ID, DESCRICAO)
+            VALUES (SEQ_ESTMARCAPRODUTO.NEXTVAL, UPPER(TRIM(NVL(:NEW.EMBALAGEM, ' '))));
+  
+    END IF;
+  END IF;
+END;

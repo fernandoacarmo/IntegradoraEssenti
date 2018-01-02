@@ -1,0 +1,6 @@
+﻿DECLARE
+  jobno NUMBER;
+BEGIN
+  DBMS_JOB.submit(jobno,'ESP_ENVIAR_PROMOCAO_ECOMMECE;',TRUNC(SYSDATE) +1 + (1/1440));
+end;
+

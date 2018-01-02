@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?><vx:CorrigeEstoque xmlns:vx='http://www.viaexpress.com.br/external/ViaExpress_external_integra.xsd' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+<vx:ticket>
+	<vx:pid>AJURI</vx:pid>
+	<vx:nome>AJURI</vx:nome>
+	<vx:empresa>RV</vx:empresa>
+	<vx:fornecedor>AJURI</vx:fornecedor>
+	<vx:host>200.208.181.15</vx:host>
+	<vx:data-origem>2016-04-04T15:12:21</vx:data-origem>
+	<vx:versao>1.0.0</vx:versao>
+	<vx:observacoes></vx:observacoes>
+	<vx:id>123</vx:id>
+<vx:filial>
+	<vx:codigo>vx:codigo</vx:codigo>
+	<vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+	<vx:razao-social>vx:razao-social</vx:razao-social>
+</vx:filial>
+</vx:ticket>
+<vx:gerador>
+	<vx:login>AJURI</vx:login>
+	<vx:nome>AJURI</vx:nome>
+	<vx:atribuicao>GERADOR</vx:atribuicao>
+	<vx:host>200.208.181.15</vx:host>
+	<vx:data>2016-04-04T15:12:21</vx:data>
+	<vx:operacao>EXPORTAR_DADOS</vx:operacao>
+	<vx:pid>AJURI</vx:pid>
+</vx:gerador>
+<vx:correcoes>
+<vx:correcao tipo="ACERTO">
+<vx:filial>
+	<vx:codigo></vx:codigo>
+	<vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+	<vx:razao-social></vx:razao-social>
+</vx:filial>
+<vx:cliente>
+	<vx:documento-federal>00.697.295/0001-05</vx:documento-federal>
+	<vx:razao-social></vx:razao-social>
+</vx:cliente>
+<vx:origem>
+<vx:produto>
+	<vx:partnumber>4880</vx:partnumber>
+</vx:produto>
+	<vx:quantidade-unidades>702</vx:quantidade-unidades>
+	<vx:lote>1298</vx:lote>
+	<vx:serial>37</vx:serial>
+	<vx:modelo>1229</vx:modelo>
+	<vx:fabricacao>2016-02-28</vx:fabricacao>
+	<vx:vencimento>2016-02-28</vx:vencimento>
+</vx:origem>
+<vx:destino>
+<vx:produto>
+	<vx:partnumber>4880</vx:partnumber>
+</vx:produto>
+	<vx:quantidade-unidades>702</vx:quantidade-unidades>
+	<vx:lote>1298</vx:lote>
+	<vx:serial>37</vx:serial>
+	<vx:modelo>1229</vx:modelo>
+	<vx:fabricacao>2016-02-28</vx:fabricacao>
+	<vx:vencimento>2018-02-28</vx:vencimento>
+</vx:destino>
+<vx:livres>
+<vx:livre>
+	<vx:indice>6</vx:indice>
+	<vx:nome>TRANSACAO_ID_AJURI</vx:nome>
+	<vx:valor>4730344</vx:valor>
+</vx:livre>
+<vx:livre>
+	<vx:indice>7</vx:indice>
+	<vx:nome>TRANSACAO_ID_CLIENTE</vx:nome>
+	<vx:valor>26</vx:valor>
+</vx:livre>
+<vx:livre>
+	<vx:indice>1</vx:indice>
+	<vx:nome>DOCUMENTO_CEMA</vx:nome>
+	<vx:valor>263/2016</vx:valor>
+</vx:livre>
+</vx:livres>
+</vx:correcao>
+</vx:correcoes>
+</vx:CorrigeEstoque>

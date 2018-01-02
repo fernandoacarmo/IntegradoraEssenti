@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.integrador.gs.com.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="GerenciaVendaWS" targetNamespace="http://ws.integrador.gs.com.br/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://201.49.82.8:8181/IntegradorGS-WS/GerenciaVendaWS?xsd=1" namespace="http://ws.integrador.gs.com.br/" />
+    </xsd:schema>
+  </types>
+  <message name="setNotificaVenda">
+    <part name="parameters" element="tns:setNotificaVenda" />
+  </message>
+  <message name="setNotificaVendaResponse">
+    <part name="parameters" element="tns:setNotificaVendaResponse" />
+  </message>
+  <message name="NoSuchAlgorithmException">
+    <part name="fault" element="tns:NoSuchAlgorithmException" />
+  </message>
+  <message name="setIdentificaCliente">
+    <part name="parameters" element="tns:setIdentificaCliente" />
+  </message>
+  <message name="setIdentificaClienteResponse">
+    <part name="parameters" element="tns:setIdentificaClienteResponse" />
+  </message>
+  <message name="setCancelaVenda">
+    <part name="parameters" element="tns:setCancelaVenda" />
+  </message>
+  <message name="setCancelaVendaResponse">
+    <part name="parameters" element="tns:setCancelaVendaResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="setImportaProduto">
+    <part name="parameters" element="tns:setImportaProduto" />
+  </message>
+  <message name="setImportaProdutoResponse">
+    <part name="parameters" element="tns:setImportaProdutoResponse" />
+  </message>
+  <portType name="GerenciaVendaWS">
+    <operation name="setNotificaVenda">
+      <input wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setNotificaVendaRequest" message="tns:setNotificaVenda" />
+      <output wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setNotificaVendaResponse" message="tns:setNotificaVendaResponse" />
+      <fault wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setNotificaVenda/Fault/NoSuchAlgorithmException" name="NoSuchAlgorithmException" message="tns:NoSuchAlgorithmException" />
+    </operation>
+    <operation name="setIdentificaCliente">
+      <input wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setIdentificaClienteRequest" message="tns:setIdentificaCliente" />
+      <output wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setIdentificaClienteResponse" message="tns:setIdentificaClienteResponse" />
+      <fault wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setIdentificaCliente/Fault/NoSuchAlgorithmException" name="NoSuchAlgorithmException" message="tns:NoSuchAlgorithmException" />
+    </operation>
+    <operation name="setCancelaVenda">
+      <input wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setCancelaVendaRequest" message="tns:setCancelaVenda" />
+      <output wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setCancelaVendaResponse" message="tns:setCancelaVendaResponse" />
+      <fault wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setCancelaVenda/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="setImportaProduto">
+      <input wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setImportaProdutoRequest" message="tns:setImportaProduto" />
+      <output wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setImportaProdutoResponse" message="tns:setImportaProdutoResponse" />
+      <fault wsam:Action="http://ws.integrador.gs.com.br/GerenciaVendaWS/setImportaProduto/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="GerenciaVendaWSPortBinding" type="tns:GerenciaVendaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="setNotificaVenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="NoSuchAlgorithmException">
+        <soap:fault use="literal" name="NoSuchAlgorithmException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setIdentificaCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="NoSuchAlgorithmException">
+        <soap:fault use="literal" name="NoSuchAlgorithmException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setCancelaVenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setImportaProduto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="GerenciaVendaWS">
+    <port name="GerenciaVendaWSPort" binding="tns:GerenciaVendaWSPortBinding">
+      <soap:address location="http://201.49.82.8:8181/IntegradorGS-WS/GerenciaVendaWS" />
+    </port>
+  </service>
+</definitions>

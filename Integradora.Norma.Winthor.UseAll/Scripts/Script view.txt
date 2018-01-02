@@ -1,0 +1,69 @@
+﻿CREATE OR DROP VIEW ESVREPLICACAO;
+
+/* Formatted on 2016/07/31 11:40 (Formatter Plus v4.8.8) */
+CREATE OR REPLACE FORCE VIEW esvreplicacao (tabela,
+                                            coluna,
+                                            registro,
+                                            titulo,
+                                            parcela,
+                                            acao
+                                           )
+AS
+   (                                           --Registro de retorno de fatura
+    SELECT 'FATURA' AS tabela, 'IDCODFATURA' AS coluna,
+           fatura.idcodfatura AS registro,
+           TO_CHAR (fatura.numero_fiscal) titulo, NULL parcela, 0 acao
+      FROM fatura
+--     , OUTRASCOB_UC
+    WHERE  fatura.data_emissao >= TRUNC (SYSDATE) - 35
+       AND fatura.numero_fiscal > 0
+       AND fatura.retificado = 'N'
+       AND NOT EXISTS (
+              SELECT 1
+                FROM estregistroimportado validador
+               WHERE validador.tabela = 'FATURA'
+                 AND validador.coluna = 'IDCODFATURA'
+                 AND validador.registro = fatura.idcodfatura)
+    UNION ALL
+--Registro do estorno da fatura
+    SELECT 'V_FATURAS_CANCELADAS' AS tabela, 'IDCODFATURA' AS coluna,
+           fatura.idcodfatura AS registro,
+           TO_CHAR (fatura.numero_fiscal) titulo, NULL parcela, 1 acao
+      FROM fatura
+     WHERE fatura.retificado = 'X'
+       AND fatura.pagto >= TRUNC (SYSDATE) - 35
+       AND NOT EXISTS (
+              SELECT 1
+                FROM estregistroimportado validador
+               WHERE validador.tabela = 'V_FATURAS_CANCELADAS'
+                 AND validador.coluna = 'IDCODFATURA'
+                 AND validador.registro = fatura.idcodfatura)
+--select * from fatura where numero_fiscal in ( 1000400 , 1000401.)
+    UNION ALL
+--Registro de estorno das vendas
+    SELECT 'OUTRASCOB_UC' AS tabela, 'IDOUTRASCOBUC' AS coluna,
+           outrascob_uc.idoutrascobuc AS registro,
+           (SUBSTR (outrascob_uc.historico,
+                    1,
+                    INSTR (outrascob_uc.historico, '-') - 1
+                   )
+           ) titulo,
+           (SUBSTR (outrascob_uc.historico,
+                    INSTR (outrascob_uc.historico, '-') + 1,
+                    LENGTH (outrascob_uc.historico)
+                   )
+           ) parcela,
+           2 acao
+      FROM outrascob_uc
+     WHERE outrascob_uc.cancelado > 0
+       AND outrascob_uc.iditem = 7
+       AND INSTR (outrascob_uc.historico, '-') > 0
+       AND outrascob_uc.data_lancto >= TRUNC (SYSDATE) - 35
+       AND outrascob_uc.historico IS NOT NULL
+       AND NOT EXISTS (
+              SELECT 1
+                FROM estregistroimportado validador
+               WHERE validador.tabela = 'OUTRASCOB_UC'
+                 AND validador.coluna = 'IDOUTRASCOBUC'
+                 AND validador.registro = outrascob_uc.idoutrascobuc));
+

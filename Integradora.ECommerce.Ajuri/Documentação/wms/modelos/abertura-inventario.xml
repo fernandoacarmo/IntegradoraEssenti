@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Inventario tipo="NOVO">
+    <inventario_id>3</inventario_id>
+    <data_origem>2013-12-04</data_origem>
+    <material>
+        <item>
+            <produto>
+                <partnumber>14690</partnumber>
+            </produto>
+        </item>
+    </material>
+    <livres>
+        <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+        </livre>
+    </livres>
+</Inventario>

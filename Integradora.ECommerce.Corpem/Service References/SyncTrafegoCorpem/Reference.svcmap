@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8d11abb7-5c69-448c-8ae7-e882d03d1f38" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1824/ServiceTrafego.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceTrafego.disco" MetadataType="Disco" ID="90f97d44-b699-4e6b-b291-819b4ba5bcfe" SourceId="1" SourceUrl="http://localhost:1824/ServiceTrafego.svc?disco" />
+    <MetadataFile FileName="ServiceTrafego.xsd" MetadataType="Schema" ID="ac2572c8-ca0d-4d18-b886-57081b1a0270" SourceId="1" SourceUrl="http://localhost:1824/ServiceTrafego.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServiceTrafego1.xsd" MetadataType="Schema" ID="19c2ddf4-a224-488f-86f1-f5372e144efa" SourceId="1" SourceUrl="http://localhost:1824/ServiceTrafego.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceTrafego2.xsd" MetadataType="Schema" ID="fc28d63e-3c5b-4bcd-9bfa-9c111120b9ca" SourceId="1" SourceUrl="http://localhost:1824/ServiceTrafego.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceTrafego3.xsd" MetadataType="Schema" ID="70206e2c-bf72-4678-b379-6ce337b063db" SourceId="1" SourceUrl="http://localhost:1824/ServiceTrafego.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceTrafego4.xsd" MetadataType="Schema" ID="287d1c84-9c6d-4a41-8bff-41b4c6eb842c" SourceId="1" SourceUrl="http://localhost:1824/ServiceTrafego.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceTrafego.wsdl" MetadataType="Wsdl" ID="2a13692c-be26-4b92-b795-21e0a84e5b5c" SourceId="1" SourceUrl="http://localhost:1824/ServiceTrafego.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA91BC9B-DF63-4A74-B3E6-6D4222C8D3C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integradora.ERP.Corpem</RootNamespace>
+    <AssemblyName>Integradora.ERP.Corpem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>.\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\ESTCLIENTE.cs" />
+    <Compile Include="Entity\ESTDEPARTAMENTO.cs" />
+    <Compile Include="Entity\ESTEMBALAGEM.cs" />
+    <Compile Include="Entity\ESTENDERECO.cs" />
+    <Compile Include="Entity\ESTFILIAL.cs" />
+    <Compile Include="Entity\ESTFORNECEDOR.cs" />
+    <Compile Include="Entity\ESTGERENTE.cs" />
+    <Compile Include="Entity\ESTINVENTARIO.cs" />
+    <Compile Include="Entity\ESTKIT.cs" />
+    <Compile Include="Entity\ESTMARCA.cs" />
+    <Compile Include="Entity\ESTNCM.cs" />
+    <Compile Include="Entity\ESTNOTAENTRADA.cs" />
+    <Compile Include="Entity\ESTNOTAENTRADAITENS.cs" />
+    <Compile Include="Entity\ESTNOTASAIDA.cs" />
+    <Compile Include="Entity\ESTNOTASAIDAITENS.cs" />
+    <Compile Include="Entity\ESTPREPEDIDOSAIDA.cs" />
+    <Compile Include="Entity\ESTPEDIDOSAIDA.cs" />
+    <Compile Include="Entity\ESTPREPEDIDOSAIDAITENS.cs" />
+    <Compile Include="Entity\ESTPEDIDOSAIDAITENS.cs" />
+    <Compile Include="Entity\ESTPRODUTO.cs" />
+    <Compile Include="Entity\ESTRAMOATIVIDADE.cs" />
+    <Compile Include="Entity\ESTRCA.cs" />
+    <Compile Include="Entity\ESTSECAO.cs" />
+    <Compile Include="Entity\ESTSUPERVISOR.cs" />
+    <Compile Include="Entity\ESVREPLICACAO.cs" />
+    <Compile Include="Inherited\OracleObjeto.cs" />
+    <Compile Include="Inherited\OracleSelect.cs" />
+    <Compile Include="Inherited\OracleTable.cs" />
+    <Compile Include="Inherited\OracleView.cs" />
+    <Compile Include="Integracao.cs" />
+    <Compile Include="Persistente\EntidadesBuider.cs" />
+    <Compile Include="Persistente\Oracle.cs" />
+    <Compile Include="Persistente\Persistencia.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integradora.Biblioteca\Integradora.Biblioteca.csproj">
+      <Project>{9838092c-0298-4345-8609-b1457c3de220}</Project>
+      <Name>Integradora.Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integradora.ERP\Integradora.ERP.csproj">
+      <Project>{c2e10202-5c91-4b33-8f2f-a6e92982b5d6}</Project>
+      <Name>Integradora.ERP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

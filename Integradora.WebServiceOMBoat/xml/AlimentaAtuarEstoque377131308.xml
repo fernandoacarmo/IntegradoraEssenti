@@ -1,0 +1,2507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AlimentaAtuarEstoque status="?" xmlns="vx">
+    <ticket>
+      <pid>AJURI</pid>
+      <nome>AJURI</nome>
+      <empresa>RV</empresa>
+      <fornecedor>AJURI</fornecedor>
+      <host>192.168.33.1</host>
+      <data-origem>2016-12-14T13:09:20</data-origem>
+      <versao>1.0.0</versao>
+      <observacoes />
+      <id>123</id>
+      <filial>
+        <codigo>vx:codigo</codigo>
+        <documento-federal>05.366.444/0003-20</documento-federal>
+        <razao-social>vx:razao-social</razao-social>
+      </filial>
+    </ticket>
+    <atuacoes>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>48657</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>11104</lote>
+        <serial>37</serial>
+        <modelo>1034</modelo>
+        <data-fabricacao>2015-09-30</data-fabricacao>
+        <data-vencimento>2016-09-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>1920</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>48656</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>11124</lote>
+        <serial>37</serial>
+        <modelo>1034</modelo>
+        <data-fabricacao>2015-09-30</data-fabricacao>
+        <data-vencimento>2016-09-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>2160</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4898</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>29IH1498</lote>
+        <serial>37</serial>
+        <modelo>33</modelo>
+        <data-fabricacao>2015-08-31</data-fabricacao>
+        <data-vencimento>2016-11-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>906</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4898</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>29IH1513</lote>
+        <serial>37</serial>
+        <modelo>33</modelo>
+        <data-fabricacao>2015-08-31</data-fabricacao>
+        <data-vencimento>2016-11-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>359</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>46177</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>11200</lote>
+        <serial>37</serial>
+        <modelo>1034</modelo>
+        <data-fabricacao>2015-06-30</data-fabricacao>
+        <data-vencimento>2016-06-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>3040</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>45961</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>11180</lote>
+        <serial>37</serial>
+        <modelo>1034</modelo>
+        <data-fabricacao>2015-06-30</data-fabricacao>
+        <data-vencimento>2016-06-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>3040</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>45296</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>10925</lote>
+        <serial>37</serial>
+        <modelo>1034</modelo>
+        <data-fabricacao>2015-07-31</data-fabricacao>
+        <data-vencimento>2016-07-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>3680</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4897</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>29IK1890</lote>
+        <serial>37</serial>
+        <modelo>33</modelo>
+        <data-fabricacao>2015-10-31</data-fabricacao>
+        <data-vencimento>2016-10-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>2053</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3212</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>636883</lote>
+        <serial>37</serial>
+        <modelo>625</modelo>
+        <data-fabricacao>2014-05-31</data-fabricacao>
+        <data-vencimento>2016-05-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>1950</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>7498</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>1409006</lote>
+        <serial>108</serial>
+        <modelo>49</modelo>
+        <data-fabricacao>2014-09-30</data-fabricacao>
+        <data-vencimento>2016-07-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>202</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4877</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>062014</lote>
+        <serial>37</serial>
+        <modelo>1262</modelo>
+        <data-fabricacao>2015-11-18</data-fabricacao>
+        <data-vencimento>2016-11-18</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>186</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4877</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>062013</lote>
+        <serial>37</serial>
+        <modelo>1262</modelo>
+        <data-fabricacao>2015-11-03</data-fabricacao>
+        <data-vencimento>2016-11-18</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>23</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4877</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>062010</lote>
+        <serial>37</serial>
+        <modelo>1262</modelo>
+        <data-fabricacao>2015-09-03</data-fabricacao>
+        <data-vencimento>2016-09-03</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>9</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3915</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>3310261</lote>
+        <serial>354</serial>
+        <modelo>1258</modelo>
+        <data-fabricacao>2013-11-30</data-fabricacao>
+        <data-vencimento>2016-08-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>50</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3915</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>4086144</lote>
+        <serial>354</serial>
+        <modelo>1258</modelo>
+        <data-fabricacao>2014-04-30</data-fabricacao>
+        <data-vencimento>2016-10-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>250</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>7458</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>5583701</lote>
+        <serial>37</serial>
+        <modelo>55</modelo>
+        <data-fabricacao>2014-04-30</data-fabricacao>
+        <data-vencimento>2016-04-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>160</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4632</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>15100702</lote>
+        <serial>106</serial>
+        <modelo>3</modelo>
+        <data-fabricacao>2015-10-31</data-fabricacao>
+        <data-vencimento>2016-10-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>41500</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>7610</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>4GC34</lote>
+        <serial>111</serial>
+        <modelo>877</modelo>
+        <data-fabricacao>2014-07-31</data-fabricacao>
+        <data-vencimento>2016-07-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>4394</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>23259</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>14070626</lote>
+        <serial>523</serial>
+        <modelo>10</modelo>
+        <data-fabricacao>2014-07-31</data-fabricacao>
+        <data-vencimento>2016-07-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>8500</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>53294</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>4K82695SA2</lote>
+        <serial>119</serial>
+        <modelo>438</modelo>
+        <data-fabricacao>2014-11-30</data-fabricacao>
+        <data-vencimento>2016-10-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>6720</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3498</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>0893/14</lote>
+        <serial>37</serial>
+        <modelo>26</modelo>
+        <data-fabricacao>2014-12-31</data-fabricacao>
+        <data-vencimento>2016-11-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>3</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>7418</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>13107291</lote>
+        <serial>37</serial>
+        <modelo>2</modelo>
+        <data-fabricacao>2013-10-31</data-fabricacao>
+        <data-vencimento>2016-10-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>150</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3114</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>03104S</lote>
+        <serial>37</serial>
+        <modelo>31</modelo>
+        <data-fabricacao>2014-04-30</data-fabricacao>
+        <data-vencimento>2016-04-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>10</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3132</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>1419046M</lote>
+        <serial>37</serial>
+        <modelo>379</modelo>
+        <data-fabricacao>2014-10-31</data-fabricacao>
+        <data-vencimento>2016-10-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>200</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>2282</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>1L01703</lote>
+        <serial>354</serial>
+        <modelo>112</modelo>
+        <data-fabricacao>2011-11-30</data-fabricacao>
+        <data-vencimento>2016-11-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>15</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>2282</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>2B01080</lote>
+        <serial>354</serial>
+        <modelo>112</modelo>
+        <data-fabricacao>2011-11-30</data-fabricacao>
+        <data-vencimento>2016-11-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>44</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>9996</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>290416</lote>
+        <serial>37</serial>
+        <modelo>1058</modelo>
+        <data-fabricacao>2015-07-30</data-fabricacao>
+        <data-vencimento>2016-04-29</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>450</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4629</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>5103046041</lote>
+        <serial>37</serial>
+        <modelo>615</modelo>
+        <data-fabricacao>2015-07-01</data-fabricacao>
+        <data-vencimento>2016-07-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>1</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4911</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>5222046041</lote>
+        <serial>37</serial>
+        <modelo>615</modelo>
+        <data-fabricacao>2015-11-01</data-fabricacao>
+        <data-vencimento>2016-11-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>43</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>7414</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>B1357B01</lote>
+        <serial>459</serial>
+        <modelo>5</modelo>
+        <data-fabricacao>2013-11-30</data-fabricacao>
+        <data-vencimento>2016-11-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>130</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>16069</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>SR-02</lote>
+        <serial>37</serial>
+        <modelo>1034</modelo>
+        <data-fabricacao>2014-09-30</data-fabricacao>
+        <data-vencimento>2016-09-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>24300</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4627</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>L019238</lote>
+        <serial>93</serial>
+        <modelo>36</modelo>
+        <data-fabricacao>2015-03-31</data-fabricacao>
+        <data-vencimento>2016-09-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>101</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>7498</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>1411001</lote>
+        <serial>108</serial>
+        <modelo>49</modelo>
+        <data-fabricacao>2014-11-30</data-fabricacao>
+        <data-vencimento>2016-11-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>250</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>35892</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>1052565</lote>
+        <serial>119</serial>
+        <modelo>320</modelo>
+        <data-fabricacao>2014-06-30</data-fabricacao>
+        <data-vencimento>2016-06-30</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>20910</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>19487</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>29IB0432</lote>
+        <serial>354</serial>
+        <modelo>33</modelo>
+        <data-fabricacao>2015-05-01</data-fabricacao>
+        <data-vencimento>2016-05-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>4</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3223</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>1430223</lote>
+        <serial>354</serial>
+        <modelo>231</modelo>
+        <data-fabricacao>2014-05-01</data-fabricacao>
+        <data-vencimento>2016-05-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>300</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>2135</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>051214</lote>
+        <serial>354</serial>
+        <modelo>229</modelo>
+        <data-fabricacao>2014-06-01</data-fabricacao>
+        <data-vencimento>2016-06-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>300</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3116</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>AA14M11715-2</lote>
+        <serial>354</serial>
+        <modelo>379</modelo>
+        <data-fabricacao>2014-12-01</data-fabricacao>
+        <data-vencimento>2016-12-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>200</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4798</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>14101172</lote>
+        <serial>354</serial>
+        <modelo>380</modelo>
+        <data-fabricacao>2014-10-01</data-fabricacao>
+        <data-vencimento>2016-10-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>20</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3166</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>11424S</lote>
+        <serial>354</serial>
+        <modelo>31</modelo>
+        <data-fabricacao>2014-10-01</data-fabricacao>
+        <data-vencimento>2016-10-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>3</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>7612</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>74HM5006</lote>
+        <serial>354</serial>
+        <modelo>33</modelo>
+        <data-fabricacao>2014-12-01</data-fabricacao>
+        <data-vencimento>2016-11-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>96</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4912</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>PTL150230</lote>
+        <serial>354</serial>
+        <modelo>1058</modelo>
+        <data-fabricacao>2015-03-24</data-fabricacao>
+        <data-vencimento>2016-09-10</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>7</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3391</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>AP175/14 ESP</lote>
+        <serial>354</serial>
+        <modelo>26</modelo>
+        <data-fabricacao>2014-10-01</data-fabricacao>
+        <data-vencimento>2016-10-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>26</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3783</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>5263/15</lote>
+        <serial>37</serial>
+        <modelo>129</modelo>
+        <data-fabricacao>2015-08-31</data-fabricacao>
+        <data-vencimento>2016-10-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>152</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3783</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>5226/15</lote>
+        <serial>37</serial>
+        <modelo>129</modelo>
+        <data-fabricacao>2015-06-30</data-fabricacao>
+        <data-vencimento>2016-08-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>60</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>53450</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>154RO037Z</lote>
+        <serial>93</serial>
+        <modelo>767</modelo>
+        <data-fabricacao>2015-04-01</data-fabricacao>
+        <data-vencimento>2016-06-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>160</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>53450</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>155RO046Z</lote>
+        <serial>93</serial>
+        <modelo>767</modelo>
+        <data-fabricacao>2015-05-01</data-fabricacao>
+        <data-vencimento>2016-06-01</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>240</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>19487</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>29IB0432</lote>
+        <serial>354</serial>
+        <modelo>33</modelo>
+        <data-fabricacao>2014-05-31</data-fabricacao>
+        <data-vencimento>2016-05-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>30</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>4899</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>1405280003</lote>
+        <serial>354</serial>
+        <modelo>1058</modelo>
+        <data-fabricacao>2014-05-28</data-fabricacao>
+        <data-vencimento>2016-05-28</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>12</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3250</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>5198055</lote>
+        <serial>354</serial>
+        <modelo>16</modelo>
+        <data-fabricacao>2014-10-31</data-fabricacao>
+        <data-vencimento>2016-10-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>100</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>2211</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>14636R</lote>
+        <serial>354</serial>
+        <modelo>312</modelo>
+        <data-fabricacao>2014-07-31</data-fabricacao>
+        <data-vencimento>2016-07-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>10</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>16701</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>PTL150395</lote>
+        <serial>354</serial>
+        <modelo>206</modelo>
+        <data-fabricacao>2015-05-11</data-fabricacao>
+        <data-vencimento>2016-07-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>12</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>16701</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>PTL150208</lote>
+        <serial>354</serial>
+        <modelo>206</modelo>
+        <data-fabricacao>2015-03-13</data-fabricacao>
+        <data-vencimento>2016-06-04</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>24</quantidade>
+      </atuacao>
+      <atuacao tipo="BLOQUEAR">
+        <descricao>Bloqueio</descricao>
+        <cliente>
+          <documento-federal>00.697.295/0001-05</documento-federal>
+          <razao-social />
+        </cliente>
+        <motivo>
+          <codigo>BLOQUEADO_VENCIMENTO</codigo>
+        </motivo>
+        <produto>
+          <filial />
+          <cliente />
+          <partnumber>3619</partnumber>
+          <grupo />
+          <tipo />
+          <configura-embalagens />
+          <livres />
+        </produto>
+        <lote>493/1</lote>
+        <serial>354</serial>
+        <modelo>88</modelo>
+        <data-fabricacao>2014-05-31</data-fabricacao>
+        <data-vencimento>2016-05-31</data-vencimento>
+        <predio />
+        <almoxarifado />
+        <posicao />
+        <fornecedor />
+        <livres>
+          <livre>
+            <indice>1</indice>
+            <nome>TIPO_OPERACAO_AJURI</nome>
+            <valor>B</valor>
+          </livre>
+          <livre>
+            <indice>6</indice>
+            <nome>TRANSACAO_ID_AJURI</nome>
+            <valor>4710297</valor>
+          </livre>
+          <livre>
+            <indice>7</indice>
+            <nome>TRANSACAO_ID_CLIENTE</nome>
+            <valor>26</valor>
+          </livre>
+        </livres>
+        <quantidade>1</quantidade>
+      </atuacao>
+    </atuacoes>
+  </AlimentaAtuarEstoque>
+</xml>

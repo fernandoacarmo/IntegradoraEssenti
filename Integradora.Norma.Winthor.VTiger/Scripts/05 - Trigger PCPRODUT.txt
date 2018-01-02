@@ -1,0 +1,48 @@
+﻿CREATE OR REPLACE TRIGGER esg_vtiger_produto
+ AFTER
+   INSERT OR DELETE OR UPDATE OF obs2, codprod, dtexclusao, dirfotoprod, alturam3, codauxiliar, magento_id, codfab, codmarca, codcategoria, pesoliq, descricao, obs, nomeecommerce, comprimentom3, codepto, codlinhaprod, codsec, nbm, larguram3
+ ON friopeca.pcprodut
+REFERENCING NEW AS NEW OLD AS OLD
+ FOR EACH ROW
+DECLARE
+    vnacao   vtiger.estreplicacao_vtiger.acao%TYPE;
+    vsid     vtiger.estreplicacao_vtiger.id%TYPE;
+BEGIN
+    vnacao := 0;                                                   --Inserindo
+
+    --Se for prenchimento destes campos não faz nada
+		IF    (:new.codepto IS NULL)
+		   OR (:new.codsec IS NULL)
+		   OR (:new.nomeecommerce IS NULL)
+		   OR (:new.codlinhaprod IS NULL)
+    THEN
+        vnacao := -1;
+    END IF;
+
+    IF vnacao > -1
+    THEN
+        BEGIN
+            IF DELETING OR (:new.dtexclusao IS NOT NULL)
+            THEN
+                vnacao := 2;                                       --Excluindo
+                vsid := :old.ROWID;
+            ELSE
+                vsid := :new.ROWID;
+
+                IF UPDATING
+                THEN
+                    vnacao := 1;                                  -- Alterando
+                END IF;
+            END IF;
+
+            INSERT INTO vtiger.estreplicacao_vtiger (tabela, acao, id)
+              VALUES   ('VWVTEXPRODUTOS', vnacao, vsid);
+
+        EXCEPTION
+            WHEN DUP_VAL_ON_INDEX
+            THEN
+                NULL;
+        END;
+    END IF;
+END;
+/

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<vx:AlimentaProduto
+  xmlns:vx='http://www.viaexpress.com.br/external/ViaExpress_external_integra.xsd'
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+  <vx:ticket>
+    <vx:pid>AJURI</vx:pid>
+    <vx:nome>AJURI</vx:nome>
+    <vx:empresa>RV</vx:empresa>
+    <vx:fornecedor>AJURI</vx:fornecedor>
+    <vx:host>200.208.181.15</vx:host>
+    <vx:data-origem>2016-05-06T10:14:07</vx:data-origem>
+    <vx:versao>1.0.0</vx:versao>
+    <vx:observacoes></vx:observacoes>
+    <vx:id>123</vx:id>
+    <vx:filial>
+      <vx:codigo>vx:codigo</vx:codigo>
+      <vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+      <vx:razao-social>vx:razao-social</vx:razao-social>
+    </vx:filial>
+  </vx:ticket>
+  <vx:produtos>
+    <vx:produto>
+      <vx:filial>
+        <vx:codigo></vx:codigo>
+        <vx:documento-federal>05.366.444/0003-20</vx:documento-federal>
+        <vx:razao-social></vx:razao-social>
+      </vx:filial>
+      <vx:cliente>
+        <vx:documento-federal>00.697.295/0001-05</vx:documento-federal>
+        <vx:razao-social></vx:razao-social>
+      </vx:cliente>
+      <vx:partnumber>63786</vx:partnumber>
+      <vx:descricao>MARAVIQUE 150 mg, apresentação : comprimido
+      </vx:descricao>
+      <vx:unidade>CP</vx:unidade>
+      <vx:dias-validade>0</vx:dias-validade>
+      <vx:dias-bloqueio>1</vx:dias-bloqueio>
+      <vx:mistura-produto-posicao>NAO</vx:mistura-produto-posicao>
+      <vx:mistura-lote-posicao>NAO</vx:mistura-lote-posicao>
+      <vx:endereca-bloqueado>NAO</vx:endereca-bloqueado>
+      <vx:bloqueia-qualidade>NAO</vx:bloqueia-qualidade>
+      <vx:grupo>
+        <vx:descricao>MEDICAMENTOS - CEMA</vx:descricao>
+      </vx:grupo>
+      <vx:tipo>
+        <vx:descricao>MEDICAMENTOS ESTRATE</vx:descricao>
+      </vx:tipo>
+      <vx:configura-embalagens>
+        <vx:configuracao>
+          <vx:embalagem>
+            <vx:codigo>UNITARIA</vx:codigo>
+            <vx:comprimento-metros>0.0001</vx:comprimento-metros>
+            <vx:largura-metros>0.0001</vx:largura-metros>
+            <vx:altura-metros>0.0001</vx:altura-metros>
+            <vx:tara-kilos>0.0001</vx:tara-kilos>
+          </vx:embalagem>
+          <vx:itens-por-volume>1</vx:itens-por-volume>
+          <vx:unidades-por-item>1</vx:unidades-por-item>
+          <vx:volumes-por-palete>1</vx:volumes-por-palete>
+          <vx:peso-bruto-volume-kilos>0.0001
+          </vx:peso-bruto-volume-kilos>
+          <vx:peso-liquido-volume-kilos>0.0001
+          </vx:peso-liquido-volume-kilos>
+        </vx:configuracao>
+      </vx:configura-embalagens>
+      <vx:livres>
+        <vx:livre>
+          <vx:indice>1</vx:indice>
+          <vx:nome>DESCRICAO_AJURI</vx:nome>
+          <vx:valor>MARAVIQUE 150 mg, apresentação : comprimido
+          </vx:valor>
+        </vx:livre>
+      </vx:livres>
+    </vx:produto>
+  </vx:produtos>
+</vx:AlimentaProduto>
